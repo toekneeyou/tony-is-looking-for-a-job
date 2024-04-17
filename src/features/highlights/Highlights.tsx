@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import "./highlights.css";
 
 export type Highlight = {
@@ -9,13 +9,19 @@ export type Highlight = {
 type HighlightsProps = {
   highlightsSectionId: string;
   highlights: Highlight[];
+  style?: CSSProperties;
 };
 export default function Highlights({
   highlightsSectionId,
   highlights,
+  style,
 }: HighlightsProps) {
   return (
-    <section id={highlightsSectionId} className="highlights_section">
+    <section
+      id={highlightsSectionId}
+      className="highlights_section"
+      style={style}
+    >
       <ul className="highlights_list">
         {highlights.map((hl) => {
           return <Highlight key={JSON.stringify(hl)} {...hl} />;

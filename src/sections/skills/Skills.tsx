@@ -1,4 +1,4 @@
-import { SKILLS_SECTION_ID } from "../../App";
+import { SKILLS_SECTION_ID, SKILLS_SECTION_Z_INDEX } from "../../App";
 import Highlights, { Highlight } from "../../features/highlights/Highlights";
 
 const skills: Highlight[] = [
@@ -10,6 +10,10 @@ const skills: Highlight[] = [
 
 export default function Skills() {
   return (
-    <Highlights highlightsSectionId={SKILLS_SECTION_ID} highlights={skills} />
+    <Highlights
+      highlightsSectionId={SKILLS_SECTION_ID}
+      highlights={skills}
+      style={{ zIndex: SKILLS_SECTION_Z_INDEX }}
+    />
   );
 }

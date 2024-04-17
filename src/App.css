@@ -18,9 +18,20 @@
   }
 }
 
+#app {
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   margin: 0;
   background-color: var(--white);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* fonts */
@@ -77,22 +88,15 @@ ul {
   }
 }
 
-#app {
-  max-width: 2000px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
 /* laptop/desktop */
 @media (min-width: 1025px) and (max-width: 1440px) {
 }
 /* tablet/laptop */
 @media (min-width: 769px) and (max-width: 1024px) {
 }
-/* mobile */
-@media (min-width: 482px) and (max-width: 768px) {
+/* mobile/tablet */
+@media (min-width: 429px) and (max-width: 768px) {
 }
-@media (max-width: 481px) {
+/* mobile */
+@media (max-width: 428px) {
 }
