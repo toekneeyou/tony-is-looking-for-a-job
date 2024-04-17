@@ -1,0 +1,89 @@
+.introduction_section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 55% 45%;
+  min-height: 100vh;
+}
+
+.introduction_section__left {
+  width: 100%;
+  display: flex;
+}
+
+.introduction_section__left img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.introduction_section__right {
+  width: 100%;
+  padding: var(--padding-xl);
+  padding-top: 20vh;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .introduction_section__right {
+    padding: var(--padding-l);
+    padding-top: 20vh;
+  }
+}
+@media (min-width: 769px) and (max-width: 104px) {
+  .introduction_section__right {
+    padding: var(--padding-m);
+    padding-top: 20vh;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .introduction_section {
+    grid-template-columns: 100%;
+  }
+  .introduction_section__left {
+    display: none;
+  }
+  .introduction_section__right {
+    padding: 0;
+    height: 100%;
+    background-image: url("/src/assets/tony-iceland.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .introduction_section__text {
+    padding: var(--padding-l);
+    padding-bottom: calc(2 * var(--padding-l));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 70%, transparent);
+  }
+  .introduction_section__text h1,
+  .introduction_section__text span {
+    color: var(--white);
+  }
+}
+
+@media (max-width: 480.99px) {
+  .introduction_section {
+    grid-template-columns: 100%;
+  }
+  .introduction_section__left {
+    display: none;
+  }
+  .introduction_section__right {
+    padding: 0;
+    height: 100%;
+    background-image: url("/src/assets/tony-iceland.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .introduction_section__text {
+    padding: var(--padding-m);
+    padding-bottom: calc(2 * var(--padding-m));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 70%, transparent);
+  }
+  .introduction_section__text h1,
+  .introduction_section__text span {
+    color: var(--white);
+  }
+}

@@ -1,0 +1,91 @@
+:root {
+  /* colors */
+  --yellow: #f4d35e;
+  --black: #13141b;
+  --white: #ddd;
+  --pistachio: #7ec139;
+  --eggplant: #786570;
+  --dark-eggplant: #604956;
+  /* padding */
+  --padding-xl: 5rem;
+  --padding-l: 4rem;
+  --padding-m: 3rem;
+  --padding-s: 2rem;
+  --padding-xs: 1rem;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--white);
+}
+
+/* fonts */
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 480.99px) {
+  h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767.99px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.99px) {
+  h1 {
+    font-size: 3.25rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+#app {
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+@media (max-width: 480.99px) {
+}
+
+@media (min-width: 481px) and (max-width: 767.99px) {
+}
+
+@media (min-width: 768px) and (max-width: 1023.99px) {
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+}
