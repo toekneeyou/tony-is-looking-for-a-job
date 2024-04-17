@@ -29,7 +29,7 @@
     padding-top: 20vh;
   }
 }
-@media (min-width: 769px) and (max-width: 104px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .introduction_section__right {
     padding: var(--padding-m);
     padding-top: 20vh;
@@ -50,11 +50,18 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
   }
   .introduction_section__text {
+    width: 100%;
     padding: var(--padding-l);
-    padding-bottom: calc(2 * var(--padding-l));
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 70%, transparent);
+    padding-bottom: calc(2 * var(--padding-xl));
+    background-image: linear-gradient(transparent 25%, var(--black));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .introduction_section__text h1,
   .introduction_section__text span {
@@ -76,11 +83,18 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
   }
   .introduction_section__text {
+    width: 100%;
     padding: var(--padding-m);
     padding-bottom: calc(2 * var(--padding-m));
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5) 70%, transparent);
+    background-image: linear-gradient(transparent 25%, var(--black));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .introduction_section__text h1,
   .introduction_section__text span {

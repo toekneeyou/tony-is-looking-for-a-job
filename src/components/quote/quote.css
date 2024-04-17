@@ -8,3 +8,10 @@
   font-weight: bold;
   line-height: calc(1.5rem * 1.25);
 }
+
+@media (max-width: 768px) {
+  .quote span {
+    font-size: 1.25rem;
+    line-height: calc(1.25rem * 1.25);
+  }
+}
