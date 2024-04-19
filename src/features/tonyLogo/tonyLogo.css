@@ -1,0 +1,64 @@
+.tony_logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  width: max-content;
+  height: max-content;
+  user-select: none;
+}
+
+.tony_logo .josefin_sans_bold {
+  font-size: 8rem;
+}
+
+.tony_logo .first_name {
+  z-index: 1;
+  background-image: linear-gradient(to right, var(--black), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.tony_logo .last_name {
+  color: var(--blue);
+  margin-top: -4rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.first_name__overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  bottom: 2.75rem;
+  z-index: 2;
+  background-color: var(--white);
+  transition: transform 1s ease;
+}
+
+.last_name__overlay {
+  display: none;
+  position: absolute;
+  top: 1.25rem;
+  width: 100%;
+  right: 0;
+  height: 100%;
+  z-index: 2;
+  background-color: var(--white);
+  transition: transform 1s ease;
+}
+
+.first_name__show .first_name__overlay {
+  transform: translate(100%) !important;
+}
+.last_name__show .last_name__overlay {
+  transform: translateY(100%) !important;
+}
