@@ -2,9 +2,13 @@
   color: var(--black);
   max-width: 40ch;
   font-size: 1rem;
-  line-height: calc(1rem * 1.5);
   overflow: hidden;
+  line-height: calc(1rem * 1.5);
+}
+
+.text_body span {
   color: var(--dark-gray);
+  font-weight: 400;
 }
 
 .text_body__border {

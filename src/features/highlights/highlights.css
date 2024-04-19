@@ -45,7 +45,7 @@
     font-size: 1rem;
   }
 }
-
+/* tablet/laptop */
 @media (min-width: 769px) and (max-width: 1024px) {
   .highlight {
     padding: 0 1.25rem;
@@ -57,7 +57,7 @@
     font-size: 1rem;
   }
 }
-
+/* mobile/tablet */
 @media (max-width: 768px) {
   .highlights_list {
     display: grid;

@@ -34,10 +34,9 @@
   font-weight: bold;
   position: relative;
   cursor: pointer;
+  user-select: none;
 }
 .nav_header__nav li.selected .nav_header__scrollbar__segment {
-  height: 4px;
-  transform: translateY(1px);
   background-color: var(--blue);
 }
 
@@ -46,9 +45,9 @@
   left: 0;
   right: 0;
   bottom: -0.5rem;
-  height: 2px;
-  background-color: #bbb;
-  transition: background-color 0.5s ease;
+  height: 4px;
+  background-color: var(--gray);
+  transition: background-color 0.25s ease;
 }
 
 .nav_header__nav li:hover .nav_header__scrollbar__segment {
@@ -61,6 +60,6 @@
   height: 8px;
   width: 8px;
   border-radius: 100%;
-  background-color: var(--black);
-  top: 27px;
+  background-color: var(--red);
+  top: 26px;
 }

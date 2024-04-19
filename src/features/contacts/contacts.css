@@ -1,0 +1,8 @@
+.contacts {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: grid;
+  grid-auto-rows: auto;
+  row-gap: 0.5rem;
+}
