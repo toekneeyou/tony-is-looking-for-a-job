@@ -1,0 +1,60 @@
+.link {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.link__text {
+  z-index: 1;
+  font-size: 1rem;
+  color: var(--black);
+  padding: 0.25rem;
+  font-weight: bold;
+  transition: color 0.5s ease;
+}
+
+.link__highlighter {
+  z-index: 0;
+  background-color: var(--red);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transform: translateY(4rem);
+  transition: transform 0.5s ease;
+}
+
+.link:hover .link__text {
+  color: var(--white);
+}
+
+.link:hover .link__highlighter {
+  top: 0;
+  transform: translateY(0);
+}
+
+/* skills section styling */
+.link.skills .link__text {
+  color: var(--white);
+}
+.link.skills .link__highlighter {
+  background-color: var(--red);
+}
+.link.skills:hover .link__text {
+  color: var(--black);
+}
+/* abby section styling */
+.link.abby .link__text {
+  color: var(--white);
+}
+.link.abby .link__highlighter {
+  background-color: var(--pistachio);
+}
+.link.abby:hover .link__text {
+  color: var(--black);
+}
