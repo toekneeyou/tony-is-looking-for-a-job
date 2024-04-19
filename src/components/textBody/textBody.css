@@ -1,0 +1,16 @@
+.text_body {
+  color: var(--black);
+  max-width: 40ch;
+  font-size: 1rem;
+  line-height: calc(1rem * 1.5);
+  overflow: hidden;
+  color: var(--dark-gray);
+}
+
+.text_body__border {
+  height: 2px;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: var(--gray);
+}
