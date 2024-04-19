@@ -2,10 +2,14 @@
   /* colors */
   --yellow: #f4d35e;
   --black: #13141b;
-  --white: #ddd;
+  --white: #e5e5e5;
   --pistachio: #7ec139;
   --eggplant: #786570;
   --dark-eggplant: #604956;
+  --blue: #97aef5;
+  --red: #da2c31;
+  --gray: #bbb;
+  --dark-gray: #555;
   /* padding */
   --padding-xl: 5rem;
   --padding-l: 4rem;
@@ -18,18 +22,9 @@
   }
 }
 
-#app {
-  max-width: 2000px;
-  margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-}
-
 body {
   margin: 0;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -63,6 +58,15 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+#app {
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.5s ease;
 }
 
 @media (max-width: 481px) {
