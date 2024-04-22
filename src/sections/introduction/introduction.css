@@ -1,112 +1,41 @@
 .introduction_section {
+  min-height: 100vh;
   width: 100%;
   display: grid;
-  grid-template-columns: 55% 45%;
-  min-height: 100vh;
+  grid-template-columns: 50% 50%;
+}
+
+.introduction_section__left,
+.introduction_section__right {
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
-.introduction_section__left {
-  display: flex;
+.introduction_section__left__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--white);
 }
 
-.introduction_section__left img {
+.introduction_section__left__show .introduction_section__left__overlay {
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(100%);
+}
+
+.introduction_section__picture {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: bottom;
 }
 
 .introduction_section__right {
-  width: 45%;
   padding: var(--padding-xl);
-  padding-top: 20vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
-/* laptop */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  .introduction_section__right {
-    padding: var(--padding-l);
-    padding-top: 20vh;
-  }
-}
-/* tablet/laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .introduction_section__right {
-    padding: var(--padding-m);
-    padding-top: 20vh;
-  }
-}
-/* mobile/tablet */
-@media (min-width: 426px) and (max-width: 768px) {
-  .introduction_section {
-    grid-template-columns: 100%;
-  }
-  .introduction_section__left {
-    display: none;
-  }
-  .introduction_section__right {
-    position: initial;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("/src/assets/tony-iceland.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: flex-end;
-  }
-  .introduction_section__text {
-    width: 100%;
-    padding: var(--padding-l);
-    padding-bottom: calc(2 * var(--padding-xl));
-    background-image: linear-gradient(transparent 25%, var(--black));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .introduction_section__text h1,
-  .introduction_section__text span {
-    color: var(--white);
-  }
-}
-/* mobile */
-@media (max-width: 425px) {
-  .introduction_section {
-    grid-template-columns: 100%;
-  }
-  .introduction_section__left {
-    display: none;
-  }
-  .introduction_section__right {
-    position: initial;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("/src/assets/tony-iceland.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: flex-end;
-  }
-  .introduction_section__text {
-    width: 100%;
-    padding: var(--padding-m);
-    padding-bottom: calc(2 * var(--padding-m));
-    background-image: linear-gradient(transparent 25%, var(--black));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .introduction_section__text h1,
-  .introduction_section__text span {
-    color: var(--white);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
