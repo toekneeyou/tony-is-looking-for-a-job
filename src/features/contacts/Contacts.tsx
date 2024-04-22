@@ -8,16 +8,27 @@ export default function Contacts() {
   return (
     <ul className="contacts" style={{ zIndex: CONTACTS_Z_INDEX }}>
       <IconButton
+        label="Email"
         onClick={() => {
           window.open("mailto:tonyyu1129@gmail.com", "_blank");
         }}
       >
         <span className="material-symbols-outlined">mail</span>
       </IconButton>
-      <IconButton>
+      <IconButton
+        onClick={() => {
+          window.open("https://linkedin.com/in/tonyyu1129", "_blank");
+        }}
+        label="LinkedIn"
+      >
         <LinkedInIcon />
       </IconButton>
-      <IconButton>
+      <IconButton
+        onClick={() => {
+          window.open("https://github.com/toekneeyou", "_blank");
+        }}
+        label="Github"
+      >
         <GithubIcon />
       </IconButton>
     </ul>
