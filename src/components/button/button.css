@@ -1,0 +1,43 @@
+.button {
+  all: unset;
+  background-image: linear-gradient(var(--dark-blue), var(--dark-blue));
+  padding: var(--padding-xs) var(--padding-s);
+  color: var(--white);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.button span {
+  color: var(--white);
+}
+.button__left_icon {
+  margin-right: 4px;
+}
+.button__right_icon {
+  margin-left: 4px;
+}
+.button * {
+  z-index: 1;
+}
+
+.button__overlay {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to left, var(--red), var(--dark-blue) 90%);
+  transition: transform 0.5s ease;
+  transform: translate(100%);
+  opacity: 1;
+}
+
+.button:hover .button__overlay {
+  transform: translate(0);
+}
