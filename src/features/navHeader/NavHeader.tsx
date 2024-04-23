@@ -128,7 +128,7 @@ export default function NavHeader() {
       className="nav_header"
       style={{ zIndex: NAV_HEADER_Z_INDEX }}
     >
-      <div className="nav_header__name josefin_sans_bold">Tony Yu</div>
+      <div className="josefin_sans_bold nav_header__name">Tony Yu</div>
       <nav className="nav_header__nav">
         <ul
           style={{
