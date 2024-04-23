@@ -1,24 +1,26 @@
 .nav_header {
   position: fixed;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   top: 0;
   left: 0;
   right: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   height: 4rem;
+  background-color: var(--black);
 }
 
 .nav_header__name {
   font-weight: bold;
   color: var(--white);
   font-size: 1.25rem;
+  text-transform: uppercase;
 }
 
 .nav_header__nav {
   position: relative;
-  width: 400px;
+  transform: translateY(-0.25rem);
 }
 
 .nav_header__nav ul {
@@ -30,7 +32,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--black);
+  color: var(--white);
   font-weight: bold;
   position: relative;
   cursor: pointer;
@@ -51,7 +53,7 @@
 }
 
 .nav_header__nav li:hover .nav_header__scrollbar__segment {
-  background-color: var(--red);
+  background-color: var(--dark-blue);
   opacity: 1;
 }
 

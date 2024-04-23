@@ -7,18 +7,16 @@
   opacity: 1 !important;
   transform: translateY(0) !important;
   transform: translateX(0) !important;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease;
 }
 
-.tony_intro__show .tony {
-  transition-delay: 500ms;
-}
+.tony_intro__show .tony,
 .tony_intro__show .u {
-  transition-delay: 500ms;
+  transition-delay: 600ms;
 }
 
 .tony_intro__show .im_a,
 .tony_intro__show .frontend,
 .tony_intro__show .developer {
-  transition-delay: 1000ms;
+  transition-delay: 1200ms;
 }

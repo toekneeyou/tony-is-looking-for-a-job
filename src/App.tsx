@@ -6,12 +6,16 @@ import Abby from "./sections/abby/Abby";
 import NavHeader from "./features/navHeader/NavHeader";
 import "./styles/animations.css";
 import Contacts from "./features/contacts/Contacts";
+import AboutMe from "./sections/aboutMe/AboutMe";
 
-// IDs
+// IDs NB K
 export const APP_ID = "app";
 export const INTRODUCTION_SECTION_ID = "introduction-section";
 export const INTRODUCTION_SECTION_LEFT_ID = "introduction-section-left";
 export const INTRODUCTION_SECTION_RIGHT_ID = "introduction-section-right";
+export const ABOUT_ME_SECTION_ID = "about-me-section";
+export const ABOUT_ME_SECTION_LEFT_ID = "about-me-section-left";
+export const ABOUT_ME_SECTION_RIGHT_ID = "about-me-section-right";
 export const SKILLS_SECTION_ID = "skills-section";
 export const ABBY_SECTION_ID = "abby-section";
 export const ABBY_IMAGE_INTRO_ID = "abby-bold-intro";
@@ -27,9 +31,9 @@ export const ABBY_SECTION_Z_INDEX = 2;
 export const NAV_HEADER_Z_INDEX = 100;
 export const CONTACTS_Z_INDEX = 100;
 // colors
-const EGGPLANT = "#786570";
-const BLACK = "#13141b";
-const WHITE = "#e5e5e5";
+export const EGGPLANT = "#786570";
+export const BLACK = "#13141b";
+export const WHITE = "#e5e5e5";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +41,7 @@ function App() {
 
   useEffect(() => {
     const root = document.getElementById("root");
+    const body = document.querySelector("body") as HTMLElement;
     const app = document.getElementById(APP_ID);
     const nav = document.getElementById(NAV_HEADER_ID);
     const navLinks = document.querySelectorAll(
@@ -49,97 +54,78 @@ function App() {
     const introSectionRight = document.getElementById(
       INTRODUCTION_SECTION_RIGHT_ID
     );
+    const aboutMeSection = document.getElementById(ABOUT_ME_SECTION_ID);
+    const aboutMeSectionLeft = document.getElementById(
+      ABOUT_ME_SECTION_LEFT_ID
+    );
+    const aboutMeSectionRight = document.getElementById(
+      ABOUT_ME_SECTION_RIGHT_ID
+    );
     const skillsSection = document.getElementById(SKILLS_SECTION_ID);
     const abbySection = document.getElementById(ABBY_SECTION_ID);
     const abbyImageIntro = document.getElementById(ABBY_IMAGE_INTRO_ID);
 
     if (
       root &&
+      body &&
       app &&
       nav &&
       navLinks &&
       introSection &&
       introSectionLeft &&
       introSectionRight &&
+      aboutMeSection &&
+      aboutMeSectionLeft &&
+      aboutMeSectionRight &&
       skillsSection &&
       abbySection &&
       abbyImageIntro
     ) {
+      body.style.overflowY = isLoading ? "hidden" : "scroll";
+
       const handleColors = () => {
-        if (introSection.getBoundingClientRect().bottom >= 1) {
-          navLinks.forEach((link) => {
-            link.style.color = BLACK;
-          });
-          nav.style.backgroundColor = "transparent";
-          setBackgroundColor(WHITE);
-        } else if (
-          abbyImageIntro.getBoundingClientRect().top >
-          0.1 * window.innerHeight
+        if (
+          abbyImageIntro.getBoundingClientRect().top <
+            0.1 * window.innerHeight &&
+          abbyImageIntro.getBoundingClientRect().bottom > 0
         ) {
-          navLinks.forEach((link) => {
-            link.style.color = WHITE;
-          });
-          nav.style.backgroundColor = BLACK;
-          setBackgroundColor(WHITE);
-        } else {
-          navLinks.forEach((link) => {
-            link.style.color = WHITE;
-          });
-          nav.style.backgroundColor = "rgb(120, 101, 112, 0.95)";
           setBackgroundColor(EGGPLANT);
+        } else {
+          setBackgroundColor(WHITE);
         }
       };
 
       const handleIntro = () => {
-        const isInView = introSection?.getBoundingClientRect().bottom >= 0;
-        const isSmallViewport = window.innerWidth <= TABLET_BREAKPOINT;
-
-        const makeVisible = () => {
-          if (introSectionRight.style.visibility !== "visible") {
-            introSectionRight.style.visibility = "visible";
-          }
-        };
-
-        const makeHidden = () => {
-          if (introSectionRight.style.visibility !== "hidden") {
-            introSectionRight.style.visibility = "hidden";
-          }
-        };
-
-        const makeWidth100Percent = () => {
-          // right section has width of 100% in small viewports
-          if (introSectionRight.style.width !== "100%") {
-            introSectionRight.style.width = "100%";
-          }
-        };
-
-        if (isInView) {
-          makeVisible();
-          if (isSmallViewport) {
-            makeWidth100Percent();
-          } else {
-            const right = (window.innerWidth - app.clientWidth) / 2;
-            introSectionRight.style.right = `${right}px`;
-            introSectionRight.style.width = `${0.45 * app.clientWidth}px`;
-            introSectionLeft.style.transform = `translateY(${
-              -0.2 * introSection.getBoundingClientRect().top
-            }px)`;
-          }
-        } else {
-          if (isSmallViewport) {
-            makeWidth100Percent();
-          } else {
-            makeHidden();
-          }
-        }
+        introSectionLeft.style.transform = `translateY(${
+          0.15 * introSection.getBoundingClientRect().top
+        }px)`;
+        introSectionRight.style.transform = `translateY(${
+          -0.15 * introSection.getBoundingClientRect().top
+        }px)`;
       };
+
+      const handleAboutMe = () => {
+        // aboutMeSectionLeft.style.transform = `translateY(${
+        //   0.05 * introSection.getBoundingClientRect().top
+        // }px)`;
+        aboutMeSectionRight.style.transform = `translateY(${
+          -0.1 * introSection.getBoundingClientRect().top
+        }px)`;
+      };
+
+      const handleSkills = () => {};
+
+      const handleAbby = () => {};
 
       // Resize Handler
       const observer = new ResizeObserver((entries) => {
         for (let entry of entries) {
           if (entry.target === root) {
-            handleIntro();
             handleColors();
+            handleIntro();
+            handleAboutMe();
+            handleSkills();
+            handleAbby();
           }
         }
       });
@@ -147,15 +133,13 @@ function App() {
 
       // Scroll Handler
       const handleScroll = (e: Event) => {
-        if (isLoading) {
-          e.preventDefault();
-        } else {
-          handleIntro();
-          handleColors();
-        }
+        handleColors();
+        handleIntro();
+        handleAboutMe();
+        handleSkills();
+        handleAbby();
       };
       window.addEventListener("scroll", handleScroll, { passive: false });
-
       setIsLoading(false);
 
       return () => {
@@ -163,15 +147,16 @@ function App() {
         observer.disconnect();
       };
     }
-    setIsLoading(false);
+    // setIsLoading(false);
   }, [isLoading]);
 
   return (
     <main id={APP_ID} style={{ backgroundColor }}>
       <NavHeader />
       <Introduction />
+      <AboutMe />
       <Skills />
-      <Abby />
+      <Abby showBackground={backgroundColor === EGGPLANT} />
       <Contacts />
     </main>
   );

@@ -57,8 +57,8 @@ export default function TonyIntro({ animate }: TonyIntroSVGProps) {
           y2="179"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#13141B" />
-          <stop offset="1" stop-color="#97AEF5" />
+          <stop stopColor="#13141B" />
+          <stop offset="1" stopColor="#97AEF5" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_132_94"
@@ -68,8 +68,8 @@ export default function TonyIntro({ animate }: TonyIntroSVGProps) {
           y2="427"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B8DCD" />
-          <stop offset="1" stop-color="#97AEF5" />
+          <stop stopColor="#6B8DCD" />
+          <stop offset="1" stopColor="#97AEF5" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_132_94"
@@ -79,8 +79,8 @@ export default function TonyIntro({ animate }: TonyIntroSVGProps) {
           y2="525"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#6B8DCD" />
-          <stop offset="1" stop-color="#97AEF5" />
+          <stop stopColor="#6B8DCD" />
+          <stop offset="1" stopColor="#97AEF5" />
         </linearGradient>
       </defs>
     </svg>
