@@ -1,25 +1,33 @@
 .button {
   all: unset;
-  background-image: linear-gradient(var(--dark-blue), var(--dark-blue));
-  padding: var(--padding-xs) var(--padding-s);
+  padding: 6px 12px;
   color: var(--white);
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-image 0.5s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border: 1px solid var(--gray);
+  transition: transform 0.25s ease;
+  border-radius: 25px;
+  /* border: 2px solid var(--white); */
 }
 .button span {
   color: var(--white);
+  font-size: 14px;
+  transition: color 0.25s ease;
 }
-.button__left_icon {
-  margin-right: 4px;
+.button .button__left_icon {
+  margin-right: 8px;
+  font-size: 1.25rem;
+  transform: translateY(1px);
 }
-.button__right_icon {
-  margin-left: 4px;
+.button .button__right_icon {
+  margin-left: 8px;
+  font-size: 1.25rem;
+  transform: translateY(1px);
 }
 .button * {
   z-index: 1;
@@ -32,12 +40,19 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to left, var(--red), var(--dark-blue) 90%);
+  background-image: linear-gradient(to left, #5bdd66, #ea7bfe 90%);
   transition: transform 0.5s ease;
-  transform: translate(100%);
+  transform: translate(-100%);
   opacity: 1;
 }
 
+.button:hover {
+  border: 1px solid transparent;
+  transform: translateY(-2px);
+}
+.button:hover span {
+  color: var(--black);
+}
 .button:hover .button__overlay {
   transform: translate(0);
 }
