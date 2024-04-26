@@ -1,0 +1,26 @@
+.NAV_BAR {
+}
+
+.nav_list {
+  display: grid;
+  column-gap: 16px;
+}
+
+.nav_list__item {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+.nav_list__item:hover {
+  transform: translateY(-2px);
+  background-image: linear-gradient(
+    45deg,
+    #5bdd66,
+    #ea7bfe
+  ); /* Gradient definition */
+  background-clip: text; /* Clip background to text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent so the gradient shows through */
+}

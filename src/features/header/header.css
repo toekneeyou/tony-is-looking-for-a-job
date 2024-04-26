@@ -1,0 +1,25 @@
+.HEADER {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-xs) var(--padding-m);
+  transition: transform 0.5s ease-in-out;
+}
+
+.header_name span {
+  display: inline-block;
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+/* HIDE */
+.HEADER__hide {
+  transform: translateY(-100%);
+}
+/* SHOW */
+.HEADER__show {
+  transform: translateY(0);
+}
