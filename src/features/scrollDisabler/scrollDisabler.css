@@ -1,0 +1,10 @@
+.SCROLL_DISABLER {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.SCROLL_DISABLER__hide {
+  display: none;
+}
