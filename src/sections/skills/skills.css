@@ -1,20 +1,196 @@
-.skills_section {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  min-height: 100vh;
+.SKILLS {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+/* 
 
-.skills_section__left {
-  width: 100%;
+
+Left section containing visual
+
+*/
+.skills_left {
+  padding: var(--padding-xl);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills_visual {
+  display: flex;
+  flex-direction: column;
+}
+.SKILL_ITEM {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+.skill_item__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.25;
+}
+.skill_item__label span {
+  font-weight: bold;
+  transform: rotate(270deg);
+  font-size: 1.25rem;
+  color: var(--white);
+}
+.skill_item__tools {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  overflow: hidden;
+  background-color: black;
+  padding: var(--padding-xs);
+  position: relative;
+}
+.SKILL_ITEM__0 .skill_item__tools {
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+.SKILL_ITEM__2 .skill_item__tools {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.skill_item__tools .overlay {
+  background-color: var(--black);
+}
+.TOOL_ITEM {
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-m) 0;
+  position: relative;
 }
-
-.skills_section__right {
-  width: 100%;
+.TOOL_ITEM img {
+  max-width: 76px;
+  max-height: 76px;
+  object-fit: contain;
+}
+.TOOL_ITEM .overlay {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  padding: 4px;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  background-color: black;
+  border-radius: 25px;
+}
+.TOOL_ITEM span {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  user-select: none;
+  background-image: linear-gradient(
+    45deg,
+    #5bdd66,
+    #ea7bfe
+  ); /* Gradient definition */
+  background-clip: text; /* Clip background to text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent so the gradient shows through */
+}
+.TOOL_ITEM:hover .overlay {
+  opacity: 0.9;
+}
+
+.SKILLS__show .skill_item__overlay {
+  transition: transform 500ms 250ms ease-in-out;
+  transform: translateX(110%);
+}
+.SKILLS__show .skill_item__label {
+  transition: transform 0.5s 500ms ease-in-out, opacity 0.5s 500ms ease-in-out;
+  transform: translateY(0);
+  opacity: 0.25;
+}
+.SKILLS__show .SKILL_ITEM__0 {
+  transition: transform 0.5s 1000ms ease-in-out;
+  transform: translate(-12px, -4px);
+}
+.SKILLS__show .SKILL_ITEM__1 {
+  transition: transform 0.5s 1000ms ease-in-out;
+  transform: translate(48px, 0px);
+}
+.SKILLS__show .SKILL_ITEM__2 {
+  transition: transform 0.5s 1000ms ease-in-out;
+  transform: translate(-48px, 4px);
+}
+.SKILLS__show .skill_item__tools {
+  transition: border-radius 0.5s 1000ms ease-in-out;
+  border-radius: 25px;
+}
+.SKILLS__hide .skill_item__overlay {
+  transition: transform 500ms 0ms ease-in-out;
+  transform: translateX(0);
+}
+.SKILLS__hide .skill_item__label {
+  transition: transform 0.5s 0ms ease-in-out, opacity 0.5s 0ms ease-in-out;
+  transform: translateY(100%);
+  opacity: 0;
+}
+.SKILLS__hide .SKILL_ITEM__0,
+.SKILLS__hide .SKILL_ITEM__1,
+.SKILLS__hide .SKILL_ITEM__2 {
+  transition: transform 0.5s 0ms ease-in-out;
+  transform: translate(0);
+}
+.SKILLS__hide .SKILL_ITEM__0 .skill_item__tools {
+  transition: border-radius 0.5s 0ms ease-in-out;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+.SKILLS__hide .SKILL_ITEM__1 .skill_item__tools {
+  transition: border-radius 0.5s 0ms ease-in-out;
+  border-radius: 0;
+}
+.SKILLS__hide .SKILL_ITEM__2 .skill_item__tools {
+  transition: border-radius 0.5s 0ms ease-in-out;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+/* 
+
+
+Rigth section containing text content
+
+*/
+.skills_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-xl);
+}
+.skills_right .divider {
+  width: calc(100% + 2 * var(--padding-xl));
+  transform: translateX(calc(-2 * var(--padding-xl)));
+}
+
+.SKILLS__hide .TEXT_CONTENT h2,
+.SKILLS__hide .TEXT_CONTENT > span,
+.SKILLS__hide .TEXT_CONTENT .divider,
+.SKILLS__hide .button {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.SKILLS__show .TEXT_CONTENT h2 {
+  transition: transform 0.5s 250ms ease, opacity 0.5s 250ms ease;
+  transform: translate(0%);
+  opacity: 1;
+}
+.SKILLS__show .TEXT_CONTENT > span {
+  transition: transform 0.5s 350ms ease, opacity 0.5s 350ms ease;
+  transform: translate(0%);
+  opacity: 1;
+}
+.SKILLS__show .TEXT_CONTENT .divider,
+.SKILLS__show .button {
+  transition: transform 0.5s 500ms ease, opacity 0.5s 500ms ease;
+  transform: translateX(calc(-2 * var(--padding-xl)));
+  opacity: 1;
 }

@@ -118,7 +118,7 @@ Right side with content
 .about_me_visual__item__content .date {
 }
 .about_me_visual__item__content__show {
-  transition: width 0.5s ease, opacity 0.5s 300ms ease;
+  transition: width 0.5s ease, opacity 0.5s 250ms ease;
 }
 .ABOUT_ME__hide .about_me_right .about_me_visual__overlay {
   transition: transform 0.5s 0ms ease;
