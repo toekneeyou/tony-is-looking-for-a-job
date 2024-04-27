@@ -114,6 +114,15 @@ ABBY content section left with text
     padding: var(--padding-xs);
   }
 }
+/* big tablet */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  .abby_content__left {
+    padding: var(--padding-m);
+  }
+  .abby_content__left .TEXT_CONTENT {
+    max-width: 40ch;
+  }
+}
 /* 
 
 ABBY content section right with videos
@@ -166,6 +175,13 @@ ABBY content section right with videos
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
   .abby_content__right {
     padding: var(--padding-xs);
+  }
+}
+/* big tablet */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  .abby_content__right {
+    padding: var(--padding-m);
+    padding-left: 0;
   }
 }
 

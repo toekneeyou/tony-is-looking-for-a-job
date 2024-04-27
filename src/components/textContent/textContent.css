@@ -43,14 +43,16 @@
   .TEXT_CONTENT {
     max-width: 32ch;
   }
-
   .TEXT_CONTENT span {
     font-size: 12px;
     line-height: 24px;
   }
 }
 /* tablet/laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  .TEXT_CONTENT {
+    max-width: 64ch;
+  }
 }
 /* mobile/tablet */
 @media (min-width: 429px) and (max-width: 768px) {

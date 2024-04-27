@@ -131,43 +131,14 @@ export default function Abby({}: AbbyProps) {
             >
               <AbbyVideoPlayer
                 src={abbyBalanceVideo}
-                className={
-                  selectedVideo === "balances & trends"
-                    ? "abby_video_player__selected"
-                    : undefined
-                }
+                isSelected={selectedVideo === "balances & trends"}
               />
               <AbbyVideoPlayer
                 src={abbyTransactionVideo}
-                className={
-                  selectedVideo === "transactions"
-                    ? "abby_video_player__selected"
-                    : undefined
-                }
+                isSelected={selectedVideo === "transactions"}
               />
             </div>
           </div>
-          {/* <div className="abby_video_container">
-            <Tabs tabs={videoTabs} initialTab={videoTabs[0]} />
-            <div style={{ position: "relative" }}>
-              <AbbyVideoPlayer
-                src={abbyBalanceVideo}
-                className={
-                  selectedVideo === "balances & trends"
-                    ? "abby_video_player__selected"
-                    : undefined
-                }
-              />
-              <AbbyVideoPlayer
-                src={abbyTransactionVideo}
-                className={
-                  selectedVideo === "transactions"
-                    ? "abby_video_player__selected"
-                    : undefined
-                }
-              />
-            </div>
-          </div> */}
         </div>
       </div>
     </>
@@ -176,12 +147,26 @@ export default function Abby({}: AbbyProps) {
 
 type AbbyVideoPlayerProps = {
   src: string;
-  className?: string;
+  isSelected: boolean;
 };
-function AbbyVideoPlayer({ src, className }: AbbyVideoPlayerProps) {
+function AbbyVideoPlayer({ src, isSelected }: AbbyVideoPlayerProps) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const videoEl = videoRef.current as HTMLVideoElement;
+    if (!isSelected) {
+      videoEl.pause();
+      videoEl.currentTime = 0;
+    }
+  }, [isSelected]);
+
   return (
-    <div className={combineClasses(["abby_video_player", className])}>
-      <video src={src} controls />
+    <div
+      className={combineClasses([
+        "abby_video_player",
+        isSelected ? "abby_video_player__selected" : undefined,
+      ])}
+    >
+      <video ref={videoRef} src={src} controls />
     </div>
   );
 }

@@ -10,7 +10,14 @@
 /* tiny laptop */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
   .INTRO {
-    grid-template-columns: 40% 50%;
+    grid-template-columns: minmax(350px, 40%) 50%;
+    padding: var(--padding-s);
+  }
+}
+/* big tablet */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  .INTRO {
+    grid-template-columns: minmax(350px, 40%) 60%;
     padding: var(--padding-s);
   }
 }
@@ -118,6 +125,11 @@ Middle section with photo
   .intro__photo img {
     object-position: center;
   }
+} /* big tablet */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  .intro__photo img {
+    object-position: center;
+  }
 }
 /* 
 
@@ -157,6 +169,11 @@ Right section with nav
 }
 /* tablet/laptop */
 @media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .intro__nav {
+    display: none;
+  }
+} /* big tablet */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
   .intro__nav {
     display: none;
   }
