@@ -19,7 +19,7 @@ export default function TextContent({
       <h2 className="josefin_sans_bold">{title}</h2>
       <div className="divider" />
       {bodyEl ? bodyEl : <span>{bodyText}</span>}
-      {!!button && button}
+      {!!button && <div className="text_content__buttons">{button}</div>}
     </div>
   );
 }

@@ -1,0 +1,38 @@
+.tabs {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: max-content;
+}
+
+.tabs__selected_underline {
+  transition: transform 0.5s ease;
+  height: 4px;
+  background-image: linear-gradient(to right, var(--blue), var(--blue));
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: max-content;
+  padding: 0 1rem;
+}
+
+.tab span {
+  cursor: pointer;
+  display: inline-block;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--white);
+  transition: color 0.25s ease;
+  opacity: 0.5;
+}
+
+.tab__selected span {
+  opacity: 1;
+  font-size: 1.25rem;
+  color: var(--white);
+}

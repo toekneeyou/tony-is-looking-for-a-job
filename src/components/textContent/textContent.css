@@ -23,8 +23,12 @@
   font-size: 1rem;
   line-height: 2rem;
   color: var(--gray);
+  font-weight: 500;
 }
 
+.text_content__buttons {
+  margin-top: 2rem;
+}
 .TEXT_CONTENT .button {
   margin-top: 1rem;
 }

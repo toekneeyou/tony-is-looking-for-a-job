@@ -7,6 +7,7 @@
   justify-content: space-between;
   padding: var(--padding-xs) var(--padding-m);
   transition: transform 0.5s ease-in-out;
+  transform: translateY(-100%);
 }
 
 .header_name span {
