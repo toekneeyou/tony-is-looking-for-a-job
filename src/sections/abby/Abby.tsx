@@ -78,9 +78,39 @@ export default function Abby({}: AbbyProps) {
             bodyText="When Mint sunsetted, I decided to build my own app to monitor my finances. The app is still in its MVP state, and there are a ton of features I still want to add to it. Here’s a sneak peak:"
             button={
               <>
-                <Button rightIcon="open_in_new">Design - Figma</Button>
-                <Button rightIcon="open_in_new">Frontend - React Native</Button>
-                <Button rightIcon="open_in_new">Backend - Express</Button>
+                <Button
+                  onClick={() => {
+                    window.open(
+                      "https://www.figma.com/file/NJuPGZIs74vcuwP5Ty3VLD/Abby-Design-System?type=design&node-id=2-96&mode=design",
+                      "_blank"
+                    );
+                  }}
+                  rightIcon="open_in_new"
+                >
+                  Design - Figma
+                </Button>
+                <Button
+                  onClick={() => {
+                    window.open(
+                      "https://github.com/toekneeyou/abby-ui",
+                      "_blank"
+                    );
+                  }}
+                  rightIcon="open_in_new"
+                >
+                  Frontend - React Native
+                </Button>
+                <Button
+                  onClick={() => {
+                    window.open(
+                      "https://github.com/toekneeyou/abby-backend",
+                      "_blank"
+                    );
+                  }}
+                  rightIcon="open_in_new"
+                >
+                  Backend - Express
+                </Button>
               </>
             }
           />

@@ -29,6 +29,9 @@
 .text_content__buttons {
   margin-top: 2rem;
 }
+.text_content__buttons a {
+  all: unset;
+}
 .TEXT_CONTENT .button {
   margin-top: 1rem;
 }

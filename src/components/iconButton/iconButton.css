@@ -1,61 +1,33 @@
-.icon_button {
+.ICON_BUTTON {
   all: unset;
-  cursor: pointer;
-  display: flex;
-  width: 3rem;
-  max-width: 3rem;
-  height: 3rem;
-  max-height: 3rem;
+  position: relative;
+  background-color: transparent;
+  width: 48px; /* Width of the main element */
+  height: 48px; /* Height of the main element */
+  border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 100%;
-  position: relative;
-  background-color: var(--dark-blue);
-  overflow: hidden;
-  transition: transform 0.1s ease;
-}
-.icon_button span {
-  color: var(--white);
-  z-index: 1;
-}
-.icon_button svg {
-  width: 100%;
-  width: 1.5rem;
-  height: 1.5rem;
-  z-index: 1;
-}
-.icon_button svg path {
-  fill: var(--white);
-}
-.icon_button__background {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  border-radius: 100%;
-  background-image: linear-gradient(135deg, var(--dark-blue) 25%, var(--red));
-  z-index: 0;
+  cursor: pointer;
   transition: transform 0.25s ease;
-  /* border: 1px solid transparent; */
-  transform: translateX(100%);
+}
+.ICON_BUTTON span {
+  color: var(--white);
+}
+.ICON_BUTTON svg {
+  width: 24px;
 }
 
-.icon_button:hover .icon_button__background {
-  /* border: 1.5rem solid var(--red); */
-  transform: translateX(0);
+.ICON_BUTTON:hover {
+  transform: translateY(-2px);
 }
-.icon_button:hover span {
-  color: var(--white);
-}
-.icon_button:hover svg path {
-  color: var(--white);
-}
-
-.icon_button:active {
-  transform: scale(0.9);
-}
-.icon_button:active span {
-  color: var(--white);
+.ICON_BUTTON:hover span {
+  background-image: linear-gradient(
+    45deg,
+    #5bdd66,
+    #ea7bfe
+  ); /* Gradient definition */
+  background-clip: text; /* Clip background to text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent so the gradient shows through */
 }

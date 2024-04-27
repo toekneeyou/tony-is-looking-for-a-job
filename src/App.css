@@ -2,7 +2,7 @@
   /* colors */
   --yellow: #f4d35e;
   --black: #13141b;
-  --white: #e5e5e5;
+  --white: #eee;
   --pistachio: #7ec139;
   --eggplant: #786570;
   --dark-eggplant: #604956;
@@ -22,11 +22,22 @@
     box-sizing: border-box;
   }
 }
-
+#root,
 body {
   margin: 0;
+  background-color: var(--black);
+}
+
+main {
+  height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+main > * {
+  scroll-snap-align: start;
 }
 
 /* fonts */
@@ -61,7 +72,7 @@ ul {
 }
 
 #app {
-  max-width: 2000px;
+  max-width: 1800px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;
@@ -75,6 +86,14 @@ ul {
   font-weight: 700;
   font-style: normal;
   color: var(--black);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
 
 @media (max-width: 481px) {

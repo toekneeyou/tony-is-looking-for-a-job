@@ -34,14 +34,11 @@ export default function AboutMe() {
           title="About Me"
           bodyText="The only thing that excites me more than a beautiful, intuitive user interface is hitting the slopes on my snowboard or sending a fun bouldering route. With over four years of experience in collaborative development environments, I've honed my skills in building engaging applications using React. Though my expertise lies in frontend development, I've been actively involved in every phase of the development lifecycle."
           button={
-            <Button
-              onClick={() => {
-                window.open("https://linkedin.com/in/tonyyu1129", "_blank");
-              }}
-              rightIcon="download"
-            >
-              Download Resume
-            </Button>
+            <a href={nielsenLogo} download={"Resume"}>
+              <Button onClick={() => {}} rightIcon="download">
+                Download Resume
+              </Button>
+            </a>
           }
         />
       </div>

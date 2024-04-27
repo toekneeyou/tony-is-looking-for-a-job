@@ -11,6 +11,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: all 0.25s ease;
+  position: relative;
 }
 
 .nav_list__item:hover {

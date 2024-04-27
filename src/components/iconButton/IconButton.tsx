@@ -1,22 +1,36 @@
-import { ReactNode } from "react";
-
+import { useState } from "react";
 import "./iconButton.css";
 
 type IconButtonProps = {
-  children: ReactNode;
   onClick: () => void;
-  label: string;
+  iconString?: string;
+  IconEl?: any;
+  label?: string;
+  showLabel?: string;
 };
 
 export default function IconButton({
-  children,
   onClick,
+  iconString,
+  IconEl,
   label,
+  showLabel,
 }: IconButtonProps) {
+  const [isHovered, setIsHovered] = useState(false);
   return (
-    <button className="icon_button" onClick={onClick} title={label}>
-      <div className="icon_button__background" />
-      {children}
+    <button
+      className="ICON_BUTTON"
+      onClick={onClick}
+      aria-label={label}
+      title={label}
+      onMouseOver={() => setIsHovered(true)}
+      onMouseOut={() => setIsHovered(false)}
+    >
+      {!!IconEl && <IconEl isGradient={isHovered} />}
+      {!!iconString && (
+        <span className="material-symbols-outlined">{iconString}</span>
+      )}
+      {showLabel && <span>{label}</span>}
     </button>
   );
 }
