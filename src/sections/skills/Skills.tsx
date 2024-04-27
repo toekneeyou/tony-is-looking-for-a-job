@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from "react";
 import TextContent from "../../components/textContent/TextContent";
-import { Skill, SkillDetail, Tool, skills } from "../../constants/data";
+import { SkillDetail, Tool, skills } from "../../constants/data";
 import { SKILLS_SECTION_ID } from "../../constants/id";
 import "./skills.css";
 import { AppContext } from "../../App";
@@ -39,7 +39,7 @@ export default function Skills() {
       <div className="skills_right">
         <TextContent
           title="Skills & Tools"
-          bodyText="The only thing that excites me more than a beautiful, intuitive user interface is hitting the slopes on my snowboard or sending a fun bouldering route. With over four years of experience in collaborative development environments, I've honed my skills in building engaging applications using React. Though my expertise lies in frontend development, I've been actively involved in every phase of the development lifecycle."
+          bodyText="I focus on creating user interfaces with React and the extensive JavaScript ecosystem. Though my expertise is mainly in frontend development, I've been involved in different phases of the development cycle and I'm always looking to expand my knowledge. Here are some of the recent tools I've used."
         />
       </div>
     </section>

@@ -1,9 +1,9 @@
 import { useContext, useEffect, useRef } from "react";
-import { INTRO_SECTION_NAME_ID, INTRO_SECTION_ID } from "../../constants/id";
+import { INTRO_SECTION_ID } from "../../constants/id";
 import tony from "../../assets/tony-iceland.jpg";
 import NavBar from "../../features/navBar/NavBar";
-import "./intro.css";
 import { AppContext } from "../../App";
+import "./intro.css";
 
 type IntroProps = {};
 const introNameZIndex = 0;
@@ -47,7 +47,6 @@ export default function Intro({}: IntroProps) {
   return (
     <div ref={introRef} id={INTRO_SECTION_ID} className="INTRO">
       <div
-        id={INTRO_SECTION_NAME_ID}
         className="josefin_sans_bold intro__name"
         style={{ zIndex: introNameZIndex }}
       >
