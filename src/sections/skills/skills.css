@@ -7,7 +7,6 @@
 }
 /* 
 
-
 Left section containing visual
 
 */
@@ -16,6 +15,7 @@ Left section containing visual
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
 .skills_visual {
   display: flex;
@@ -108,15 +108,18 @@ Left section containing visual
 }
 .SKILLS__show .SKILL_ITEM__0 {
   transition: transform 0.5s 750ms ease-in-out;
-  transform: translate(-12px, -4px);
+  /* transform: translate(-12px, -4px); */
+  transform: translate(0px, -4px);
 }
 .SKILLS__show .SKILL_ITEM__1 {
   transition: transform 0.5s 750ms ease-in-out;
-  transform: translate(48px, 0px);
+  /* transform: translate(48px, 0px); */
+  transform: translate(16px, 0px);
 }
 .SKILLS__show .SKILL_ITEM__2 {
   transition: transform 0.5s 750ms ease-in-out;
-  transform: translate(-48px, 4px);
+  /* transform: translate(-48px, 4px); */
+  transform: translate(0px, 4px);
 }
 .SKILLS__show .skill_item__tools {
   transition: border-radius 0.5s 750ms ease-in-out;
@@ -151,8 +154,61 @@ Left section containing visual
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
 }
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .skills_left {
+    padding: var(--padding-m);
+  }
+  .SKILL_ITEM {
+    grid-template-columns: 72px 1fr;
+  }
+  .skill_item__tools {
+    grid-template-columns: repeat(4, 88px);
+  }
+  .TOOL_ITEM {
+    width: 88px;
+    height: 88px;
+  }
+  .TOOL_ITEM img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .skills_left {
+    padding: var(--padding-xs);
+  }
+  .SKILL_ITEM {
+    grid-template-columns: 48px 1fr;
+  }
+  .skill_item__label span {
+    font-size: 16px;
+  }
+  .skill_item__tools {
+    grid-template-columns: repeat(4, 72px);
+  }
+  .TOOL_ITEM {
+    width: 72px;
+    height: 72px;
+  }
+  .TOOL_ITEM img {
+    max-width: 48px;
+    max-height: 48px;
+  }
+  .TOOL_ITEM span {
+    font-size: 12px;
+  }
+}
+/* tablet/laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+/* mobile/tablet */
+@media (min-width: 429px) and (max-width: 768px) {
+}
+/* mobile */
+@media (max-width: 428px) {
+}
 /* 
-
 
 Rigth section containing text content
 
@@ -193,4 +249,25 @@ Rigth section containing text content
   transition: transform 0.5s 500ms ease, opacity 0.5s 500ms ease;
   transform: translateX(calc(-2 * var(--padding-xl)));
   opacity: 1;
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .skills_right {
+    padding: var(--padding-m);
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .skills_right {
+    padding: var(--padding-xs);
+  }
+}
+/* tablet/laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+/* mobile/tablet */
+@media (min-width: 429px) and (max-width: 768px) {
+}
+/* mobile */
+@media (max-width: 428px) {
 }

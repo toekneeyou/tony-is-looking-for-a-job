@@ -61,7 +61,7 @@ ABBY content section
 }
 /* 
 
-ABBY content section left with textƒ
+ABBY content section left with text
 
 */
 .abby_content__left {
@@ -103,7 +103,22 @@ ABBY content section left with textƒ
   transform: translate(0%);
   opacity: 1;
 }
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .abby_content__left {
+    padding: var(--padding-m);
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .abby_content__left {
+    padding: var(--padding-xs);
+  }
+}
+/* 
 
+ABBY content section right with videos
+
+*/
 .abby_content__right {
   height: 100%;
   display: flex;
@@ -141,6 +156,17 @@ ABBY content section left with textƒ
   max-height: 550px;
   border-radius: 25px;
   border: 6px solid #222;
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .abby_content__right {
+    padding: var(--padding-m);
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .abby_content__right {
+    padding: var(--padding-xs);
+  }
 }
 
 @keyframes moveUp {

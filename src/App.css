@@ -122,8 +122,11 @@ ul {
 /* laptop/desktop */
 @media (min-width: 1025px) and (max-width: 1440px) {
 }
-/* tablet/laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+}
+/* big tablet */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
 }
 /* mobile/tablet */
 @media (min-width: 429px) and (max-width: 768px) {

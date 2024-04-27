@@ -35,3 +35,26 @@
 .TEXT_CONTENT .button {
   margin-top: 1rem;
 }
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+}
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .TEXT_CONTENT {
+    max-width: 32ch;
+  }
+
+  .TEXT_CONTENT span {
+    font-size: 12px;
+    line-height: 24px;
+  }
+}
+/* tablet/laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+/* mobile/tablet */
+@media (min-width: 429px) and (max-width: 768px) {
+}
+/* mobile */
+@media (max-width: 428px) {
+}

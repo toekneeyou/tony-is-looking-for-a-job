@@ -36,3 +36,13 @@
   font-size: 1.25rem;
   color: var(--white);
 }
+
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .tab span {
+    font-size: 14px;
+  }
+  .tab__selected span {
+    font-size: 16px;
+  }
+}

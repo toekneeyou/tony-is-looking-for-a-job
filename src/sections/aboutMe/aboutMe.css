@@ -6,6 +6,18 @@
   justify-content: center;
   align-items: center;
 }
+/* laptop/desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .ABOUT_ME {
+    padding: var(--padding-m);
+  }
+}
+/* tablet/laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .ABOUT_ME {
+    padding: var(--padding-s);
+  }
+}
 /* 
 
 Left side with text
@@ -46,6 +58,28 @@ Left side with text
   transition: transform 0.5s 500ms ease, opacity 0.5s 500ms ease;
   transform: translate(0%);
   opacity: 1;
+}
+
+/* laptop/desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .about_me_left {
+    padding: var(--padding-m);
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .about_me_left {
+    padding: var(--padding-xs);
+  }
+}
+/* tablet/laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+/* mobile/tablet */
+@media (min-width: 429px) and (max-width: 768px) {
+}
+/* mobile */
+@media (max-width: 428px) {
 }
 
 /* 
@@ -127,4 +161,29 @@ Right side with content
 .ABOUT_ME__show .about_me_right .about_me_visual__overlay {
   transition: transform 0.5s 250ms ease;
   transform: translateY(110%);
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .about_me_right {
+    padding: var(--padding-m);
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .about_me_right {
+    padding: var(--padding-xs);
+  }
+  .about_me_visual {
+    min-width: 400px;
+    height: 300px;
+  }
+}
+/* tablet/laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+/* mobile/tablet */
+@media (min-width: 429px) and (max-width: 768px) {
+}
+/* mobile */
+@media (max-width: 428px) {
 }
