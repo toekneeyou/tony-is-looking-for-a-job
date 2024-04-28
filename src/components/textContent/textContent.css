@@ -34,12 +34,12 @@
   }
 }
 /* mobile/tablet */
-@media (min-width: 429px) {
+@media (min-width: 426px) {
 }
 /* tiny laptop */
 @media (min-width: 769px) and (orientation: landscape) {
   .TEXT_CONTENT {
-    max-width: 32ch;
+    max-width: 36ch;
   }
   .text_content__buttons {
     margin-top: 2rem;
@@ -53,9 +53,6 @@
 }
 /* laptop/desktop */
 @media (min-width: 1025px) {
-  .TEXT_CONTENT {
-    max-width: 40ch;
-  }
   .TEXT_CONTENT span {
     font-size: 1rem;
     line-height: 2rem;
@@ -63,4 +60,7 @@
 }
 /* huge */
 @media (min-width: 1440px) {
+  .TEXT_CONTENT {
+    max-width: 40ch;
+  }
 }
