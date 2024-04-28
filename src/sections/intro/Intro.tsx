@@ -6,8 +6,6 @@ import { AppContext } from "../../App";
 import "./intro.css";
 
 type IntroProps = {};
-const introNameZIndex = 0;
-const introPhotoZIndex = 1;
 
 export default function Intro({}: IntroProps) {
   const { isLoading, sectionIndex, setIsLoading } = useContext(AppContext);
@@ -46,16 +44,13 @@ export default function Intro({}: IntroProps) {
 
   return (
     <div ref={introRef} id={INTRO_SECTION_ID} className="INTRO">
-      <div
-        className="josefin_sans_bold intro__name"
-        style={{ zIndex: introNameZIndex }}
-      >
+      <div className="josefin_sans_bold intro__name">
         <span className="intro__name__full_name">Tony Yu</span>
         <div className="divider" />
         <span className="intro__name__title">Frontend Developer</span>
       </div>
 
-      <div className="intro__photo" style={{ zIndex: introPhotoZIndex }}>
+      <div className="intro__photo">
         <div className="overlay" />
         <img src={tony} />
       </div>
