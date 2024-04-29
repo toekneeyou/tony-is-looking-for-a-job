@@ -81,7 +81,7 @@ ABBY content section
     justify-content: center;
     align-items: center;
     background: linear-gradient(var(--eggplant), var(--black));
-    padding: 80px 0;
+    padding: 52px 0;
     min-height: 100vh;
   }
 }

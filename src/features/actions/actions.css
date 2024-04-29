@@ -7,6 +7,18 @@
   transition: transform 0.5s ease-in-out, opacity 0.75s ease-in-out;
 }
 
+.ACTIONS__mobile {
+  background-color: var(--black);
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 52px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 var(--padding-xs);
+}
+
 .ACTIONS__show {
   transform: translateX(0);
   opacity: 1;
