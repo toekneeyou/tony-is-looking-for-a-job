@@ -11,12 +11,15 @@ import Actions from "./features/actions/Actions";
 import MobileHeader from "./features/mobileHeader/MobileHeader";
 
 import "./App.css";
+import NavSideMenu from "./features/navSideMenu/NavSideMenu";
 
 type AppContextType = {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
   sectionIndex: number;
   isMobile: boolean;
+  isSideMenuOpen: boolean;
 };
 export const AppContext = createContext<AppContextType>({} as AppContextType);
 
@@ -24,6 +27,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [sectionIndex, setSectionIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const appContainerRef = useRef<HTMLDivElement>(null);
   // used to store last scrollTop
   let scrollTopRef = useRef(0);
@@ -60,9 +64,22 @@ function App() {
     };
   }, [handleSections]);
 
+  useEffect(() => {
+    if (!isMobile) {
+      setIsSideMenuOpen(false);
+    }
+  }, [isMobile]);
+
   return (
     <AppContext.Provider
-      value={{ isLoading, sectionIndex, setIsLoading, isMobile }}
+      value={{
+        isLoading,
+        sectionIndex,
+        setIsLoading,
+        isMobile,
+        isSideMenuOpen,
+        setIsSideMenuOpen,
+      }}
     >
       <div
         ref={appContainerRef}
@@ -77,6 +94,7 @@ function App() {
           <Skills />
           <Abby />
           <Actions />
+          <NavSideMenu />
         </main>
       </div>
     </AppContext.Provider>

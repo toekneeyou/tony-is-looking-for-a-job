@@ -9,7 +9,7 @@ type NavBarProps = {
 };
 export default function NavBar({ className }: NavBarProps) {
   const navRef = useRef<HTMLElement>(null);
-  const { sectionIndex } = useContext(AppContext);
+  const { sectionIndex, isMobile, setIsSideMenuOpen } = useContext(AppContext);
 
   return (
     <nav ref={navRef} className={combineClasses(["NAV_BAR", className])}>
@@ -22,7 +22,12 @@ export default function NavBar({ className }: NavBarProps) {
         {sections.map((s) => {
           if (s.label === "intro") return null;
           const el = document.getElementById(s.id) as HTMLElement;
-          const onClick = () => el.scrollIntoView();
+          const onClick = () => {
+            el.scrollIntoView();
+            if (isMobile) {
+              setIsSideMenuOpen(false);
+            }
+          };
           let isSelected = false;
 
           switch (s.label) {

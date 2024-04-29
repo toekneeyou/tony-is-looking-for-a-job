@@ -1,0 +1,26 @@
+.MOBILE_HEADER {
+  z-index: 100;
+  background-color: var(--black);
+  padding: 0 var(--padding-xs);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px;
+}
+
+.MOBILE_HEADER .mobile_header__name {
+  color: var(--white);
+  transform: translateY(4px);
+}
+
+.MOBILE_HEADER .ICON_BUTTON {
+  color: var(--white);
+  transform: translate(8px, 2px);
+}
+.MOBILE_HEADER .ICON_BUTTON:hover {
+  color: var(--white);
+  transform: translate(8px, 0px);
+}

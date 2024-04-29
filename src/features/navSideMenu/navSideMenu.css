@@ -1,0 +1,31 @@
+.NAV_SIDE_MENU {
+  position: fixed;
+  background-color: var(--black);
+  top: 52px;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  left: 0;
+  transition: transform 0.25s ease-in-out;
+  transform: translateX(101%);
+}
+
+.NAV_SIDE_MENU__show {
+  transform: translateX(0);
+}
+
+.NAV_SIDE_MENU .NAV_BAR {
+  padding: var(--padding-xl);
+  padding-left: var(--padding-l);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.NAV_SIDE_MENU .NAV_BAR ul {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 100% !important;
+  grid-template-rows: repeat(3, 52px) !important;
+}
