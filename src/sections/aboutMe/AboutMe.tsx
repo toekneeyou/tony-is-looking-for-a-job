@@ -3,7 +3,7 @@ import TextContent from "../../components/textContent/TextContent";
 import uclaLogo from "../../assets/ucla-logo.webp";
 import lewagonLogo from "../../assets/lewagon-logo.jpg";
 import nielsenLogo from "../../assets/nielsen-logo.svg";
-import { ReactNode, useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { combineClasses } from "../../helpers/helpers";
 import "./aboutMe.css";
 import Button from "../../components/button/Button";

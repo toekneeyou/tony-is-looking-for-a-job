@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./tabs.css";
 import { combineClasses } from "../../helpers/helpers";
 
@@ -9,27 +9,6 @@ type TabsProps = {
 export default function Tabs({ tabs, initialTab = tabs[0] }: TabsProps) {
   const [selectedTab, setSelectedTab] = useState<TabProps>(initialTab);
   const tabsRef = useRef<HTMLUListElement>(null);
-  // const underlineRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   if (tabsRef.current && underlineRef.current) {
-  //     const tabsEl = tabsRef.current;
-  //     const underlineEl = underlineRef.current;
-  //     const observer = new ResizeObserver((entries) => {
-  //       for (let entry of entries) {
-  //         if (entry.target === tabsEl) {
-  //           underlineEl.style.width = `${tabsEl.clientWidth / tabs.length}px`;
-  //         }
-  //       }
-  //     });
-
-  //     observer.observe(tabsEl);
-
-  //     return () => {
-  //       observer.disconnect();
-  //     };
-  //   }
-  // }, [tabs]);
 
   return (
     <ul ref={tabsRef} className="tabs">
@@ -47,15 +26,6 @@ export default function Tabs({ tabs, initialTab = tabs[0] }: TabsProps) {
           />
         );
       })}
-      {/* <div
-        ref={underlineRef}
-        className="tabs__selected_underline"
-        style={{
-          transform: `translate(${
-            tabs.findIndex((t) => selectedTab.label === t.label) * 100
-          }%)`,
-        }}
-      /> */}
     </ul>
   );
 }
