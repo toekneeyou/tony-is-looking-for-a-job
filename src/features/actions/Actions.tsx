@@ -14,6 +14,7 @@ export default function Actions() {
 
   useEffect(() => {
     const aboutMeEl = actionsRef.current as HTMLUListElement;
+
     aboutMeEl.classList.add("ACTIONS__show");
   }, [isMobile]);
 
@@ -21,10 +22,7 @@ export default function Actions() {
     <ul
       ref={actionsRef}
       id={ACTIONS_ID}
-      className={combineClasses([
-        "ACTIONS",
-        isMobile ? "ACTIONS__mobile" : undefined,
-      ])}
+      className={combineClasses(["ACTIONS"])}
       style={{ zIndex: ACTIONS_Z_INDEX }}
     >
       <IconButton

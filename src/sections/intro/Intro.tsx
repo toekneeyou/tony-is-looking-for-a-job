@@ -8,13 +8,20 @@ import "./intro.css";
 type IntroProps = {};
 
 export default function Intro({}: IntroProps) {
-  const { isLoading, sectionIndex, setIsLoading } = useContext(AppContext);
+  const { isLoading, sectionIndex, setIsLoading, isMobile } =
+    useContext(AppContext);
   const introRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const intro = introRef.current as HTMLElement;
     if (!intro.classList.contains("INTRO__initial")) {
       intro.classList.add("INTRO__initial");
+    }
+    if (isMobile) {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+    } else {
       const navLinks = intro.querySelectorAll(
         ".nav_list__item"
       ) as unknown as HTMLElement[];
@@ -27,7 +34,7 @@ export default function Intro({}: IntroProps) {
         setIsLoading(false);
       }, 2000);
     }
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     const intro = introRef.current as HTMLElement;

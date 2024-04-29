@@ -87,7 +87,7 @@ Left section with full name and title
     background-color: var(--white);
     margin: 1rem 0;
     /* transition */
-    transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     transform: translate(calc(-100% - var(--padding-xl)));
     opacity: 0;
   }
@@ -125,6 +125,7 @@ Left section with full name and title
   }
   .intro__name .divider {
     background-color: var(--dark-gray);
+    transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
   }
 } /* big tablet */
 @media (min-width: 769px) and (orientation: portrait) {
@@ -135,6 +136,7 @@ Left section with full name and title
   }
   .intro__name .divider {
     background-color: var(--dark-gray);
+    transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
   }
 }
 @media (min-width: 1025px) {
