@@ -38,7 +38,7 @@ export default function Abby({}: AbbyProps) {
 
   useEffect(() => {
     const abbyHeroEl = abbyHeroRef.current as HTMLElement;
-    if (sectionIndex === 3 || sectionIndex === 4) {
+    if (sectionIndex === 3 || sectionIndex === 4 || sectionIndex === 5) {
       abbyHeroEl.classList.remove("ABBY_HERO__hide");
       abbyHeroEl.classList.add("ABBY_HERO__show");
     } else {
@@ -46,7 +46,7 @@ export default function Abby({}: AbbyProps) {
       abbyHeroEl.classList.add("ABBY_HERO__hide");
     }
     const abbyContentEl = abbyContentRef.current as HTMLElement;
-    if (sectionIndex === 4) {
+    if (sectionIndex === 4 || sectionIndex === 5) {
       abbyContentEl.classList.remove("ABBY_CONTENT__hide");
       abbyContentEl.classList.add("ABBY_CONTENT__show");
     } else {

@@ -184,7 +184,6 @@ Right side with content
     align-items: center;
     justify-content: flex-end;
     padding: var(--padding-xs);
-    padding-top: 0;
   }
   .about_me_right .about_me_visual__overlay {
     background-color: var(--black);
