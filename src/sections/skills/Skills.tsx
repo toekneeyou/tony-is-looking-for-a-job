@@ -53,21 +53,11 @@ type SkillItemProps = {
 function SkillItem({ skill, className }: SkillItemProps) {
   return (
     <div className={combineClasses(["SKILL_ITEM", className])}>
-      <div
-        className="skill_item__label"
-        style={{
-          transform: "translateX(-48px)",
-        }}
-      >
+      <div className="skill_item__label">
         <span>{skill.name}</span>
       </div>
 
-      <ul
-        className="skill_item__tools"
-        style={{
-          transform: "translateX(-48px)",
-        }}
-      >
+      <ul className="skill_item__tools">
         {skill.tools.map((t) => {
           return <ToolItem key={t.name} {...t} />;
         })}

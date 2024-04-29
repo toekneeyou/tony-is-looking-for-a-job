@@ -22,62 +22,78 @@
     box-sizing: border-box;
   }
 }
+
 #root,
 body {
   margin: 0;
   background-color: var(--black);
+  overflow: hidden;
+  height: 100vh;
 }
 
-main {
+/* fonts */
+@media (min-width: 0px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a {
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (orientation: landscape) {
+  span {
+    font-size: 1rem;
+  }
+}
+/* big tablet */
+@media (min-width: 769px) and (orientation: portrait) {
+  span {
+    font-size: 1rem;
+  }
+}
+
+.app-container {
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 1800px;
+  position: relative;
 }
 
 main > * {
   scroll-snap-align: start;
 }
 
-/* fonts */
-h1 {
-  font-size: 4rem;
-}
-h2 {
-  font-size: 3rem;
-}
-h3 {
-  font-size: 2rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-a {
-  color: var(--black);
-  margin: 0;
-  padding: 0;
+.section-container {
+  height: 100vh;
+  width: 100%;
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-#app {
-  max-width: 1800px;
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: background-color 0.5s ease;
 }
 
 .josefin_sans_bold {
@@ -96,41 +112,46 @@ ul {
   bottom: 0;
 }
 
-@media (max-width: 481px) {
-  h1 {
-    font-size: 2.75rem;
-  }
-}
-
-@media (min-width: 482px) and (max-width: 768px) {
-  h1 {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  h1 {
-    font-size: 3.25rem;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1440px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-}
-
-/* laptop/desktop */
-@media (min-width: 1025px) and (max-width: 1440px) {
-}
-/* tiny laptop */
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
-}
-/* big tablet */
-@media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+/* mobile */
+@media (min-width: 0px) {
 }
 /* mobile/tablet */
-@media (min-width: 429px) and (max-width: 768px) {
+@media (min-width: 426px) {
 }
+/* tiny laptop */
+@media (min-width: 769px) and (orientation: landscape) {
+}
+/* big tablet */
+@media (min-width: 769px) and (orientation: portrait) {
+}
+/* laptop/desktop */
+@media (min-width: 1025px) {
+}
+/* huge */
+@media (min-width: 1440px) {
+}
+
+/* 
+
+RWD Template
+
+*/
+
 /* mobile */
-@media (max-width: 428px) {
+@media (min-width: 0px) {
+}
+/* mobile/tablet */
+@media (min-width: 426px) {
+}
+/* tiny laptop */
+@media (min-width: 769px) and (orientation: landscape) {
+}
+/* big tablet */
+@media (min-width: 769px) and (orientation: portrait) {
+}
+/* laptop/desktop */
+@media (min-width: 1025px) {
+}
+/* huge */
+@media (min-width: 1440px) {
 }

@@ -47,6 +47,10 @@
 }
 /* big tablet */
 @media (min-width: 769px) and (orientation: portrait) {
+  .TEXT_CONTENT span {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
   .text_content__buttons {
     margin-top: 2rem;
   }

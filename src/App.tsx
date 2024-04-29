@@ -8,6 +8,7 @@ import Aboutme from "./sections/aboutMe/AboutMe";
 import Skills from "./sections/skills/Skills";
 import Abby from "./sections/abby/Abby";
 import Actions from "./features/actions/Actions";
+import MobileHeader from "./features/mobileHeader/MobileHeader";
 
 import "./App.css";
 
@@ -15,19 +16,21 @@ type AppContextType = {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   sectionIndex: number;
+  isMobile: boolean;
 };
 export const AppContext = createContext<AppContextType>({} as AppContextType);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [sectionIndex, setSectionIndex] = useState(0);
-  const appRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const appContainerRef = useRef<HTMLDivElement>(null);
   // used to store last scrollTop
   let scrollTopRef = useRef(0);
 
   // handles sections
   const handleSections = useCallback(() => {
-    const appEl = appRef.current as HTMLElement;
+    const appEl = appContainerRef.current as HTMLElement;
     const position = appEl.scrollTop / window.innerHeight;
     const newSectionIndex =
       position > scrollTopRef.current
@@ -40,11 +43,12 @@ function App() {
 
   // handle sections when window is resized
   useEffect(() => {
-    const appEl = appRef.current as HTMLElement;
+    const appEl = appContainerRef.current as HTMLElement;
     const observer = new ResizeObserver((entries) => {
       for (let entry of entries) {
         if (entry.target === appEl) {
           handleSections();
+          setIsMobile(appEl.clientWidth <= 768);
         }
       }
     });
@@ -57,16 +61,24 @@ function App() {
   }, [handleSections]);
 
   return (
-    <AppContext.Provider value={{ isLoading, sectionIndex, setIsLoading }}>
-      <main ref={appRef} id={APP_ID} onScroll={handleSections}>
-        <ScrollDisabler />
-        <Header />
-        <Intro />
-        <Aboutme />
-        <Skills />
-        <Abby />
-        <Actions />
-      </main>
+    <AppContext.Provider
+      value={{ isLoading, sectionIndex, setIsLoading, isMobile }}
+    >
+      <div
+        ref={appContainerRef}
+        className="app-container"
+        onScroll={handleSections}
+      >
+        <main id={APP_ID}>
+          <ScrollDisabler />
+          {isMobile ? <MobileHeader /> : <Header />}
+          <Intro />
+          <Aboutme />
+          <Skills />
+          <Abby />
+          <Actions />
+        </main>
+      </div>
     </AppContext.Provider>
   );
 }

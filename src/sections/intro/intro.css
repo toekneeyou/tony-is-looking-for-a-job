@@ -2,7 +2,7 @@
 @media (min-width: 0px) {
   .INTRO {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-color: var(--black);
     padding: var(--padding-xs);
     /* padding-top accounts for header height */
@@ -12,7 +12,7 @@
   }
 }
 /* mobile/tablet */
-@media (min-width: 429px) {
+@media (min-width: 426px) {
 }
 /* tiny laptop */
 @media (min-width: 769px) and (orientation: landscape) {
@@ -63,9 +63,6 @@ Left section with full name and title
     justify-content: center;
     padding: 0 var(--padding-s);
   }
-  .intro__name .divider {
-    background-color: var(--gray);
-  }
   .intro__name span {
     color: var(--white);
     font-weight: bold;
@@ -88,7 +85,8 @@ Left section with full name and title
   .intro__name .divider {
     height: 1px;
     width: calc(100vw - 2 * var(--padding-xl) - 200px);
-    background-color: var(--dark-gray);
+    max-width: calc(1800px - 2 * var(--padding-xl));
+    background-color: var(--white);
     margin: 1rem 0;
     /* transition */
     transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
@@ -118,7 +116,7 @@ Left section with full name and title
   }
 }
 /* mobile/tablet */
-@media (min-width: 429px) {
+@media (min-width: 426px) {
 }
 /* tablet/laptop */
 @media (min-width: 769px) and (orientation: landscape) {
@@ -127,12 +125,18 @@ Left section with full name and title
     z-index: 0;
     padding: 0 var(--padding-s) 0 0;
   }
+  .intro__name .divider {
+    background-color: var(--dark-gray);
+  }
 } /* big tablet */
 @media (min-width: 769px) and (orientation: portrait) {
   .intro__name {
     position: relative;
     z-index: 0;
     padding: 0 var(--padding-s) 0 0;
+  }
+  .intro__name .divider {
+    background-color: var(--dark-gray);
   }
 }
 @media (min-width: 1025px) {
@@ -181,7 +185,7 @@ Middle section with photo
   }
 }
 /* mobile/tablet */
-@media (min-width: 429px) {
+@media (min-width: 426px) {
 }
 /* tablet/laptop */
 @media (min-width: 769px) and (orientation: landscape) {
@@ -205,7 +209,7 @@ Right section with nav. Hidden in smaller viewports.
   }
 }
 /* mobile/tablet */
-@media (min-width: 429px) {
+@media (min-width: 426px) {
 }
 /* tablet/laptop */
 @media (min-width: 769px) and (orientation: landscape) {

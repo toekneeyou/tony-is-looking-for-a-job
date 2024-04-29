@@ -32,9 +32,7 @@ export default function AboutMe() {
       <div className="about_me_left">
         <TextContent
           title="About Me"
-          bodyText="Hi, I'm Tony, a frontend developer based in Los Angeles, CA, with over four years of experience creating engaging user interfaces using React. I enjoy building intuitive, user-friendly designs that make a positive impact.
-
-          My earlier career in healthcare provided me with invaluable insights into teamwork, problem-solving, and understanding user needs—skills that greatly inform my work as a developer. To learn more, download my resume or contact me through the links at the bottom right corner!"
+          bodyText="Hello! I'm Tony, a frontend developer located in Los Angeles, CA. I have over four years of experience building interactive user interfaces with React. Coming from a healthcare background, I’ve always prioritized solving problems and understanding patient and user needs. For more information, you can download my resume or get in touch with me using the links in the bottom right corner."
           button={
             <a href={nielsenLogo} download={"Resume"}>
               <Button onClick={() => {}} rightIcon="download">
