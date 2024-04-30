@@ -1,21 +1,18 @@
 .MOBILE_HEADER {
   z-index: 100;
   background-color: var(--black);
-  padding: 0 var(--padding-xs);
+  padding: 0 var(--padding);
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 52px;
+  height: var(--mobile-header-height);
 }
 
 .MOBILE_HEADER .mobile_header__name {
   color: var(--white);
-  transform: translate(-1rem, 4px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  opacity: 0;
 }
 .MOBILE_HEADER .mobile_header__name__show {
   opacity: 1;

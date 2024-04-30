@@ -1,12 +1,22 @@
-import { useContext } from "react";
 import NavBar from "../navBar/NavBar";
-import "./navSideMenu.css";
-import { AppContext } from "../../App";
 import { combineClasses } from "../../helpers/helpers";
+import "./navSideMenu.css";
+import { SectionDetail } from "../../constants/data";
+import Actions from "../actions/Actions";
 
-export default function NavSideMenu() {
-  const { isSideMenuOpen } = useContext(AppContext);
+type NavSideMenuProps = {
+  isSideMenuOpen: boolean;
+  isMobile: boolean;
+  currentSection: SectionDetail;
+  setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
+export default function NavSideMenu({
+  isSideMenuOpen,
+  isMobile,
+  currentSection,
+  setIsSideMenuOpen,
+}: NavSideMenuProps) {
   return (
     <div
       className={combineClasses([
@@ -14,7 +24,12 @@ export default function NavSideMenu() {
         isSideMenuOpen ? "NAV_SIDE_MENU__show" : undefined,
       ])}
     >
-      <NavBar />
+      <NavBar
+        isMobile={isMobile}
+        setIsSideMenuOpen={setIsSideMenuOpen}
+        currentSection={currentSection}
+      />
+      <Actions />
     </div>
   );
 }

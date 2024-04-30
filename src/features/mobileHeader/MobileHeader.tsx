@@ -1,21 +1,17 @@
-import { useContext, useEffect, useRef } from "react";
+import { useRef } from "react";
 import IconButton from "../../components/iconButton/IconButton";
 import "./mobileHeader.css";
-import { AppContext } from "../../App";
 
-export default function MobileHeader() {
+type MobileHeaderProps = {
+  isSideMenuOpen: boolean;
+  setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function MobileHeader({
+  isSideMenuOpen,
+  setIsSideMenuOpen,
+}: MobileHeaderProps) {
   const nameRef = useRef<HTMLDivElement>(null);
-  const { setIsSideMenuOpen, isSideMenuOpen, sectionIndex } =
-    useContext(AppContext);
-
-  useEffect(() => {
-    const nameEl = nameRef.current as HTMLDivElement;
-    if (sectionIndex === 0) {
-      nameEl.classList.remove("mobile_header__name__show");
-    } else {
-      nameEl.classList.add("mobile_header__name__show");
-    }
-  }, [sectionIndex]);
 
   return (
     <div className="MOBILE_HEADER">
@@ -24,12 +20,10 @@ export default function MobileHeader() {
       </div>
       <IconButton
         onClick={() => {
-          setIsSideMenuOpen((p) => {
-            return !p;
-          });
+          setIsSideMenuOpen((p) => !p);
         }}
         label="Menu"
-        iconString={isSideMenuOpen ? "close" : "near_me"}
+        iconString={isSideMenuOpen ? "close" : "menu"}
       />
     </div>
   );

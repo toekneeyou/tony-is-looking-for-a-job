@@ -1,15 +1,27 @@
-import { useContext, useRef } from "react";
-import { sections } from "../../constants/data";
+import { useRef } from "react";
+import { SectionDetail, sections } from "../../constants/data";
 import { combineClasses } from "../../helpers/helpers";
 import "./navBar.css";
-import { AppContext } from "../../App";
+import {
+  ABBY_CONTENT_SECTION_ID,
+  ABBY_HERO_SECTION_ID,
+  ABOUT_ME_SECTION_ID,
+  SKILLS_SECTION_ID,
+} from "../../constants/id";
 
 type NavBarProps = {
   className?: string;
+  isMobile?: boolean;
+  setIsSideMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  currentSection: SectionDetail;
 };
-export default function NavBar({ className }: NavBarProps) {
+export default function NavBar({
+  className,
+  isMobile,
+  setIsSideMenuOpen,
+  currentSection,
+}: NavBarProps) {
   const navRef = useRef<HTMLElement>(null);
-  const { sectionIndex, isMobile, setIsSideMenuOpen } = useContext(AppContext);
 
   return (
     <nav ref={navRef} className={combineClasses(["NAV_BAR", className])}>
@@ -25,20 +37,22 @@ export default function NavBar({ className }: NavBarProps) {
           const onClick = () => {
             el.scrollIntoView();
             if (isMobile) {
-              setIsSideMenuOpen(false);
+              setIsSideMenuOpen?.(false);
             }
           };
           let isSelected = false;
 
           switch (s.label) {
             case "about me":
-              isSelected = sectionIndex === 1;
+              isSelected = currentSection.id === ABOUT_ME_SECTION_ID;
               break;
             case "skills":
-              isSelected = sectionIndex === 2;
+              isSelected = currentSection.id === SKILLS_SECTION_ID;
               break;
             case "projects":
-              isSelected = sectionIndex === 3 || sectionIndex === 4;
+              isSelected =
+                currentSection.id === ABBY_HERO_SECTION_ID ||
+                currentSection.id === ABBY_CONTENT_SECTION_ID;
               break;
           }
           return (

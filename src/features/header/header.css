@@ -5,8 +5,13 @@
   left: 0;
   display: flex;
   justify-content: space-between;
-  padding: var(--padding-xs) var(--padding-m);
-  transition: transform 0.5s ease-in-out;
+  align-items: center;
+  padding: 2rem var(--padding);
+  height: var(--header-height);
+  transition: transform 0.25s ease-in-out;
+}
+
+.HEADER__hide {
   transform: translateY(-100%);
 }
 
@@ -14,13 +19,4 @@
   display: inline-block;
   color: var(--white);
   font-size: 1.25rem;
-}
-
-/* HIDE */
-.HEADER__hide {
-  transform: translateY(-100%);
-}
-/* SHOW */
-.HEADER__show {
-  transform: translateY(0);
 }
