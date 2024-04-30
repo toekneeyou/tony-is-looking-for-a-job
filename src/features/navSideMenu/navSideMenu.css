@@ -29,3 +29,7 @@
   grid-template-columns: 100% !important;
   grid-template-rows: repeat(3, 52px) !important;
 }
+
+.NAV_SIDE_MENU .ACTIONS {
+  right: var(--padding);
+}

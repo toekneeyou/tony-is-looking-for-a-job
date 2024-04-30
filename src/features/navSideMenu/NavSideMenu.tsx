@@ -1,8 +1,8 @@
 import NavBar from "../navBar/NavBar";
 import { combineClasses } from "../../helpers/helpers";
-import "./navSideMenu.css";
 import { SectionDetail } from "../../constants/data";
 import Actions from "../actions/Actions";
+import "./navSideMenu.css";
 
 type NavSideMenuProps = {
   isSideMenuOpen: boolean;
