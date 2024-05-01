@@ -4,25 +4,21 @@ import abbyTransactionVideo from "../../assets/abby-transaction-video.mp4";
 
 import "./abby.css";
 import Tabs, { TabProps } from "../../components/tabs/Tabs";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
-  ABBY_CONTENT_SECTION_ID,
-  ABBY_HERO_SECTION_ID,
+  ABBY_SECTION_FEATURES_ID,
+  ABBY_SECTION_HERO_ID,
+  ABBY_SECTION_ID,
 } from "../../constants/id";
 import TextContent from "../../components/textContent/TextContent";
 import abbyLogo from "../../assets/abby-logo-large.svg";
 import Button from "../../components/button/Button";
-import { AppContext } from "../../App";
 import { combineClasses } from "../../helpers/helpers";
 
-type AbbyProps = {};
+type AbbyProps = { isMobile: boolean };
 type AbbyVideoType = "balances & trends" | "transactions";
 
-export default function Abby({}: AbbyProps) {
-  const abbyHeroRef = useRef<HTMLDivElement>(null);
-  const abbyContentRef = useRef<HTMLDivElement>(null);
-  const { sectionIndex } = useContext(AppContext);
-
+export default function Abby({ isMobile }: AbbyProps) {
   const [selectedVideo, setSelectedVideo] =
     useState<AbbyVideoType>("balances & trends");
   const videoTabs: TabProps[] = [
@@ -36,46 +32,56 @@ export default function Abby({}: AbbyProps) {
     },
   ];
 
-  useEffect(() => {
-    const abbyHeroEl = abbyHeroRef.current as HTMLElement;
-    if (sectionIndex === 3 || sectionIndex === 4 || sectionIndex === 5) {
-      abbyHeroEl.classList.remove("ABBY_HERO__hide");
-      abbyHeroEl.classList.add("ABBY_HERO__show");
-    } else {
-      abbyHeroEl.classList.remove("ABBY_HERO__show");
-      abbyHeroEl.classList.add("ABBY_HERO__hide");
-    }
-    const abbyContentEl = abbyContentRef.current as HTMLElement;
-    if (sectionIndex === 4 || sectionIndex === 5) {
-      abbyContentEl.classList.remove("ABBY_CONTENT__hide");
-      abbyContentEl.classList.add("ABBY_CONTENT__show");
-    } else {
-      abbyContentEl.classList.remove("ABBY_CONTENT__show");
-      abbyContentEl.classList.add("ABBY_CONTENT__hide");
-    }
-  }, [sectionIndex]);
-
   return (
-    <>
-      <div ref={abbyHeroRef} id={ABBY_HERO_SECTION_ID} className="ABBY_HERO">
-        <div className="abby_hero__logo">
+    <section id={ABBY_SECTION_ID} className="ABBY">
+      <div className="abby__description">
+        <TextContent
+          title="PROJECTS: ABBY"
+          bodyText="When Mint sunsetted, I decided to build my own app to monitor my finances. The app is still in its MVP state, and there are a ton of features I still want to add to it. Here’s a sneak peak:"
+        />
+      </div>
+      <div id={ABBY_SECTION_HERO_ID} className="abby__hero">
+        <div className="abby__hero__logo">
           <img src={abbyLogo} />
         </div>
 
-        <div className="overlay abby_hero__phone">
+        <div className="overlay abby__hero__phone">
           <img src={AbbyLogin} alt="A screenshot of ABBY's login screen" />
         </div>
       </div>
-
-      <div
-        ref={abbyContentRef}
-        id={ABBY_CONTENT_SECTION_ID}
-        className="ABBY_CONTENT"
-      >
-        <div className="abby_content__left">
+      {isMobile ? (
+        <div id={ABBY_SECTION_FEATURES_ID} className="abby__features__mobile">
           <TextContent
-            title="Projects: ABBY"
-            bodyText="When Mint sunsetted, I decided to build my own app to monitor my finances. The app is still in its MVP state, and there are a ton of features I still want to add to it. Here’s a sneak peak:"
+            title="Videos"
+            button={
+              <>
+                <Button
+                  onClick={() => {
+                    const videoElement = document.querySelector(
+                      ".abby_balance_video"
+                    ) as HTMLVideoElement;
+                    videoElement.play();
+                  }}
+                  rightIcon="play_arrow"
+                >
+                  Balances & Trends
+                </Button>
+                <Button
+                  onClick={() => {
+                    const videoElement = document.querySelector(
+                      ".abby_transaction_video"
+                    ) as HTMLVideoElement;
+                    videoElement.play();
+                  }}
+                  rightIcon="play_arrow"
+                >
+                  Transactions
+                </Button>
+              </>
+            }
+          />
+          <TextContent
+            title="Links"
             button={
               <>
                 <Button
@@ -114,42 +120,113 @@ export default function Abby({}: AbbyProps) {
               </>
             }
           />
+          <div
+            style={{
+              position: "absolute",
+              transform: `translate(200%)`,
+              opacity: 0,
+            }}
+          >
+            <AbbyVideoPlayer
+              src={abbyBalanceVideo}
+              isSelected={selectedVideo === "balances & trends"}
+              videoClassName="abby_balance_video"
+            />
+            <AbbyVideoPlayer
+              src={abbyTransactionVideo}
+              isSelected={selectedVideo === "transactions"}
+              videoClassName="abby_transaction_video"
+            />
+          </div>
         </div>
-        <div className="abby_content__right">
-          <div className="abby_content__videos">
-            <Tabs tabs={videoTabs} initialTab={videoTabs[0]} />
-            <div
-              className="abby_content__videos__carousel"
-              style={{
-                width: `${
-                  document.querySelector(".abby_video_player")?.clientWidth
-                }px`,
-                height: `${
-                  document.querySelector(".abby_video_player")?.clientHeight
-                }px`,
-              }}
-            >
-              <AbbyVideoPlayer
-                src={abbyBalanceVideo}
-                isSelected={selectedVideo === "balances & trends"}
-              />
-              <AbbyVideoPlayer
-                src={abbyTransactionVideo}
-                isSelected={selectedVideo === "transactions"}
-              />
+      ) : (
+        <div id={ABBY_SECTION_FEATURES_ID} className="abby__features">
+          <div className="abby__features__left">
+            <TextContent
+              title="Projects: ABBY"
+              bodyText="When Mint sunsetted, I decided to build my own app to monitor my finances. The app is still in its MVP state, and there are a ton of features I still want to add to it. Here’s a sneak peak:"
+              button={
+                <>
+                  <Button
+                    onClick={() => {
+                      window.open(
+                        "https://www.figma.com/file/NJuPGZIs74vcuwP5Ty3VLD/Abby-Design-System?type=design&node-id=2-96&mode=design",
+                        "_blank"
+                      );
+                    }}
+                    rightIcon="open_in_new"
+                  >
+                    Design - Figma
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      window.open(
+                        "https://github.com/toekneeyou/abby-ui",
+                        "_blank"
+                      );
+                    }}
+                    rightIcon="open_in_new"
+                  >
+                    Frontend - React Native
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      window.open(
+                        "https://github.com/toekneeyou/abby-backend",
+                        "_blank"
+                      );
+                    }}
+                    rightIcon="open_in_new"
+                  >
+                    Backend - Express
+                  </Button>
+                </>
+              }
+            />
+          </div>
+          <div className="abby__features__right">
+            <div className="abby__features__videos">
+              <Tabs tabs={videoTabs} initialTab={videoTabs[0]} />
+              <div
+                className="abby__features__videos__carousel"
+                style={{
+                  width: `${
+                    document.querySelector(".abby_video_player")?.clientWidth
+                  }px`,
+                  height: `${
+                    document.querySelector(".abby_video_player")?.clientHeight
+                  }px`,
+                }}
+              >
+                <AbbyVideoPlayer
+                  src={abbyBalanceVideo}
+                  isSelected={selectedVideo === "balances & trends"}
+                  videoClassName="abby_balance_video"
+                />
+                <AbbyVideoPlayer
+                  src={abbyTransactionVideo}
+                  isSelected={selectedVideo === "transactions"}
+                  videoClassName="abby_transaction_video"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </>
+      )}
+    </section>
   );
 }
 
 type AbbyVideoPlayerProps = {
   src: string;
   isSelected: boolean;
+  videoClassName: string;
 };
-function AbbyVideoPlayer({ src, isSelected }: AbbyVideoPlayerProps) {
+function AbbyVideoPlayer({
+  src,
+  isSelected,
+  videoClassName,
+}: AbbyVideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const videoEl = videoRef.current as HTMLVideoElement;
@@ -166,7 +243,7 @@ function AbbyVideoPlayer({ src, isSelected }: AbbyVideoPlayerProps) {
         isSelected ? "abby_video_player__selected" : undefined,
       ])}
     >
-      <video ref={videoRef} src={src} controls />
+      <video className={videoClassName} ref={videoRef} src={src} controls />
     </div>
   );
 }

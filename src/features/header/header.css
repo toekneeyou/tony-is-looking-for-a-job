@@ -1,14 +1,15 @@
 .HEADER {
   position: fixed;
   top: 0;
-  right: 0;
   left: 0;
+  width: calc(100 * var(--vw));
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem var(--padding);
+  padding: 2rem;
   height: var(--header-height);
   transition: transform 0.25s ease-in-out;
+  background-color: var(--black);
 }
 
 .HEADER__hide {

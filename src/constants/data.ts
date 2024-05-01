@@ -1,5 +1,5 @@
 import {
-  ABBY_HERO_SECTION_ID,
+  ABBY_SECTION_ID,
   ABOUT_ME_SECTION_ID,
   INTRO_SECTION_ID,
   SKILLS_SECTION_ID,
@@ -29,7 +29,7 @@ export const sections: SectionDetail[] = [
   { label: "intro", id: INTRO_SECTION_ID },
   { label: "about me", id: ABOUT_ME_SECTION_ID },
   { label: "skills", id: SKILLS_SECTION_ID },
-  { label: "projects", id: ABBY_HERO_SECTION_ID },
+  { label: "projects", id: ABBY_SECTION_ID },
 ];
 
 export type Skill = "design" | "frontend" | "backend";

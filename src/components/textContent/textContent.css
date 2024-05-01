@@ -20,8 +20,8 @@
     display: inline-block;
     font-size: 14px;
     line-height: 28px;
-    color: var(--gray);
-    font-weight: 500;
+    color: var(--white);
+    font-weight: 400;
   }
   .text_content__buttons {
     margin-top: 1rem;

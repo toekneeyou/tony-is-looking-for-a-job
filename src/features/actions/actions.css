@@ -10,3 +10,6 @@
   opacity: 1;
   transition: transform 0.5s ease-in-out, opacity 0.75s ease-in-out;
 }
+.ACTIONS .ICON_BUTTON:not(:last-child) {
+  margin-bottom: 8px;
+}

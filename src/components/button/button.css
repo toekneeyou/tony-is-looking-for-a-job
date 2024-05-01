@@ -12,7 +12,7 @@
   border: 1px solid var(--gray);
   transition: transform 0.25s ease;
   border-radius: 25px;
-  /* border: 2px solid var(--white); */
+  height: 52px;
 }
 .button span {
   color: var(--white);
@@ -22,12 +22,26 @@
 .button .button__left_icon {
   margin-right: 8px;
   font-size: 1.25rem;
-  transform: translateY(1px);
+  background-image: linear-gradient(
+    45deg,
+    #5bdd66,
+    #ea7bfe
+  ); /* Gradient definition */
+  background-clip: text; /* Clip background to text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent so the gradient shows through */
 }
 .button .button__right_icon {
   margin-left: 8px;
   font-size: 1.25rem;
-  transform: translateY(1px);
+  background-image: linear-gradient(
+    45deg,
+    #5bdd66,
+    #ea7bfe
+  ); /* Gradient definition */
+  background-clip: text; /* Clip background to text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text transparent so the gradient shows through */
 }
 .button * {
   z-index: 1;
@@ -51,6 +65,10 @@
 }
 .button:hover span {
   color: var(--black);
+}
+.button:hover .button__left_icon,
+.button:hover .button__right_icon {
+  background-image: linear-gradient(45deg, var(--black), var(--black));
 }
 .button:hover .button__overlay {
   transform: translate(0);

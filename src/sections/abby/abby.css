@@ -1,218 +1,124 @@
-/* 
-* ABBY Hero section
-*/
-/* mobile */
 @media (min-width: 0px) {
-  .ABBY_HERO {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(var(--black), var(--eggplant));
+  .ABBY {
+    padding: 2rem 0;
+    background-color: var(--black);
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 1rem;
   }
-  .abby_hero__logo {
+  .abby__description {
+    padding: var(--padding);
+  }
+  .abby__description .TEXT_CONTENT {
+    max-width: 56ch;
+  }
+  .abby__description h2 {
+    text-align: center;
+  }
+  .abby__hero {
+    height: 500px;
+    padding: var(--padding) 0;
+    position: relative;
+  }
+  .abby__hero__logo {
     height: 100%;
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    opacity: 0.8;
-    pointer-events: none;
+    align-items: center;
   }
-  .abby_hero__logo img {
+  .abby__hero__logo img {
     width: 100%;
-    height: auto;
+    object-fit: cover;
   }
-  .abby_hero__phone img {
-    height: 40vh;
+  .abby__hero__phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .abby__hero__phone img {
+    max-height: 400px;
+  }
+  .abby__features__mobile {
+    padding: var(--padding);
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .abby__features__mobile .TEXT_CONTENT {
+    width: 32ch;
+  }
+  .abby__features__mobile .TEXT_CONTENT {
+    width: 32ch;
+  }
+  .abby__features__mobile .TEXT_CONTENT .josefin_sans_bold {
+    text-align: center;
+    margin: 0;
+  }
+  .abby__features__mobile .TEXT_CONTENT > span,
+  .abby__features__mobile .TEXT_CONTENT > .divider {
+    display: none;
+  }
+  .abby__features__mobile .TEXT_CONTENT .text_content__buttons {
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    margin: 0;
+  }
+
+  .abby__features__mobile .TEXT_CONTENT .button:first-child {
+    margin: 0;
+  }
+  .abby__features__mobile .TEXT_CONTENT .text_content__buttons .button {
+    width: 100%;
+  }
+}
+/* mobile/tablet */
+@media (min-width: 426px) {
+  .abby__description {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* big tablet */
+@media (min-width: 769px) and (orientation: portrait) {
+  /* 
+  
+  ABBY hero section with giant phone
+  
+  */
+  .abby__hero {
+    height: 600px;
+  }
+  .abby__hero__phone img {
     max-height: 500px;
   }
-  .abby_hero__phone {
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: unset;
-  }
-  .ABBY_HERO__show .abby_hero__logo {
-    transition: opacity 0.5s 400ms ease;
-    opacity: 0.8;
-  }
-  .ABBY_HERO__hide .abby_hero__logo {
-    transition: opacity 0.5s ease;
-    opacity: 0;
-  }
-}
-/* mobile/tablet */
-@media (min-width: 426px) {
-}
-/* tiny laptop */
-@media (min-width: 769px) and (orientation: landscape) {
-}
-/* big tablet */
-@media (min-width: 769px) and (orientation: portrait) {
-}
-/* laptop/desktop */
-@media (min-width: 1025px) {
-  .abby_hero__phone img {
-    height: 70vh;
-    max-height: 700px;
-  }
-}
-/* huge */
-@media (min-width: 1440px) {
-}
-
-/* 
-
-ABBY content section
-
-
-*/
-/* mobile */
-@media (min-width: 0px) {
-  .ABBY_CONTENT {
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(var(--eggplant), var(--black));
-    padding: 52px 0;
-    min-height: 100vh;
-  }
-}
-/* mobile/tablet */
-@media (min-width: 426px) {
-}
-/* tiny laptop */
-@media (min-width: 769px) and (orientation: landscape) {
-  .ABBY_CONTENT {
-    padding: 0;
-    flex-direction: row;
-  }
-}
-/* big tablet */
-@media (min-width: 769px) and (orientation: portrait) {
-  .ABBY_CONTENT {
-    padding: 0;
-  }
-}
-/* laptop/desktop */
-@media (min-width: 1025px) {
-}
-/* huge */
-@media (min-width: 1440px) {
-}
-/* 
-
-ABBY content section left with text
-
-*/
-/* mobile */
-@media (min-width: 0px) {
-  .abby_content__left {
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding: var(--padding-xs);
-  }
-  .abby_content__left .TEXT_CONTENT .divider {
-    width: 100%;
-    background-color: var(--gray);
-  }
-  .abby_content__left .TEXT_CONTENT > span {
-    color: var(--white);
-  }
-  .ABBY_CONTENT__hide .TEXT_CONTENT h2,
-  .ABBY_CONTENT__hide .TEXT_CONTENT > span,
-  .ABBY_CONTENT__hide .TEXT_CONTENT .divider,
-  .ABBY_CONTENT__hide .button {
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  .ABBY_CONTENT__show .TEXT_CONTENT h2 {
-    transition: transform 0.5s 250ms ease, opacity 0.5s 250ms ease;
-    transform: translate(0%);
-    opacity: 1;
-  }
-  .ABBY_CONTENT__show .TEXT_CONTENT > span {
-    transition: transform 0.5s 350ms ease, opacity 0.5s 350ms ease;
-    transform: translate(0%);
-    opacity: 1;
-  }
-  .ABBY_CONTENT__show .TEXT_CONTENT .divider,
-  .ABBY_CONTENT__show .button {
-    transition: transform 0.5s 500ms ease, opacity 0.5s 500ms ease;
-    transform: translate(0%);
-    opacity: 1;
-  }
-}
-/* mobile/tablet */
-@media (min-width: 426px) {
-  .abby_content__left {
-    padding: var(--padding-s);
-    padding-top: var(--padding-xs);
-  }
-}
-/* tiny laptop */
-@media (min-width: 769px) and (orientation: landscape) {
-  .abby_content__left {
-    padding: var(--padding-m);
-  }
-  .abby_content__left .TEXT_CONTENT .divider {
-    width: 200%;
-  }
-}
-/* big tablet */
-@media (min-width: 769px) and (orientation: portrait) {
-  .abby_content__left {
-    padding: var(--padding-m);
-    padding-top: var(--padding-xs);
-  }
-}
-/* laptop/desktop */
-@media (min-width: 1025px) {
-  .abby_content__left {
-    padding: var(--padding-l);
-  }
-  .abby_content__left .TEXT_CONTENT .divider {
-    width: 200%;
-  }
-}
-/* huge */
-@media (min-width: 1440px) {
-  .abby_content__left {
-    padding: var(--padding-xl);
-  }
-}
-
-/* 
-
-ABBY content section right with videos
-
-*/
-/* mobile */
-@media (min-width: 0px) {
-  .abby_content__right {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--padding-xs);
-  }
-  .abby_content__videos {
+  /* 
+  
+  ABBY features section with videos
+  
+  */
+  .abby__features {
+    padding: var(--padding);
     display: grid;
-    grid-template-rows: max-content max-content;
-    row-gap: 1rem;
-    position: relative;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--padding);
   }
-  .abby_content__videos__carousel {
+  .abby__features__left {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .abby__features__right {
+    display: flex;
+    justify-content: center;
+  }
+  .abby__features__videos {
+    display: grid;
+    row-gap: 1rem;
+  }
+  .abby__features__videos__carousel {
     position: relative;
     display: flex;
     justify-content: center;
@@ -223,6 +129,74 @@ ABBY content section right with videos
     position: absolute;
     transform: translateX(32px) scale(0.9);
     animation: moveBack 750ms ease-in-out forwards;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  .abby_video_player__selected {
+    animation: moveUp 750ms ease-in-out forwards;
+  }
+  .abby_video_player video {
+    height: 70vh;
+    max-height: 500px;
+    border-radius: 25px;
+    border: 6px solid #222;
+  }
+}
+/* tiny laptop */
+@media (min-width: 769px) and (orientation: landscape) {
+  .ABBY {
+    row-gap: 0;
+  }
+  /* 
+  
+  ABBY hero section with giant photo of phone
+  
+  */
+  .abby__hero {
+    height: calc(100 * var(--vh));
+  }
+  .abby__hero__phone img {
+    max-height: calc(70 * var(--vh));
+  }
+  /* 
+  
+  ABBY features section with videos
+  
+  */
+  .abby__features {
+    padding: var(--padding);
+    display: grid;
+    grid-template-columns: minmax(50%, max-content) 1fr;
+    column-gap: var(--padding);
+  }
+  .abby__features__left {
+    /* padding: var(--padding); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .abby__features__right {
+    /* padding: var(--padding); */
+    display: flex;
+    justify-content: center;
+  }
+  .abby__features__videos {
+    display: grid;
+    row-gap: 1rem;
+  }
+  .abby__features__videos__carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    justify-self: center;
+  }
+  .abby_video_player {
+    position: absolute;
+    transform: translateX(32px) scale(0.9);
+    animation: moveBack 750ms ease-in-out forwards;
+    border-radius: 25px;
+    overflow: hidden;
   }
   .abby_video_player__selected {
     animation: moveUp 750ms ease-in-out forwards;
@@ -234,37 +208,11 @@ ABBY content section right with videos
     border: 6px solid #222;
   }
 }
-/* mobile/tablet */
-@media (min-width: 426px) {
-  .abby_content__right {
-    padding: var(--padding-s);
-    padding-bottom: var(--padding-xs);
-  }
-}
-/* tiny laptop */
-@media (min-width: 769px) and (orientation: landscape) {
-  .abby_content__right {
-    padding: var(--padding-m);
-  }
-}
-/* big tablet */
-@media (min-width: 769px) and (orientation: portrait) {
-  .abby_content__right {
-    padding: var(--padding-m);
-    padding-bottom: var(--padding-xs);
-  }
-}
 /* laptop/desktop */
 @media (min-width: 1025px) {
-  .abby_content__right {
-    padding: var(--padding-l);
-  }
 }
 /* huge */
 @media (min-width: 1440px) {
-  .abby_content__right {
-    padding: var(--padding-xl);
-  }
 }
 
 @keyframes moveUp {

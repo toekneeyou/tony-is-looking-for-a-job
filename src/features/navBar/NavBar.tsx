@@ -3,8 +3,7 @@ import { SectionDetail, sections } from "../../constants/data";
 import { combineClasses } from "../../helpers/helpers";
 import "./navBar.css";
 import {
-  ABBY_CONTENT_SECTION_ID,
-  ABBY_HERO_SECTION_ID,
+  ABBY_SECTION_ID,
   ABOUT_ME_SECTION_ID,
   SKILLS_SECTION_ID,
 } from "../../constants/id";
@@ -33,9 +32,9 @@ export default function NavBar({
       >
         {sections.map((s) => {
           if (s.label === "intro") return null;
-          const el = document.getElementById(s.id) as HTMLElement;
           const onClick = () => {
-            el.scrollIntoView();
+            const el = document.getElementById(s.id) as HTMLElement;
+            el?.scrollIntoView({ behavior: "smooth" });
             if (isMobile) {
               setIsSideMenuOpen?.(false);
             }
@@ -50,9 +49,7 @@ export default function NavBar({
               isSelected = currentSection.id === SKILLS_SECTION_ID;
               break;
             case "projects":
-              isSelected =
-                currentSection.id === ABBY_HERO_SECTION_ID ||
-                currentSection.id === ABBY_CONTENT_SECTION_ID;
+              isSelected = currentSection.id === ABBY_SECTION_ID;
               break;
           }
           return (
