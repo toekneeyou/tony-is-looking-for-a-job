@@ -1,12 +1,8 @@
-import { useContext } from "react";
 import { SCROLL_DISABLER_Z_INDEX } from "../../constants/zIndices";
-import { AppContext } from "../../App";
 import "./scrollDisabler.css";
 
-type ScrollDisablerProps = {};
-export default function ScrollDisabler({}: ScrollDisablerProps) {
-  const { isLoading } = useContext(AppContext);
-
+type ScrollDisablerProps = { isLoading: boolean };
+export default function ScrollDisabler({ isLoading }: ScrollDisablerProps) {
   if (!isLoading) return null;
 
   return (
