@@ -1,68 +1,35 @@
-import { useContext, useEffect, useRef } from "react";
 import { INTRO_SECTION_ID } from "../../constants/id";
 import tony from "../../assets/tony-iceland.jpg";
-import NavBar from "../../features/navBar/NavBar";
-import { AppContext } from "../../App";
 import "./intro.css";
+import NavBar from "../../features/navBar/NavBar";
+import { SectionDetail } from "../../constants/data";
 
-type IntroProps = {};
+type IntroProps = {
+  currentSection: SectionDetail;
+  isMobile: boolean;
+};
 
-export default function Intro({}: IntroProps) {
-  const { isLoading, sectionIndex, setIsLoading, isMobile } =
-    useContext(AppContext);
-  const introRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const intro = introRef.current as HTMLElement;
-    if (!intro.classList.contains("INTRO__initial")) {
-      intro.classList.add("INTRO__initial");
-    }
-    if (isMobile) {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-    } else {
-      const navLinks = intro.querySelectorAll(
-        ".nav_list__item"
-      ) as unknown as HTMLElement[];
-      setTimeout(() => {
-        navLinks.forEach((nl) => {
-          nl.style.transition = "all 0.25s ease";
-          nl.style.transitionDelay = "0ms";
-          nl.style.pointerEvents = "all";
-        });
-        setIsLoading(false);
-      }, 2000);
-    }
-  }, [isMobile]);
-
-  useEffect(() => {
-    const intro = introRef.current as HTMLElement;
-    if (!isLoading) {
-      if (sectionIndex === 0) {
-        intro.classList.add("INTRO__show");
-        intro.classList.remove("INTRO__hide");
-      } else {
-        intro.classList.add("INTRO__hide");
-        intro.classList.remove("INTRO__show");
-      }
-    }
-  }, [isLoading, sectionIndex]);
-
+export default function Intro({ currentSection, isMobile }: IntroProps) {
   return (
-    <div ref={introRef} id={INTRO_SECTION_ID} className="INTRO">
-      <div className="josefin_sans_bold intro__name">
-        <span className="intro__name__full_name">Tony Yu</span>
+    <section id={INTRO_SECTION_ID} className="INTRO">
+      <div className="intro__name">
+        <div className="josefin_sans_bold intro__name__full_name">TONY YU</div>
         <div className="divider" />
-        <span className="intro__name__title">Frontend Developer</span>
+        <div className="josefin_sans_bold intro__name__job_title">
+          FRONTEND DEVELOPER
+        </div>
       </div>
-
       <div className="intro__photo">
-        <div className="overlay" />
-        <img src={tony} />
+        <img
+          src={tony}
+          alt="Photo of author wearing a red jacket standing in front of a snow-capped mountain"
+        />
       </div>
-
-      <NavBar className="intro__nav" />
-    </div>
+      {!isMobile && (
+        <div className="intro__nav">
+          <NavBar currentSection={currentSection} />
+        </div>
+      )}
+    </section>
   );
 }
