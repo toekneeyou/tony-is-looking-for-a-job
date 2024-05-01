@@ -120,8 +120,8 @@
   .ABOUT_ME_VISUAL {
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 280px);
+    grid-template-rows: repeat(3, 280px);
     gap: 1rem;
   }
   .ABOUT_ME_VISUAL_ITEM {
@@ -180,6 +180,7 @@
     grid-area: 3 / 1 / 4 / 2;
     align-self: center;
     height: 280px;
+    width: 280px;
     padding: 0;
     transform: translate(calc(-100% - 1rem));
     transition: transform 0.5s 0.5s ease, opacity 0.5s 0.5s ease;

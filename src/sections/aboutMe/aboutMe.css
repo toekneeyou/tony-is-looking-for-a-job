@@ -25,7 +25,7 @@
 /* big tablet */
 @media (min-width: 769px) and (orientation: portrait) {
   .ABOUT_ME {
-    max-width: initial;
+    max-width: var(--app-max-width);
   }
   .about_me__visual {
     padding: var(--padding);
@@ -36,7 +36,7 @@
 /* tiny laptop */
 @media (min-width: 769px) and (orientation: landscape) {
   .ABOUT_ME {
-    max-width: initial;
+    max-width: var(--app-max-width);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: var(--padding);
