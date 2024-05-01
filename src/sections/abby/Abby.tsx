@@ -122,20 +122,15 @@ export default function Abby({ isMobile }: AbbyProps) {
           />
           <div
             style={{
-              position: "absolute",
+              position: "fixed",
               transform: `translate(200%)`,
               opacity: 0,
             }}
           >
-            <AbbyVideoPlayer
-              src={abbyBalanceVideo}
-              isSelected={selectedVideo === "balances & trends"}
-              videoClassName="abby_balance_video"
-            />
-            <AbbyVideoPlayer
+            <video src={abbyBalanceVideo} className="abby_balance_video" />
+            <video
               src={abbyTransactionVideo}
-              isSelected={selectedVideo === "transactions"}
-              videoClassName="abby_transaction_video"
+              className="abby_transaction_video"
             />
           </div>
         </div>
@@ -143,8 +138,8 @@ export default function Abby({ isMobile }: AbbyProps) {
         <div id={ABBY_SECTION_FEATURES_ID} className="abby__features">
           <div className="abby__features__left">
             <TextContent
-              title="Projects: ABBY"
-              bodyText="When Mint sunsetted, I decided to build my own app to monitor my finances. The app is still in its MVP state, and there are a ton of features I still want to add to it. Here’s a sneak peak:"
+              title="ABBY Features"
+              bodyText="ABBY connects users to their accounts via Plaid. Users can then monitor their balances in the app and see how they change over time on an easy-to-read chart. Users can also view and edit their transactions to get a better understanding of where their money is going. Check the videos on the right for a demo and the links below for ABBY's design files and codebase."
               button={
                 <>
                   <Button

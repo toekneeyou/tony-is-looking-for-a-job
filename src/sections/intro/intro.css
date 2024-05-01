@@ -80,6 +80,11 @@
   .intro__photo {
     padding: 1rem;
     z-index: 1;
+    position: relative;
+  }
+  .intro__photo .overlay {
+    background-color: var(--black);
+    pointer-events: none;
   }
 }
 
@@ -104,7 +109,12 @@
     padding-bottom: 1rem;
     z-index: 0;
   }
+  .intro__name__full_name,
+  .intro__name__job_title {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
   .intro__name .divider {
+    transition: transform 1s 0.5s ease-in-out, opacity 0.5s 0.5s ease-in-out;
     width: calc(100 * var(--vw) - 2 * var(--padding));
     max-width: calc(1440px - 2 * var(--padding));
     background-color: var(--dark-gray);
@@ -113,6 +123,29 @@
   .intro__photo {
     padding: 1rem 0;
     z-index: 1;
+    position: relative;
+  }
+  .intro__photo .overlay {
+    background-color: var(--black);
+    transform: translate(110%);
+    pointer-events: none;
+    transition: transform 0.5s 0.75s ease-in-out;
+  }
+
+  .INTRO.hide .intro__name__full_name {
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+  .INTRO.hide .intro__name__job_title {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  .INTRO.hide .intro__name .divider {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  .INTRO.hide .intro__photo .overlay {
+    transform: translateX(0);
   }
 }
 
@@ -136,7 +169,12 @@
   .intro__nav .NAV_BAR {
     background-color: var(--black);
     padding: 0 1rem;
-    transform: translateY(-2px);
+    transform: translate(0px, -2px);
+    transition: transform 0.5s 1s ease-in-out, opacity 0.5s 1s ease-in-out;
+  }
+  .INTRO.hide .NAV_BAR {
+    transform: translate(-1rem, -2px);
+    opacity: 0;
   }
 }
 
