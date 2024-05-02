@@ -37,7 +37,11 @@ export type TabProps = {
 };
 function Tab({ label, onClick, className }: TabProps) {
   return (
-    <li className={combineClasses(["tab", className])}>
+    <li
+      role="button"
+      tabIndex={0}
+      className={combineClasses(["tab", className])}
+    >
       <span onClick={onClick} role="button" className="">
         {label}
       </span>

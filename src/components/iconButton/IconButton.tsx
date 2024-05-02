@@ -20,6 +20,7 @@ export default function IconButton({
   return (
     <button
       className="ICON_BUTTON"
+      tabIndex={0}
       onClick={onClick}
       aria-label={label}
       title={label}

@@ -59,6 +59,7 @@ export default function NavBar({
                 isSelected ? "nav_list__item__selected" : undefined,
               ])}
               role="button"
+              tabIndex={0}
               key={s.label}
               onClick={onClick}
             >

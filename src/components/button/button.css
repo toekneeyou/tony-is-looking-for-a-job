@@ -14,6 +14,10 @@
   border-radius: 25px;
   height: 52px;
 }
+
+.button:focus-visible {
+  outline: 1px solid var(--pink);
+}
 .button span {
   color: var(--white);
   font-size: 14px;
@@ -24,8 +28,8 @@
   font-size: 1.25rem;
   background-image: linear-gradient(
     45deg,
-    #5bdd66,
-    #ea7bfe
+    var(--green),
+    var(--pink)
   ); /* Gradient definition */
   background-clip: text; /* Clip background to text */
   -webkit-background-clip: text; /* Clip background to text */
@@ -36,8 +40,8 @@
   font-size: 1.25rem;
   background-image: linear-gradient(
     45deg,
-    #5bdd66,
-    #ea7bfe
+    var(--green),
+    var(--pink)
   ); /* Gradient definition */
   background-clip: text; /* Clip background to text */
   -webkit-background-clip: text; /* Clip background to text */
@@ -54,7 +58,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to left, #5bdd66, #ea7bfe 90%);
+  background-image: linear-gradient(to left, var(--green), var(--pink) 90%);
   transition: transform 0.5s ease;
   transform: translate(-100%);
   opacity: 1;

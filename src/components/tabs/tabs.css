@@ -19,6 +19,9 @@
     width: max-content;
     padding: 0 1rem;
   }
+  .tab:focus-visible {
+    outline: 1px solid var(--pink);
+  }
   .tab span {
     cursor: pointer;
     display: inline-block;

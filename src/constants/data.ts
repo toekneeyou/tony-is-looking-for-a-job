@@ -19,6 +19,8 @@ import dockerLogo from "../assets/docker-logo.svg";
 import lightroomLogo from "../assets/lightroom-logo.svg";
 import photoshopLogo from "../assets/photoshop-logo.svg";
 import webcomponentLogo from "../assets/webcomponent-logo.svg";
+import reduxLogo from "../assets/redux-logo.svg";
+import postmanLogo from "../assets/postman-logo.svg";
 
 export type Section = "intro" | "about me" | "skills" | "projects";
 export type SectionDetail = {
@@ -49,11 +51,12 @@ export const skills: SkillDetail[] = [
     name: "frontend",
     tools: [
       { name: "React", icon: reactLogo },
+      { name: "Redux", icon: reduxLogo },
       { name: "TypeScript", icon: tsLogo },
       { name: "JavaScript", icon: jsLogo },
       { name: "Sass", icon: sassLogo },
-      { name: "CSS", icon: cssLogo },
       { name: "HTML", icon: htmlLogo },
+      { name: "CSS", icon: cssLogo },
       { name: "Web Components", icon: webcomponentLogo },
     ],
   },
@@ -62,6 +65,7 @@ export const skills: SkillDetail[] = [
     tools: [
       { name: "Node.js", icon: nodeLogo },
       { name: "Express.js", icon: expressLogo },
+      { name: "Postman", icon: postmanLogo },
       { name: "AWS", icon: awsLogo },
       { name: "Docker", icon: dockerLogo },
     ],
