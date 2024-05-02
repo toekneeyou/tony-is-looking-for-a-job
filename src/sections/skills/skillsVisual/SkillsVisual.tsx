@@ -69,7 +69,7 @@ function SkillsVisualItem({ skill, className = "" }: SkillsVisualItemProps) {
         {skill.tools.map((s) => {
           return (
             <li key={s.name} className="skills_visual_item__tools_list__item">
-              <img src={s.icon} />
+              <img src={s.icon} alt={`${s.name}-logo`} />
               <div className="overlay skills_visual_item__tools_list__item__overlay">
                 <span>{s.name}</span>
               </div>
