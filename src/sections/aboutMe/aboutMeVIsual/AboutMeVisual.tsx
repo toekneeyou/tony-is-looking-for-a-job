@@ -101,7 +101,7 @@ function AboutMeVisualItem({
       })}
       onMouseOver={onMouseOver}
     >
-      <img className="about_me__logo" src={src} />
+      <img className="about_me__logo" src={src} alt={`${company}-logo`} />
       <div
         className={genClassNames({
           overlay: !isMobile,

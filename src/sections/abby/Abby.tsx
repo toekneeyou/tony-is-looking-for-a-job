@@ -42,7 +42,7 @@ export default function Abby({ isMobile }: AbbyProps) {
       </div>
       <div id={ABBY_SECTION_HERO_ID} className="abby__hero">
         <div className="abby__hero__logo">
-          <img src={abbyLogo} />
+          <img src={abbyLogo} alt="Huge ABBY logo in white" />
         </div>
 
         <div className="overlay abby__hero__phone">

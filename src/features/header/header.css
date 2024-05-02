@@ -14,6 +14,7 @@
 
 .HEADER__hide {
   transform: translateY(-100%);
+  pointer-events: none;
 }
 
 .header_name span {
