@@ -27,7 +27,9 @@ export default function AboutMe({ isMobile }: AboutMeProps) {
             >
               <a
                 ref={resumeRef}
-                href={nielsenLogo}
+                href={
+                  "https://tony-is-looking-for-a-job.s3.us-east.cloud-object-storage.appdomain.cloud/Resume_20240502.pdf"
+                }
                 download={"Resume"}
                 style={{ display: "none" }}
               />
