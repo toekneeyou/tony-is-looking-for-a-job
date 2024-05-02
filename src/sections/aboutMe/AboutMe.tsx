@@ -29,6 +29,7 @@ export default function AboutMe({ isMobile }: AboutMeProps) {
                 href={
                   "https://tony-is-looking-for-a-job.s3.us-east.cloud-object-storage.appdomain.cloud/Resume_20240502.pdf"
                 }
+                target="_blank"
                 download={"Resume"}
                 style={{ display: "none" }}
               />
