@@ -17,9 +17,7 @@ export default function AboutMe({ isMobile }: AboutMeProps) {
       <div className={genClassNames({ about_me__text: true })}>
         <TextContent
           title="About Me"
-          bodyText={`Hello! I'm Tony, a frontend developer located in Los Angeles, CA. I have over four years of experience building interactive user interfaces with React. Coming from a healthcare background, I’ve always prioritized solving problems and understanding patient and user needs. For more information, you can download my resume or get in touch with me using the links in the ${
-            isMobile ? "located in the menu" : "bottom right corner"
-          }.`}
+          bodyText={`Hello! I'm Tony, a frontend developer located in Los Angeles, CA. I have over four years of experience building engaging user interfaces with React. Coming from a healthcare background, I've delivered high-quality solutions that have directly contributed to improved healthcare outcomes. I believe my diverse background is a unique asset, enabling me to approach challenges with a distinctive perspective and a deep understanding of user needs.`}
           button={
             <Button
               onClick={() => {
