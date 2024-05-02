@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { ABOUT_ME_SECTION_ID } from "../../constants/id";
 import TextContent from "../../components/textContent/TextContent";
-import nielsenLogo from "../../assets/nielsen-logo.svg";
 import { genClassNames } from "../../helpers/helpers";
 import Button from "../../components/button/Button";
 import AboutMeVisual from "./aboutMeVIsual/AboutMeVisual";
