@@ -4,7 +4,9 @@ import {
   ABBY_SECTION_HERO_ID,
   ABBY_SECTION_ID,
   ABOUT_ME_SECTION_ID,
+  ACTIONS_ID,
   APP_ID,
+  FOOTER_ID,
   INTRO_SECTION_ID,
   SKILLS_SECTION_ID,
 } from "../constants/id";
@@ -61,6 +63,34 @@ export default function useSectionObserver() {
     observer.observe(abbySection);
     observer.observe(abbyHeroSection);
     observer.observe(abbyFeaturesSection);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // Hide Actions when Footer is in view. Don't need to show the same links twice
+  useEffect(() => {
+    const app = document.getElementById(APP_ID) as HTMLElement;
+    const footer = document.getElementById(FOOTER_ID) as HTMLElement;
+    const actions = document.getElementById(ACTIONS_ID) as HTMLElement;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            actions.classList.add("hide");
+          } else {
+            actions.classList.remove("hide");
+          }
+        });
+      },
+      {
+        root: app,
+        threshold: 0.5,
+      }
+    );
+
+    observer.observe(footer);
 
     return () => {
       observer.disconnect();

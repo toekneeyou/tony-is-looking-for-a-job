@@ -8,9 +8,21 @@
   align-items: center;
   padding: 0 var(--padding-xs);
   opacity: 1;
-  transition: transform 0.5s ease-in-out, opacity 0.75s ease-in-out;
 }
 
 .ACTIONS .ICON_BUTTON:not(:last-child) {
   margin-bottom: 8px;
+}
+.ACTIONS :nth-child(1) {
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+.ACTIONS :nth-child(2) {
+  transition: transform 0.25s 0.1s ease-in-out, opacity 0.25s 0.1s ease-in-out;
+}
+.ACTIONS :nth-child(3) {
+  transition: transform 0.25s 0.2s ease-in-out, opacity 0.25s 0.2s ease-in-out;
+}
+.ACTIONS.hide .ICON_BUTTON {
+  transform: scale(0%);
+  opacity: 0;
 }

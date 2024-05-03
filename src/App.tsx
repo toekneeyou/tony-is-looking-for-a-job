@@ -11,6 +11,7 @@ import Actions from "./features/actions/Actions";
 import NavSideMenu from "./features/navSideMenu/NavSideMenu";
 import Header from "./features/header/Header";
 import Abby from "./sections/abby/Abby";
+import Footer from "./sections/footer/Footer";
 
 import "./App.css";
 
@@ -42,6 +43,7 @@ export default function App() {
       <AboutMe isMobile={isMobile} />
       <Skills isMobile={isMobile} />
       <Abby isMobile={isMobile} />
+      <Footer />
       {!isMobile && <Actions />}
     </main>
   );

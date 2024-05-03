@@ -11,6 +11,9 @@
   .about_me__text {
     padding: var(--padding);
   }
+  .about_me__text .TEXT_CONTENT h2 {
+    text-align: center;
+  }
 
   .about_me__visual {
     padding: var(--padding);
@@ -26,6 +29,9 @@
 @media (min-width: 769px) and (orientation: portrait) {
   .ABOUT_ME {
     max-width: var(--app-max-width);
+  }
+  .about_me__text .TEXT_CONTENT h2 {
+    text-align: left;
   }
   .about_me__visual {
     padding: var(--padding);
@@ -44,6 +50,9 @@
   }
   .about_me__text {
     padding: 0;
+  }
+  .about_me__text .TEXT_CONTENT h2 {
+    text-align: left;
   }
   .about_me__text .TEXT_CONTENT h2,
   .about_me__text .TEXT_CONTENT > span {
