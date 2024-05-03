@@ -39,7 +39,7 @@ export default function App() {
           setIsSideMenuOpen={setIsSideMenuOpen}
         />
       )}
-      <Intro currentSection={currentSection} isMobile={isMobile} />
+      <Intro currentSection={currentSection} />
       <AboutMe isMobile={isMobile} />
       <Skills isMobile={isMobile} />
       <Abby isMobile={isMobile} />
