@@ -19,7 +19,7 @@ export default function AboutMeVisual({
   >(null);
 
   return (
-    <div className="ABOUT_ME_VISUAL">
+    <>
       <AboutMeVisualItem
         src={nielsenLogo}
         isMobile={isMobile}
@@ -60,8 +60,8 @@ export default function AboutMeVisual({
         isMobile={isMobile}
         className="ABOUT_ME_VISUAL_ITEM__ucla"
       />
-
       <Button
+        className="ABOUT_ME_VISUAL_ITEM__button"
         onClick={() => {
           window.open("https://linkedin.com/in/tonyyu1129", "_blank");
         }}
@@ -69,7 +69,7 @@ export default function AboutMeVisual({
       >
         See more on LinkedIn
       </Button>
-    </div>
+    </>
   );
 }
 

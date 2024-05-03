@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import "./button.css";
+import { combineClasses } from "../../helpers/helpers";
 
 type ButtonProps = React.DOMAttributes<HTMLButtonElement> & {
   onClick: () => void;
@@ -7,6 +8,7 @@ type ButtonProps = React.DOMAttributes<HTMLButtonElement> & {
   leftIcon?: string;
   rightIcon?: string;
   height?: number;
+  className?: string;
 };
 
 export default function Button({
@@ -15,11 +17,12 @@ export default function Button({
   leftIcon,
   rightIcon,
   height,
+  className,
   ...attr
 }: ButtonProps) {
   return (
     <button
-      className="button"
+      className={combineClasses(["button", className ? className : undefined])}
       onClick={onClick}
       style={{ height: `${height}px` }}
       {...attr}

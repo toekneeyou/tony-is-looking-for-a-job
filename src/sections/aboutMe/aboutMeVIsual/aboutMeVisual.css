@@ -1,10 +1,5 @@
 /* mobile */
 @media (min-width: 0px) {
-  .ABOUT_ME_VISUAL {
-    display: flex;
-    flex-direction: column;
-  }
-
   .ABOUT_ME_VISUAL_ITEM {
     height: 112px;
     width: 100%;
@@ -16,9 +11,7 @@
     overflow: hidden;
     position: relative;
   }
-  .ABOUT_ME_VISUAL_ITEM:not(:last-child) {
-    margin-bottom: 1rem;
-  }
+
   .ABOUT_ME_VISUAL_ITEM .overlay {
     position: initial;
   }
@@ -42,13 +35,13 @@
   .ABOUT_ME_VISUAL_ITEM__ucla {
     background-color: #0f7bb6;
   }
-
   .about_me__logo {
     height: 90%;
     width: 90%;
     object-fit: contain;
     align-self: center;
     justify-self: center;
+    transition: transform 0.25s ease-in-out;
   }
   .about_me__description {
     padding: 0.5rem;
@@ -73,13 +66,6 @@
 }
 /* big tablet */
 @media (min-width: 769px) and (orientation: portrait) {
-  .ABOUT_ME_VISUAL {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 280px);
-    grid-template-rows: repeat(2, 280px);
-    gap: 1rem;
-  }
   .ABOUT_ME_VISUAL_ITEM {
     height: 280px;
     width: 280px;
@@ -89,11 +75,26 @@
     align-items: center;
     position: relative;
   }
+  .ABOUT_ME_VISUAL_ITEM__nielsen {
+    justify-self: flex-end;
+  }
+  .ABOUT_ME_VISUAL_ITEM__lewagon {
+    justify-self: flex-end;
+  }
+  .ABOUT_ME_VISUAL_ITEM__ucla {
+    justify-self: flex-start;
+  }
+  .ABOUT_ME_VISUAL_ITEM__tilt {
+    justify-self: flex-start;
+  }
   .ABOUT_ME_VISUAL_ITEM .overlay {
     position: absolute;
   }
-  .about_me__logo {
-    transition: transform 0.25s ease-in-out;
+  .ABOUT_ME_VISUAL_ITEM__button {
+    justify-self: center;
+    grid-area: 4 / 1 / 5 / 3;
+    width: 100%;
+    max-width: 56ch;
   }
   .about_me__description {
     text-align: center;
@@ -117,16 +118,10 @@
 }
 /* tiny laptop */
 @media (min-width: 769px) and (orientation: landscape) {
-  .ABOUT_ME_VISUAL {
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 280px);
-    grid-template-rows: repeat(3, 280px);
-    gap: 1rem;
-  }
   .ABOUT_ME_VISUAL_ITEM {
-    height: 280px;
-    width: 280px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
     margin-bottom: 0 !important;
     display: flex;
     justify-content: center;
@@ -159,39 +154,42 @@
     transform: translate(125%);
   }
   .ABOUT_ME_VISUAL_ITEM__nielsen {
-    grid-area: 1 / 2 / 2 / 3;
+    justify-self: unset;
+    grid-area: 1 / 4 / 2 / 5;
     transition: transform 0.5s ease, opacity 0.5s ease;
   }
   .ABOUT_ME_VISUAL_ITEM__lewagon {
-    grid-area: 2 / 2 / 3 / 3;
+    justify-self: unset;
+    grid-area: 2 / 4 / 3 / 5;
     transition: transform 0.5s 0.25s ease, opacity 0.5s 0.25s ease;
   }
   .ABOUT_ME_VISUAL_ITEM__ucla {
-    grid-area: 3 / 2 / 4 / 3;
-    transform: translate(calc(-100% - 1rem));
+    justify-self: unset;
+    grid-area: 3 / 3 / 4 / 4;
     transition: transform 0.5s 0.5s ease, opacity 0.5s 0.5s ease;
   }
   .ABOUT_ME_VISUAL_ITEM__tilt {
-    grid-area: 2 / 1 / 3 / 2;
+    justify-self: unset;
+    grid-area: 2 / 3 / 3 / 4;
     justify-self: flex-end;
     transition: transform 0.5s 0.25s ease, opacity 0.5s 0.25s ease;
   }
-  .ABOUT_ME_VISUAL .button {
-    grid-area: 3 / 1 / 4 / 2;
+  .ABOUT_ME_VISUAL_ITEM__button {
+    justify-self: unset;
+    grid-area: 3 / 2 / 4 / 3;
     align-self: center;
-    height: 280px;
-    width: 280px;
     padding: 0;
-    transform: translate(calc(-100% - 1rem));
     transition: transform 0.5s 0.5s ease, opacity 0.5s 0.5s ease;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
   }
-  .ABOUT_ME_VISUAL .button span {
+  .ABOUT_ME_VISUAL_ITEM__button span {
     font-size: 1rem;
   }
-  .ABOUT_ME_VISUAL .button .button__right_icon {
+  .ABOUT_ME_VISUAL_ITEM__button .button__right_icon {
     font-size: 1.25rem;
   }
-
   .ABOUT_ME.hide .ABOUT_ME_VISUAL_ITEM__nielsen {
     transform: translateX(100%);
   }
@@ -199,13 +197,13 @@
     transform: translateY(-100%);
   }
   .ABOUT_ME.hide .ABOUT_ME_VISUAL_ITEM__ucla {
-    transform: translate(calc(-100% - 1rem), -100%);
+    transform: translateY(-100%);
   }
   .ABOUT_ME.hide .ABOUT_ME_VISUAL_ITEM__tilt {
     transform: translateX(-100%);
   }
-  .ABOUT_ME.hide .ABOUT_ME_VISUAL .button {
-    transform: translate(-200%);
+  .ABOUT_ME.hide .ABOUT_ME_VISUAL_ITEM__button {
+    transform: translate(-100%);
   }
 }
 /* laptop/desktop */

@@ -36,7 +36,7 @@
     padding: 1rem;
     padding-top: 0;
   }
-  .intro__photo .overlay{
+  .intro__photo .overlay {
     display: none;
   }
   .intro__photo img {
@@ -171,10 +171,12 @@
     background-color: var(--black);
     padding: 0 1rem;
     transform: translate(0px, -2px);
+  }
+  .intro__nav .NAV_BAR .nav_list {
     transition: transform 0.5s 1s ease-in-out, opacity 0.5s 1s ease-in-out;
   }
-  .INTRO.hide .NAV_BAR {
-    transform: translate(-1rem, -2px);
+  .INTRO.hide .NAV_BAR .nav_list {
+    transform: translate(-1rem);
     opacity: 0;
   }
 }
