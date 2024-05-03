@@ -6,10 +6,9 @@ import { SectionDetail } from "../../constants/data";
 
 type IntroProps = {
   currentSection: SectionDetail;
-  isMobile: boolean;
 };
 
-export default function Intro({ currentSection, isMobile }: IntroProps) {
+export default function Intro({ currentSection }: IntroProps) {
   return (
     <section id={INTRO_SECTION_ID} className="INTRO hide">
       <div className="intro__name">
@@ -26,11 +25,10 @@ export default function Intro({ currentSection, isMobile }: IntroProps) {
         />
         <div className="overlay" />
       </div>
-      {!isMobile && (
-        <div className="intro__nav">
-          <NavBar currentSection={currentSection} />
-        </div>
-      )}
+
+      <div className="intro__nav">
+        <NavBar currentSection={currentSection} />
+      </div>
     </section>
   );
 }
