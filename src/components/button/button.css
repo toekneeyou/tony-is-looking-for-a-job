@@ -58,7 +58,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to left, var(--green), var(--pink) 90%);
+  background-image: linear-gradient(to left, var(--pink), var(--green) 90%);
   transition: transform 0.5s ease;
   transform: translate(-100%);
   opacity: 1;

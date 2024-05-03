@@ -24,8 +24,10 @@
   .intro__name .divider {
     width: 100%;
     margin: 0.75rem 0 1rem 0;
-    height: 1px;
-    background-color: var(--white);
+    height: 2px;
+    border-radius: 25px;
+    background-color: var(--pink);
+    box-shadow: 0px 0px 10px var(--white);
   }
   /* intro photo */
   .intro__photo {
@@ -74,7 +76,7 @@
   .intro__name .divider {
     width: calc(100 * var(--vw) - 2 * var(--padding));
     max-width: var(--app-max-width);
-    background-color: var(--dark-gray);
+    /* background-color: var(--dark-gray); */
   }
   /* intro photo */
   .intro__photo {
@@ -117,7 +119,7 @@
     transition: transform 1s 0.5s ease-in-out, opacity 0.5s 0.5s ease-in-out;
     width: calc(100 * var(--vw) - 2 * var(--padding));
     max-width: calc(var(--app-max-width) - 2 * var(--padding));
-    background-color: var(--dark-gray);
+    /* background-color: var(--dark-gray); */
   }
   /* intro photo */
   .intro__photo {
