@@ -1,6 +1,7 @@
 export const APP_ID = "app_id";
 export const HEADER_ID = "header_id";
 export const ACTIONS_ID = "actions_id";
+export const FOOTER_ID = "footer_id";
 
 export const INTRO_SECTION_ID = "intro_section_id";
 export const ABOUT_ME_SECTION_ID = "about_me_section_id";
