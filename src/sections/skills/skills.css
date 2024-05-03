@@ -11,6 +11,9 @@
   .skills__text {
     padding: var(--padding);
   }
+  .skills__text .TEXT_CONTENT h2 {
+    text-align: center;
+  }
 
   .skills__visual {
     padding: var(--padding) 0;
@@ -41,6 +44,9 @@
     align-items: flex-start;
     padding: 0;
   }
+  .skills__text .TEXT_CONTENT h2 {
+    text-align: left;
+  }
   .skills__visual {
     grid-area: 1 / 1 / 2 / 2;
     width: max-content;
@@ -49,6 +55,9 @@
 }
 /* laptop/desktop */
 @media (min-width: 1025px) {
+  .skills__text .TEXT_CONTENT h2 {
+    text-align: left;
+  }
 }
 /* huge */
 @media (min-width: 1440px) {
