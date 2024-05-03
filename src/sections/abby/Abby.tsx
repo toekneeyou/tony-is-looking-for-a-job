@@ -36,7 +36,7 @@ export default function Abby({ isMobile }: AbbyProps) {
     <section id={ABBY_SECTION_ID} className="ABBY">
       <div className="abby__description">
         <TextContent
-          title="PROJECTS: ABBY"
+          title="PROJECT SPOTLIGHT: ABBY"
           bodyText="When Mint sunsetted, I decided to build my own app to monitor my finances. The app is still in its MVP state, and there are a ton of features I still want to add to it. Here’s a sneak peak:"
         />
       </div>

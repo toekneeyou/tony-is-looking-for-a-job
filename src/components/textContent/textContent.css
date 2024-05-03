@@ -12,9 +12,11 @@
     font-size: 1rem;
   }
   .TEXT_CONTENT .divider {
-    height: 1px;
-    background-color: var(--dark-gray);
+    height: 2px;
+    background-color: var(--pink);
     margin: 1rem 0;
+    box-shadow: 0px 0px 10px var(--white);
+    border-radius: 25px;
   }
   .TEXT_CONTENT span {
     display: inline-block;
