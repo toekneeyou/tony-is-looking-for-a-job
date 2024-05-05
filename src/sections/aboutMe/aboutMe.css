@@ -2,6 +2,7 @@
 @media (min-width: 0px) {
   .ABOUT_ME {
     padding: 2rem var(--padding);
+    padding-top: var(--mobile-header-height);
     background-color: var(--black);
     display: grid;
     grid-auto-flow: row;
