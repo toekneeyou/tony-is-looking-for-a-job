@@ -4,6 +4,9 @@ import TextContent from "../../components/textContent/TextContent";
 import Button from "../../components/button/Button";
 import AboutMeVisual from "./aboutMeVIsual/AboutMeVisual";
 import "./aboutMe.css";
+const resumeLink =
+  process.env.RESUME_LINK ??
+  "https://tony-is-looking-for-a-job.s3.us-east.cloud-object-storage.appdomain.cloud/Resume_20240502.pdf";
 
 type AboutMeProps = {
   isMobile: boolean;
@@ -24,9 +27,7 @@ export default function AboutMe({ isMobile }: AboutMeProps) {
           >
             <a
               ref={resumeRef}
-              href={
-                "https://tony-is-looking-for-a-job.s3.us-east.cloud-object-storage.appdomain.cloud/Resume_20240502.pdf"
-              }
+              href={resumeLink}
               target="_blank"
               download={"Resume"}
               style={{ display: "none" }}
