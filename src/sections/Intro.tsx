@@ -11,9 +11,14 @@ export default function Intro({}: IntroProps) {
   return (
     <div
       id={INTRO_SECTION_ID}
-      className="min-h-[var(--100vh)] max-h-[var(--100vh)] flex"
+      className="min-h-[var(--100vh)] max-h-[var(--100vh)] flex py-[var(--mobile-header-height)]"
     >
-      <div className="hidden xl:flex flex-col justify-between py-[5rem] lg:z-10">
+      <div
+        className={classNames(
+          "hidden flex-col justify-between py-[5rem] lg:z-10",
+          ["xl:flex"]
+        )}
+      >
         <h1
           id={INTRO_TONY_ID}
           className={classNames(
@@ -52,14 +57,19 @@ export default function Intro({}: IntroProps) {
           </div>
         </div>
       </div>
-      <div className="absolute xl:static top-[var(--mobile-header-height)] bottom-0 z-0">
+      <div
+        className={classNames(
+          "absolute top-[var(--mobile-header-height)] bottom-0 z-0",
+          ["xl:static"]
+        )}
+      >
         <img
           className="h-full object-cover"
           src={tony}
           alt="Photo of author wearing a red jacket standing in front of a snow-capped mountain"
         />
       </div>
-      <div className="hidden xl:flex py-[5rem]">
+      <div className={classNames("hidden py-[5rem]", ["xl:flex"])}>
         <h1
           id={INTRO_YU_ID}
           className={classNames(
@@ -70,15 +80,35 @@ export default function Intro({}: IntroProps) {
         </h1>
       </div>
       {/* mobile */}
-      <div className="xl:hidden w-full flex z-10 flex-col justify-end items-center py-[2rem] lg:py-[3rem]">
-        <h1 className="josefin_sans_bold leading-none text-[6rem] md:text-[8rem] lg:text-[10rem]">
+      <div
+        className={classNames(
+          "w-full flex z-10 flex-col justify-end items-center",
+          ["xl:hidden"]
+        )}
+      >
+        <h1
+          className={classNames("josefin_sans_bold leading-none text-[6rem]", [
+            "md:text-[8rem]",
+            "lg:text-[10rem]",
+          ])}
+        >
           TONY
         </h1>
-        <h1 className="josefin_sans_bold leading-none text-[6rem] md:text-[8rem] lg:text-[10rem]">
+        <h1
+          className={classNames("josefin_sans_bold leading-none text-[6rem]", [
+            "md:text-[8rem]",
+            "lg:text-[10rem]",
+          ])}
+        >
           YU
         </h1>
         <div className="h-[2px] bg-[var(--pink)] shadow-pink-glow w-[50vw] my-[1rem]" />
-        <h3 className="font-bold md:text-[1.5rem] lg:text-[2rem]">
+        <h3
+          className={classNames("font-bold", [
+            "md:text-[1.5rem]",
+            "lg:text-[2rem]",
+          ])}
+        >
           Frontend Developer
         </h3>
       </div>

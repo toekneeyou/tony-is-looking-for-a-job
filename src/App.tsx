@@ -1,8 +1,9 @@
-import Intro from "./sections/Intro";
-import { APP_ID } from "./constants/id";
-
 import "./index.css";
+
+import Intro from "./sections/Intro";
 import AboutMe from "./sections/aboutMe/AboutMe";
+import Skills from "./sections/skills/Skills";
+import { APP_ID } from "./constants/id";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
     >
       <Intro />
       <AboutMe />
+      <Skills />
     </main>
   );
 }
