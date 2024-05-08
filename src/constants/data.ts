@@ -18,9 +18,10 @@ import sassLogo from "../assets/sass-logo.svg";
 import dockerLogo from "../assets/docker-logo.svg";
 import lightroomLogo from "../assets/lightroom-logo.svg";
 import photoshopLogo from "../assets/photoshop-logo.svg";
-import webcomponentLogo from "../assets/webcomponent-logo.svg";
 import reduxLogo from "../assets/redux-logo.svg";
 import postmanLogo from "../assets/postman-logo.svg";
+import tailwindLogo from "../assets/tailwind-logo.svg";
+import nextLogo from "../assets/next-logo.svg";
 
 export type Section = "intro" | "about me" | "skills" | "projects";
 export type SectionDetail = {
@@ -54,10 +55,11 @@ export const skills: SkillDetail[] = [
       { name: "Redux", icon: reduxLogo },
       { name: "TypeScript", icon: tsLogo },
       { name: "JavaScript", icon: jsLogo },
+      { name: "Tailwind", icon: tailwindLogo },
       { name: "Sass", icon: sassLogo },
       { name: "HTML", icon: htmlLogo },
       { name: "CSS", icon: cssLogo },
-      { name: "Web Components", icon: webcomponentLogo },
+      { name: "Next.js", icon: nextLogo },
     ],
   },
   {
