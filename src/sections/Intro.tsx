@@ -13,7 +13,7 @@ export default function Intro({}: IntroProps) {
       id={INTRO_SECTION_ID}
       className="min-h-[var(--100vh)] max-h-[var(--100vh)] flex"
     >
-      <div className="hidden xl:flex flex-col justify-between py-20 lg:z-10">
+      <div className="hidden xl:flex flex-col justify-between py-[5rem] lg:z-10">
         <h1
           id={INTRO_TONY_ID}
           className={classNames(
@@ -24,12 +24,12 @@ export default function Intro({}: IntroProps) {
           TONY
         </h1>
         <div>
-          <h2 className="translate-x-20 font-bold text-[24px] select-none">
+          <h2 className="translate-x-[5rem] font-bold text-[24px] select-none">
             Frontend Developer
           </h2>
-          <div className="flex translate-x-20 align-middle mt-4">
-            <div className="divider w-[6rem] my-4" />
-            <div className="centered space-x-3 ml-4">
+          <div className="flex translate-x-[5rem] align-middle mt-4">
+            <div className="divider w-[6rem] my-[1rem]" />
+            <div className="centered space-x-[0.75rem] ml-[1rem]">
               <IconButton
                 iconString="mail"
                 onClick={() => {
@@ -59,25 +59,25 @@ export default function Intro({}: IntroProps) {
           alt="Photo of author wearing a red jacket standing in front of a snow-capped mountain"
         />
       </div>
-      <div className="hidden xl:flex py-20">
+      <div className="hidden xl:flex py-[5rem]">
         <h1
           id={INTRO_YU_ID}
           className={classNames(
-            "josefin_sans_bold self-end -translate-x-20 text-[200px] leading-none select-none"
+            "josefin_sans_bold self-end -translate-x-[5rem] text-[200px] leading-none select-none"
           )}
         >
           YU
         </h1>
       </div>
       {/* mobile */}
-      <div className="xl:hidden w-full flex z-10 flex-col justify-end items-center py-[1rem] md:py-[2rem] lg:py-[3rem]">
+      <div className="xl:hidden w-full flex z-10 flex-col justify-end items-center py-[2rem] lg:py-[3rem]">
         <h1 className="josefin_sans_bold leading-none text-[6rem] md:text-[8rem] lg:text-[10rem]">
           TONY
         </h1>
         <h1 className="josefin_sans_bold leading-none text-[6rem] md:text-[8rem] lg:text-[10rem]">
           YU
         </h1>
-        <div className="h-[2px] bg-[var(--pink)] shadow-pink-glow w-[50vw] my-4" />
+        <div className="h-[2px] bg-[var(--pink)] shadow-pink-glow w-[50vw] my-[1rem]" />
         <h3 className="font-bold md:text-[1.5rem] lg:text-[2rem]">
           Frontend Developer
         </h3>
