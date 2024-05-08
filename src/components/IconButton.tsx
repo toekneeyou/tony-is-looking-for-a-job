@@ -1,6 +1,3 @@
-import { useState } from "react";
-import "./iconButton.css";
-
 type IconButtonProps = {
   onClick: () => void;
   iconString?: string;
@@ -16,20 +13,19 @@ export default function IconButton({
   label,
   showLabel,
 }: IconButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <button
-      className="ICON_BUTTON"
+      className="group icon-button transition-all hover:translate-y-[4px] opacity-95 hover:opacity-100"
       tabIndex={0}
       onClick={onClick}
       aria-label={label}
       title={label}
-      onMouseOver={() => setIsHovered(true)}
-      onMouseOut={() => setIsHovered(false)}
     >
-      {!!IconEl && <IconEl isGradient={isHovered} />}
+      {!!IconEl && <IconEl />}
       {!!iconString && (
-        <span className="material-symbols-outlined">{iconString}</span>
+        <span className="material-symbols-outlined transition-all text-[30px] group-hover:text-white group-hover:drop-shadow-pink-glow">
+          {iconString}
+        </span>
       )}
       {showLabel && <span>{label}</span>}
     </button>

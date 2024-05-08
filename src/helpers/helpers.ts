@@ -1,10 +1,28 @@
-export const combineClasses = (classes: (string | undefined | null)[]) => {
-  return classes.filter((c) => c !== null).join(" ");
-};
-
-export const genClassNames = (classes: { [className: string]: boolean }) => {
-  return Object.entries(classes)
-    .filter(([_, b]) => b)
-    .map(([c, _]) => c)
-    .join(" ");
+export const classNames = (
+  classStringOrObject: string | { [className: string]: boolean },
+  classObject?: { [className: string]: boolean }
+) => {
+  let classNames: string[] = [];
+  if (typeof classStringOrObject == "string") {
+    classStringOrObject
+      .trim()
+      .split(" ")
+      .forEach((c) => {
+        classNames.push(c.trim());
+      });
+  } else {
+    for (let string in classStringOrObject) {
+      if (classStringOrObject[string]) {
+        classNames.push(string);
+      }
+    }
+  }
+  if (classObject) {
+    for (let string in classObject) {
+      if (classObject[string]) {
+        classNames.push(string);
+      }
+    }
+  }
+  return classNames.join(" ");
 };
