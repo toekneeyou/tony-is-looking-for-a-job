@@ -1,10 +1,8 @@
 export const classNames = (
-  classOne: string | string[] | { [className: string]: boolean },
-  classTwo?: string | string[] | { [className: string]: boolean },
-  classThree?: string | string[] | { [className: string]: boolean }
+  ...args: Array<string | string[] | { [className: string]: boolean }>
 ) => {
   let classNames: string[] = [];
-  [classOne, classTwo, classThree].forEach((c) => {
+  args.forEach((c) => {
     if (typeof c === "string") {
       classNames.push(c.trim());
     } else if (Array.isArray(c)) {
