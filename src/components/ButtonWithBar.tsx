@@ -23,7 +23,7 @@ export default function ButtonWithBar({
     >
       <div
         className={classNames(
-          "divider flex-grow mr-[1rem] transition-transform duration-300",
+          "divider flex-grow mr-1rem transition-transform duration-300",
           {
             "-translate-x-[100%]": isHovered,
           }
@@ -32,7 +32,7 @@ export default function ButtonWithBar({
       <button
         aria-label={label}
         className={classNames(
-          "centered py-[8px] space-x-2 z-10 bg-my-black relative",
+          "centered py-[8px] space-x-2 z-10 bg-app-black relative",
           [
             "after:content-[''] after:w-full after:absolute after:h-[2px] after:bottom-[0] after:bg-pink after:drop-shadow-pink-glow",
             "after:transition-transform after:duration-300",

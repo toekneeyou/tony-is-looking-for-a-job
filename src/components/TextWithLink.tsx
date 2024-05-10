@@ -1,48 +1,41 @@
 import { ReactNode } from "react";
 import { classNames } from "../helpers/helpers";
 
-type TextWithButtonProps = {
+type TextWithLinkProps = {
   text: string;
-  button: ReactNode;
+  button?: ReactNode;
   title: string;
   containerClass?: string;
-  h2Class?: string;
   textClass?: string;
 };
 
-export default function TextWithButton({
+export default function TextWithLink({
   text,
   button,
   containerClass = "",
-  h2Class = "",
   textClass = "",
-  title,
-}: TextWithButtonProps) {
+}: TextWithLinkProps) {
   return (
     <div
       className={classNames(
-        "p-[1rem] flex flex-col justify-center items-center",
-        ["xl:p-0"],
+        "flex flex-col justify-center items-start",
+        ["p-1rem", "lg:p-0"],
         { [containerClass]: !!containerClass }
       )}
     >
-      <h2
+      <p
         className={classNames(
-          "josefin_sans_bold leading-none text-[1.25rem] text-center !font-medium mb-[2rem]",
-          ["xl:text-[128px]"],
-          { [h2Class]: !!h2Class }
+          "max-w-text font-semibold opacity-60",
+          ["text-1rem", "xl:text-[1.25rem]"],
+          {
+            "mb-2rem": !!button,
+            [textClass]: !!textClass,
+          }
         )}
       >
-        {title}
-      </h2>
-      <div
-        className={classNames("max-w-[52ch]", ["xl:max-w-[40ch]"], {
-          [textClass]: !!textClass,
-        })}
-      >
-        <p className={classNames("mb-[2rem]")}>{text}</p>
-        {button}
-      </div>
+        {text}
+      </p>
+      {button}
     </div>
   );
 }
