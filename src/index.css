@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  .h2 {
+    @apply josefin-sans leading-none text-[1.5rem] text-center font-medium lg:text-[8rem];
+  }
+  .h3 {
+    @apply josefin-sans font-bold leading-none text-[1rem] lg:text-2rem;
+  }
   .icon-button {
     @apply appearance-none centered h-[30px] w-[30px] p-0;
   }
@@ -34,6 +40,7 @@
   --pink: #ea7bfe;
   --green: #5bdd66;
   --mobile-header-height: 52px;
+  --tablet-header-height: 64px;
   --header-height: 76px;
   --app-max-width: 1512px;
 
@@ -53,14 +60,15 @@
 }
 
 html,
-body {
+body,
+#root {
   margin: 0;
   height: 100%;
+  overflow: hidden;
 }
 
-.josefin_sans_bold {
+.josefin-sans {
   font-family: "Josefin Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 700;
   font-style: normal;
 }
