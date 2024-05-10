@@ -1,9 +1,13 @@
+import { classNames } from "../helpers/helpers";
+
 type IconButtonProps = {
   onClick: () => void;
   iconString?: string;
   IconEl?: any;
   label?: string;
   showLabel?: string;
+  className?: string;
+  disabled?: boolean;
 };
 
 export default function IconButton({
@@ -12,10 +16,21 @@ export default function IconButton({
   IconEl,
   label,
   showLabel,
+  className = "",
+  disabled,
 }: IconButtonProps) {
   return (
     <button
-      className="group icon-button transition-all hover:translate-y-[4px] opacity-95 hover:opacity-100"
+      disabled={disabled}
+      className={classNames(
+        "group icon-button",
+        "transition-all opacity-95",
+        "hover:translate-y-[4px] hover:opacity-100",
+        {
+          [className]: !!className,
+          "pointer-events-none !opacity-25": !!disabled,
+        }
+      )}
       tabIndex={0}
       onClick={onClick}
       aria-label={label}
@@ -23,7 +38,13 @@ export default function IconButton({
     >
       {!!IconEl && <IconEl />}
       {!!iconString && (
-        <span className="material-symbols-outlined transition-all text-[30px] group-hover:text-white group-hover:drop-shadow-pink-glow">
+        <span
+          className={classNames(
+            "material-symbols-outlined",
+            "transition-all text-[30px]",
+            "group-hover:text-white group-hover:drop-shadow-pink-glow"
+          )}
+        >
           {iconString}
         </span>
       )}
