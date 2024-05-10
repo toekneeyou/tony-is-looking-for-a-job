@@ -9,38 +9,61 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
   return (
     <ul
       role="list"
-      className="p-[1rem] w-full grid gap-[1rem] grid-cols-1 xl:grid-cols-3 xl:grid-rows-3 xl:row-start-3 xl:row-end-6 xl:col-start-2 xl:col-end-5"
+      className={classNames(
+        "w-full",
+        "lg:row-start-3 lg:row-end-6 lg:col-start-2 lg:col-end-5",
+        ["grid grid-cols-1 gap-[1rem]", "lg:grid-cols-3 lg:grid-rows-3"],
+        ["p-1rem", "lg:p-0"]
+      )}
     >
       <AboutMeVisualItem
         src={nielsenLogo}
         company="Gracenote, a Nielsen Company"
         title="Sr. Software Engineer"
         date="2020 - Present"
-        className="bg-gradient-to-br from-[#5030aa] via-[#304e69] to-[#1f2c66] xl:col-start-3 xl:col-end-4 xl:row-start-1 xl:row-end-2"
+        className={classNames(
+          "bg-gradient-to-br from-[#5030aa] via-[#304e69] to-[#1f2c66]",
+          "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2"
+        )}
       />
       <AboutMeVisualItem
         src={tiltLogo}
         company="Tilt"
         title="Software Engineer"
         date="2020-2021"
-        className="bg-my-white text-my-black xl:row-start-2 xl:row-end-3 xl:col-start-2 xl:col-end-3"
+        className={classNames(
+          "bg-app-white text-app-black",
+          "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3"
+        )}
       />
       <AboutMeVisualItem
         src={lewagonLogo}
         company="Le Wagon"
         title="Web Development Program"
         date="2019"
-        className="bg-[#e71005] xl:row-start-2 xl:row-end-3 xl:col-start-3 xl:col-end-4"
+        className={classNames(
+          "bg-[#e71005]",
+          "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4"
+        )}
       />
       <AboutMeVisualItem
         src={uclaLogo}
         company="UCLA Jules Stein Eye Institute"
         title="Ophthalmic Technician II"
         date="2016 - 2019"
-        className="bg-[#0f7bb6] xl:row-start-3 xl:row-end-4 xl:col-start-2 xl:col-end-3"
+        className={classNames(
+          "bg-[#0f7bb6]",
+          "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3"
+        )}
       />
       <button
-        className="flex w-full max-w-[52ch] items-center justify-center h-[7rem] xl:h-auto xl:aspect-square border-2 border-my-white justify-self-center xl:row-start-3 xl:row-end-4"
+        className={classNames(
+          "centered w-full max-w-text border-2 border-app-white justify-self-center ",
+          "lg:aspect-square",
+          "lg:row-start-3 lg:row-end-4",
+          ["h-[7rem]", "lg:h-auto"],
+          ["rounded-3xl", "lg:rounded-none"]
+        )}
         onClick={() => {
           window.open("https://linkedin.com/in/tonyyu1129", "_blank");
         }}
@@ -69,18 +92,34 @@ function AboutMeVisualItem({
   return (
     <li
       className={classNames(
-        "overflow-hidden group relative w-full max-w-[52ch] h-[7rem] grid grid-cols-[6rem_1fr] xl:grid-cols-1 items-center gap-[0.5rem] justify-self-center xl:aspect-square xl:h-auto",
+        "overflow-hidden group relative w-full max-w-text items-center gap-[0.5rem] justify-self-center",
+        "lg:aspect-square",
+        ["h-[7rem]", "lg:h-auto"],
+        ["rounded-3xl", "lg:rounded-none"],
+        ["grid grid-cols-[6rem_1fr]", "lg:grid-cols-1"],
         {
           [className]: !!className,
         }
       )}
     >
       <img
-        className="w-[5rem] justify-self-center xl:w-[85%] transition-transform xl:duration-500 group-hover:translate-x-[110%]"
+        className={classNames(
+          "justify-self-center",
+          ["w-[5rem]", "lg:w-[85%]"],
+          [
+            "lg:duration-500 lg:transition-transform lg:group-hover:translate-x-[110%]",
+          ]
+        )}
         src={src}
         alt={`${company}-logo`}
       />
-      <div className="flex flex-col xl:absolute xl:top-0 xl:left-0 xl:w-full xl:h-full xl:centered xl:transition-transform xl:duration-500 xl:translate-x-[-100%] group-hover:translate-x-0">
+      <div
+        className={classNames(
+          "flex flex-col",
+          "lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full lg:centered",
+          "lg:transition-transform lg:duration-500 lg:translate-x-[-100%] lg:group-hover:translate-x-0"
+        )}
+      >
         <span className="font-bold">{title}</span>
         <span className="text-[14px] font-medium">{company}</span>
         <span className="text-[14px] font-medium">{date}</span>

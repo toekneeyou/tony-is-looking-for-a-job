@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import { ABOUT_ME_SECTION_ID, ABOUT_ME_TONY_IMG_ID } from "../../constants/id";
+import { ABOUT_ME_ID, ABOUT_ME_TONY_IMG_ID } from "../../constants/id";
 import AboutMeVisual from "./AboutMeVisual";
 import tonyLa from "../../assets/tony-la.jpg";
 import ButtonWithBar from "../../components/ButtonWithBar";
-import TextWithButton from "../../components/TextWithLink";
+import TextWithLink from "../../components/TextWithLink";
 import { classNames } from "../../helpers/helpers";
 
 const resumeLink =
@@ -15,25 +15,39 @@ export default function AboutMe({}: AboutMeProps) {
   const resumeRef = useRef<HTMLAnchorElement>(null);
   return (
     <section
-      id={ABOUT_ME_SECTION_ID}
+      title="About Me"
+      id={ABOUT_ME_ID}
       className={classNames(
-        "w-full space-y-[2rem] py-[var(--mobile-header-height)]",
-        {
-          "xl:space-y-0 xl:mt-[10rem] xl:p-[5rem]": true,
-          "xl:grid xl:grid-cols-4 xl:grid-rows-5 xl:gap-[1rem]": true,
-        }
+        "w-full",
+        ["space-y-[2rem]", "lg:space-y-0"],
+        ["mt-[var(--mobile-header-height)]", "lg:mt-0"],
+        ["lg:portrait:px-2rem", "lg:landscape:px-5rem"],
+        ["py-[var(--mobile-header-height)]", "lg:py-0"],
+        ["lg:grid lg:grid-cols-4 lg:grid-rows-5 lg:gap-[1rem]"]
       )}
     >
-      <TextWithButton
-        containerClass="xl:col-start-3 xl:col-end-5 xl:row-start-1 xl:row-end-3 xl:grid xl:grid-cols-2 xl:grid-rows-2"
+      <h2
+        className={classNames(
+          "h2",
+          "lg:col-start-3 lg:col-end-5 lg:row-start-1 lg:row-end-2"
+        )}
+      >
+        About
+      </h2>
+      <TextWithLink
+        containerClass={classNames(
+          "lg:w-full",
+          "lg:col-start-1 lg:col-end-5 lg:row-start-2 lg:row-end-3 lg:justify-self-end lg:self-start",
+          "lg:flex lg:items-end"
+        )}
+        textClass={classNames("lg:justify-self-end", "lg:max-w-small-text")}
         title="About"
         text="Hello! I'm Tony, a frontend developer based in Los Angeles, CA. I've
             been in this field for over 4 years, and I love building engaging,
             intuitive, and beautiful user interfaces."
-        textClass="xl:justify-self-end xl:self-start xl:col-start-1 xl:col-end-3"
-        h2Class="xl:self-start"
         button={
           <ButtonWithBar
+            className="lg:col-start-1 lg:col-end-5 lg:row-start-2 lg:row-end-3"
             onClick={() => {
               resumeRef.current?.click();
             }}
@@ -54,8 +68,8 @@ export default function AboutMe({}: AboutMeProps) {
       <div
         id={ABOUT_ME_TONY_IMG_ID}
         className={classNames(
-          "hidden col-start-1 col-end-3 row-start-1 row-end-4",
-          { "xl:block": true, "xl:p-0": true }
+          ["col-start-1 col-end-3 row-start-1 row-end-4 z-10"],
+          ["hidden", "lg:block"]
         )}
       >
         <img
