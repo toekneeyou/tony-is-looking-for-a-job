@@ -117,6 +117,7 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
         className={classNames(
           "ucla-visual-item",
           "bg-[#0f7bb6]",
+          "delay-200",
           "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3"
         )}
       />
@@ -126,7 +127,8 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
           "centered w-full max-w-text border-2 border-app-white justify-self-center ",
           "lg:aspect-square",
           "lg:row-start-3 lg:row-end-4",
-          "lg:transition-[opacity,transform] lg:delay-200 lg:duration-300 lg:will-change[opacity,transform]",
+          "lg:transition-[opacity,transform,box-shadow] lg:duration-300 lg:will-change[opacity,transform]",
+          "lg:hover:shadow-pink-glow lg:hover:translate-y-[4px]",
           ["h-[7rem]", "lg:h-auto"],
           ["rounded-3xl", "lg:rounded-none"]
         )}
