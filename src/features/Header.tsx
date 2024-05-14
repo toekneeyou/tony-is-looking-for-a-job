@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import IconButton from "../components/IconButton";
 import { APP_ID, HEADER_ID, HERO_ID } from "../constants/id";
 import { classNames } from "../helpers/helpers";
@@ -28,6 +28,12 @@ export default function Header({
       observer.disconnect();
     };
   });
+
+  const scrollToHero = (event: SyntheticEvent) => {
+    event.preventDefault();
+    document.getElementById(HERO_ID)!.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header
       id={HEADER_ID}
@@ -51,7 +57,9 @@ export default function Header({
           "md:text-[1.25rem]",
         ])}
       >
-        TONY YU
+        <a href={`#${HERO_ID}`} onClick={scrollToHero}>
+          TONY YU
+        </a>
       </h1>
       <IconButton
         onClick={toggleSideMenu}
