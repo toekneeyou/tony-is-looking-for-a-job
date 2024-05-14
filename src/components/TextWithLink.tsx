@@ -18,14 +18,14 @@ export default function TextWithLink({
   return (
     <div
       className={classNames(
-        "flex flex-col justify-center items-start",
+        "flex flex-col justify-center items-center",
         ["p-1rem", "lg:p-0"],
         { [containerClass]: !!containerClass }
       )}
     >
       <p
         className={classNames(
-          "max-w-text font-semibold opacity-60",
+          "font-semibold opacity-60",
           ["text-1rem", "xl:text-[1.25rem]"],
           {
             "mb-2rem": !!button,

@@ -29,7 +29,7 @@ export default function Hero({}: HeroProps) {
         <h1
           className={classNames(
             "josefin-sans font-bold leading-none select-none translate-x-[5rem]",
-            ["text-[10rem]", "xl:text-[12rem]"]
+            ["text-[10rem]", "lg:text-[11rem]", "xl:text-[12rem]"]
           )}
         >
           TONY

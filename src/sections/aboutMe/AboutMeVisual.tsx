@@ -18,32 +18,32 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0");
-            entry.target.classList.add("opacity-1");
+            entry.target.classList.remove("lg:opacity-0");
+            entry.target.classList.add("lg:opacity-1");
             if (
               entry.target.classList.contains("nielsen-visual-item") ||
               entry.target.classList.contains("lewagon-visual-item") ||
               entry.target.classList.contains("ucla-visual-item")
             ) {
-              entry.target.classList.remove("translate-x-[5rem]");
-              entry.target.classList.add("translate-x-0");
+              entry.target.classList.remove("lg:translate-x-[5rem]");
+              entry.target.classList.add("lg:translate-x-0");
             } else {
-              entry.target.classList.remove("-translate-x-[5rem]");
-              entry.target.classList.add("translate-x-0");
+              entry.target.classList.remove("lg:-translate-x-[5rem]");
+              entry.target.classList.add("lg:translate-x-0");
             }
           } else {
-            entry.target.classList.remove("translate-x-0");
-            entry.target.classList.add("opacity-0");
+            entry.target.classList.remove("lg:translate-x-0");
+            entry.target.classList.add("lg:opacity-0");
             if (
               entry.target.classList.contains("nielsen-visual-item") ||
               entry.target.classList.contains("lewagon-visual-item") ||
               entry.target.classList.contains("ucla-visual-item")
             ) {
-              entry.target.classList.add("translate-x-[5rem]");
-              entry.target.classList.remove("opacity-1");
+              entry.target.classList.add("lg:translate-x-[5rem]");
+              entry.target.classList.remove("lg:opacity-1");
             } else {
-              entry.target.classList.remove("translate-x-0");
-              entry.target.classList.add("-translate-x-[5rem]");
+              entry.target.classList.remove("lg:translate-x-0");
+              entry.target.classList.add("lg:-translate-x-[5rem]");
             }
           }
         });

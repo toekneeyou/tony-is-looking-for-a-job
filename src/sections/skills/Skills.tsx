@@ -27,9 +27,14 @@ export default function Skills({}: SkillsProps) {
       >
         Skills
       </h2>
+
       <TextWithButton
         title="Skills"
-        containerClass="lg:col-start-5 lg:col-end-9 lg:row-start-1 lg:row-end-3"
+        containerClass={classNames(
+          ["max-w-text"],
+          ["mx-auto", "lg:mx-0"],
+          "lg:col-start-5 lg:col-end-9 lg:row-start-1 lg:row-end-3"
+        )}
         text="I focus on creating user interfaces with React and the extensive JavaScript ecosystem. Though my expertise is mainly in frontend development, I've been involved in different phases of the development cycle and I'm always looking to expand my knowledge. Here are some of the recent tools I've used."
         button={
           <ButtonWithBar

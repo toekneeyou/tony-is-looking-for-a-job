@@ -19,10 +19,10 @@ export default function AboutMe({}: AboutMeProps) {
       title="About Me"
       id={ABOUT_ME_ID}
       className={classNames(
-        "w-full",
         "lg:grid lg:grid-cols-4 lg:grid-rows-5 lg:gap-[1rem]",
+        ["w-full max-w-text", "lg:max-w-full"],
         ["space-y-[2rem]", "lg:space-y-0"],
-        ["mt-[var(--mobile-header-height)]", "lg:mt-0"],
+        ["mt-[var(--mobile-header-height)] mx-auto", "lg:mt-0"],
         ["lg:portrait:px-2rem", "lg:landscape:px-5rem"],
         ["py-[var(--mobile-header-height)]", "lg:py-0"]
       )}

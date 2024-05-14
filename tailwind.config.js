@@ -63,9 +63,10 @@ export default {
       },
       width: {
         "100vw": "var(--100vw)",
+        text: "52ch",
       },
       maxWidth: {
-        text: "50ch",
+        text: "52ch",
         "medium-text": "40ch",
         "small-text": "30ch",
       },

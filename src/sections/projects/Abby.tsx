@@ -26,10 +26,11 @@ export default function Abby({}: AbbyProps) {
         SPOTLIGHT: ABBY
       </h3>
       <TextWithLink
-        containerClass={classNames([
-          "lg:!mt-2rem",
-          "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-5 lg:self-start",
-        ])}
+        containerClass={classNames(
+          ["mx-auto", "lg:mx-0"],
+          "max-w-text",
+          "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-5 lg:self-start"
+        )}
         title="ABBY"
         text="When Mint sunsetted, I decided to build my own app to monitor my finances. Users can monitor their balances and manage their transactions to better understand their financial health."
       />
