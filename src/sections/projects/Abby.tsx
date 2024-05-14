@@ -30,7 +30,7 @@ export default function Abby({}: AbbyProps) {
       </h3>
       <TextWithLink
         containerClass={classNames(
-          ["mx-auto", "lg:mx-0"],
+          ["mx-auto", "lg:!mt-1rem"],
           "max-w-text",
           "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-5 lg:self-start"
         )}
