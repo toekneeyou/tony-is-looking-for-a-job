@@ -1,14 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .h2 {
+    @apply josefin-sans leading-none text-[1.5rem] text-center font-medium lg:text-[8rem];
+  }
+  .h3 {
+    @apply josefin-sans font-bold leading-none text-[1rem] lg:text-2rem;
+  }
+  .icon-button {
+    @apply appearance-none centered h-[30px] w-[30px] p-0;
+  }
+  .overlay {
+    @apply absolute top-0 right-0 left-0 bottom-0;
+  }
+  .divider {
+    @apply h-[2px] bg-[var(--pink)] shadow-pink-glow;
+  }
+}
+
+@layer utilities {
+  .centered {
+    @apply flex justify-center items-center;
+  }
+}
+
 :root {
+  --vw: 1vw;
+  --vh: 1vh;
+  --100vh: calc(100 * var(--vh));
+  --100vw: calc(100 * var(--vw));
+  --black: #13141b;
+  --white: #eee;
+  --gray: #bbb;
+  --dark-gray: #555;
+  --eggplant: #786570;
+  --dark-eggplant: #604956;
+  --pink: #ea7bfe;
+  --green: #5bdd66;
+  --mobile-header-height: 52px;
+  --tablet-header-height: 64px;
+  --header-height: 76px;
+  --app-max-width: 1512px;
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  overflow: hidden;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--white);
+  background-color: var(--black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }

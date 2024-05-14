@@ -1,10 +1,20 @@
-export const combineClasses = (classes: (string | undefined | null)[]) => {
-  return classes.filter((c) => c !== null).join(" ");
-};
+export const classNames = (
+  ...args: Array<string | string[] | { [className: string]: boolean }>
+) => {
+  let classNames: string[] = [];
+  args.forEach((c) => {
+    if (typeof c === "string") {
+      classNames.push(c.trim());
+    } else if (Array.isArray(c)) {
+      classNames = [...classNames, ...c];
+    } else if (typeof c === "object") {
+      for (let string in c) {
+        if (c[string]) {
+          classNames.push(string.trim());
+        }
+      }
+    }
+  });
 
-export const genClassNames = (classes: { [className: string]: boolean }) => {
-  return Object.entries(classes)
-    .filter(([_, b]) => b)
-    .map(([c, _]) => c)
-    .join(" ");
+  return classNames.join(" ");
 };

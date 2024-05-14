@@ -1,50 +1,42 @@
-import { useState } from "react";
+import "./index.css";
 
-import { APP_ID } from "./constants/id";
-import Intro from "./sections/intro/Intro";
+import Hero from "./sections/hero/Hero";
 import AboutMe from "./sections/aboutMe/AboutMe";
 import Skills from "./sections/skills/Skills";
-import useViewport from "./hooks/useViewport";
-import useSectionObserver from "./hooks/useSectionObserver";
-import MobileHeader from "./features/mobileHeader/MobileHeader";
-import Actions from "./features/actions/Actions";
-import NavSideMenu from "./features/navSideMenu/NavSideMenu";
-import Header from "./features/header/Header";
-import Abby from "./sections/abby/Abby";
+import { APP_ID } from "./constants/id";
+import { classNames } from "./helpers/helpers";
 import Footer from "./sections/footer/Footer";
-
-import "./App.css";
+import Header from "./features/Header";
+import Projects from "./sections/projects/Projects";
+import SideMenu from "./features/SideMenu";
+import { useState } from "react";
 
 export default function App() {
-  const currentSection = useSectionObserver();
-  const { isMobile } = useViewport();
-
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+  const toggleSideMenu = () => setIsSideMenuOpen((p) => !p);
 
   return (
-    <main id={APP_ID}>
-      {isMobile ? (
-        <MobileHeader
-          isSideMenuOpen={isSideMenuOpen}
-          setIsSideMenuOpen={setIsSideMenuOpen}
-        />
-      ) : (
-        <Header currentSection={currentSection} />
-      )}
-      {isMobile && (
-        <NavSideMenu
-          isSideMenuOpen={isSideMenuOpen}
-          isMobile={isMobile}
-          currentSection={currentSection}
-          setIsSideMenuOpen={setIsSideMenuOpen}
-        />
-      )}
-      <Intro currentSection={currentSection} />
-      <AboutMe isMobile={isMobile} />
-      <Skills isMobile={isMobile} />
-      <Abby isMobile={isMobile} />
+    <div
+      id={APP_ID}
+      className={classNames("overflow-y-scroll overflow-x-hidden relative", [
+        "h-svh",
+        "lg:vh",
+      ])}
+    >
+      <Header isSideMenuOpen={isSideMenuOpen} toggleSideMenu={toggleSideMenu} />
+      <SideMenu isMenuOpen={isSideMenuOpen} toggleSideMenu={toggleSideMenu} />
+      <main
+        className={classNames(
+          "max-w-[var(--app-max-width)] mx-auto",
+          "lg:space-y-[10rem]"
+        )}
+      >
+        <Hero />
+        <AboutMe />
+        <Skills />
+        <Projects />
+      </main>
       <Footer />
-      {!isMobile && <Actions />}
-    </main>
+    </div>
   );
 }
