@@ -4,10 +4,13 @@ import ButtonWithBar from "../../components/ButtonWithBar";
 import { classNames } from "../../helpers/helpers";
 import AbbyLogin from "../../assets/abby-login.svg";
 import AbbyVideos from "./AbbyVideos";
+import { useContext } from "react";
+import { AppContext } from "../../App";
 
 type AbbyProps = {};
 
 export default function Abby({}: AbbyProps) {
+  const { setLoadingState } = useContext(AppContext);
   return (
     <div
       id={ABBY_ID}
@@ -42,6 +45,7 @@ export default function Abby({}: AbbyProps) {
         )}
         src={AbbyLogin}
         alt="A screenshot of ABBY's login screen"
+        onLoad={() => setLoadingState((p) => ({ ...p, projects: false }))}
       />
 
       {/*

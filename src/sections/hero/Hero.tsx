@@ -2,30 +2,36 @@ import { HERO_ID } from "../../constants/id";
 import tony from "../../assets/tony-iceland.jpg";
 import { classNames } from "../../helpers/helpers";
 import Actions from "../../features/Actions";
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
+import { AppContext } from "../../App";
 
 type HeroProps = {};
 
 export default function Hero({}: HeroProps) {
+  const { isLoading, setLoadingState } = useContext(AppContext);
   const tonyRef = useRef<HTMLHeadingElement>(null);
   const yuRef = useRef<HTMLHeadingElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    overlayRef.current!.classList.add("lg:translate-y-full");
+    if (!isLoading) {
+      setTimeout(() => {
+        overlayRef.current!.classList.add("lg:translate-y-full");
 
-    tonyRef.current!.classList.remove("lg:opacity-0");
-    tonyRef.current!.classList.add("lg:opacity-100");
-    tonyRef.current!.classList.add("lg:translate-x-[5rem]");
+        tonyRef.current!.classList.remove("lg:opacity-0");
+        tonyRef.current!.classList.add("lg:opacity-100");
+        tonyRef.current!.classList.add("lg:translate-x-[5rem]");
 
-    yuRef.current!.classList.remove("lg:opacity-0");
-    yuRef.current!.classList.add("lg:opacity-100");
-    yuRef.current!.classList.add("lg:-translate-x-[5rem]");
+        yuRef.current!.classList.remove("lg:opacity-0");
+        yuRef.current!.classList.add("lg:opacity-100");
+        yuRef.current!.classList.add("lg:-translate-x-[5rem]");
 
-    titleRef.current!.classList.remove("lg:opacity-0");
-    titleRef.current!.classList.add("lg:opacity-100");
-  }, []);
+        titleRef.current!.classList.remove("lg:opacity-0");
+        titleRef.current!.classList.add("lg:opacity-100");
+      }, 500);
+    }
+  }, [isLoading]);
 
   return (
     <div
@@ -99,6 +105,7 @@ export default function Hero({}: HeroProps) {
           className="h-full object-cover"
           src={tony}
           alt="Photo of author wearing a red jacket standing in front of a snow-capped mountain"
+          onLoad={() => setLoadingState((p) => ({ ...p, hero: false }))}
         />
       </div>
       {/* 

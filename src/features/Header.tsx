@@ -75,6 +75,7 @@ export default function Header({
 
             return (
               <a
+                key={s.label}
                 className={classNames(
                   "font-semibold",
                   "transition-[transform,drop-shadow] will-change-[transform,drop-shadow]",
