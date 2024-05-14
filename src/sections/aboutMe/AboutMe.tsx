@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ABOUT_ME_ID, ABOUT_ME_TONY_IMG_ID } from "../../constants/id";
+import { ABOUT_ME_ID } from "../../constants/id";
 import AboutMeVisual from "./AboutMeVisual";
 import tonyLa from "../../assets/tony-la.jpg";
 import ButtonWithBar from "../../components/ButtonWithBar";
@@ -13,17 +13,18 @@ const resumeLink =
 type AboutMeProps = {};
 export default function AboutMe({}: AboutMeProps) {
   const resumeRef = useRef<HTMLAnchorElement>(null);
+
   return (
     <section
       title="About Me"
       id={ABOUT_ME_ID}
       className={classNames(
         "w-full",
+        "lg:grid lg:grid-cols-4 lg:grid-rows-5 lg:gap-[1rem]",
         ["space-y-[2rem]", "lg:space-y-0"],
         ["mt-[var(--mobile-header-height)]", "lg:mt-0"],
         ["lg:portrait:px-2rem", "lg:landscape:px-5rem"],
-        ["py-[var(--mobile-header-height)]", "lg:py-0"],
-        ["lg:grid lg:grid-cols-4 lg:grid-rows-5 lg:gap-[1rem]"]
+        ["py-[var(--mobile-header-height)]", "lg:py-0"]
       )}
     >
       <h2
@@ -66,13 +67,14 @@ export default function AboutMe({}: AboutMeProps) {
       />
 
       <div
-        id={ABOUT_ME_TONY_IMG_ID}
         className={classNames(
-          ["col-start-1 col-end-3 row-start-1 row-end-4 z-10"],
+          "z-10",
+          "col-start-1 col-end-3 row-start-1 row-end-4",
           ["hidden", "lg:block"]
         )}
       >
         <img
+          className="h-full object-cover object-right-bottom"
           src={tonyLa}
           alt="Author overlooking the downtown los angeles skyline."
         />

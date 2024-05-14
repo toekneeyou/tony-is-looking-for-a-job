@@ -1,6 +1,6 @@
 import ButtonWithBar from "../../components/ButtonWithBar";
 import TextWithButton from "../../components/TextWithLink";
-import { SKILLS_SECTION_ID } from "../../constants/id";
+import { SKILLS_ID } from "../../constants/id";
 import { classNames } from "../../helpers/helpers";
 import SkillsVisual from "./SkillsVisual";
 
@@ -8,20 +8,32 @@ type SkillsProps = {};
 export default function Skills({}: SkillsProps) {
   return (
     <section
-      id={SKILLS_SECTION_ID}
-      className={classNames("py-[var(--mobile-header-height)] space-y-[2rem]", [
-        "xl:space-y-0 xl:mt-[10rem] xl:p-[5rem]",
-        "xl:grid xl:grid-cols-4 xl:grid-rows-3 xl:gap-[1rem]",
-      ])}
+      id={SKILLS_ID}
+      title="Skills"
+      className={classNames(
+        [
+          "py-[var(--mobile-header-height)] space-y-[2rem]",
+          "lg:py-0 lg:space-y-0",
+        ],
+        "lg:portrait:px-2rem",
+        "lg:landscape:px-5rem",
+        "lg:grid lg:grid-cols-8 lg:grid-rows-8 lg:gap-[1rem]"
+      )}
     >
+      <h2
+        className={classNames("h2", [
+          "lg:col-start-1 lg:col-end-5 lg:row-start-1 lg:row-end-3 lg:justify-self-start",
+        ])}
+      >
+        Skills
+      </h2>
       <TextWithButton
         title="Skills"
-        containerClass="xl:col-start-1 xl:col-end-5 xl:grid xl:grid-cols-4"
-        h2Class="xl:col-start-1 xl:col-end-3 xl:m-0 xl:self-start xl:text-start"
-        textClass="xl:col-start-3 xl:col-end-5"
+        containerClass="lg:col-start-5 lg:col-end-9 lg:row-start-1 lg:row-end-3"
         text="I focus on creating user interfaces with React and the extensive JavaScript ecosystem. Though my expertise is mainly in frontend development, I've been involved in different phases of the development cycle and I'm always looking to expand my knowledge. Here are some of the recent tools I've used."
         button={
           <ButtonWithBar
+            label="Github"
             onClick={() => {
               window.open("https://github.com/toekneeyou", "_blank");
             }}

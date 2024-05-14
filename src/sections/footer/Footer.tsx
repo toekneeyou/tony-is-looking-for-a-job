@@ -1,33 +1,18 @@
-import IconButton from "../../components/iconButton/IconButton";
-import GithubIcon from "../../components/icons/GithubIcon";
-import LinkedInIcon from "../../components/icons/LinkedInIcon";
 import { FOOTER_ID } from "../../constants/id";
-import "./footer.css";
+import Actions from "../../features/Actions";
 
 export default function Footer() {
   return (
-    <footer id={FOOTER_ID} className="FOOTER">
-      <div className="divider" />
-      <ul className="footer__links">
-        <IconButton
-          onClick={() => {
-            window.open("mailto:tonyyu1129@gmail.com", "_blank");
-          }}
-          iconString="mail"
-        />
-        <IconButton
-          IconEl={LinkedInIcon}
-          onClick={() => {
-            window.open("https://linkedin.com/in/tonyyu1129", "_blank");
-          }}
-        />
-        <IconButton
-          IconEl={GithubIcon}
-          onClick={() => {
-            window.open("https://github.com/toekneeyou", "_blank");
-          }}
-        />
-      </ul>
+    <footer
+      id={FOOTER_ID}
+      role="contentinfo"
+      className="p-1rem mt-[var(--mobile-header-height)] space-y-2"
+    >
+      <div className="divider bg-app-white opacity-25" />
+      <Actions className="p-2rem" />
+      <div className="text-center p-2rem pt-0 opacity-60">
+        &copy; 2024 Tony Yu. All rights reserved.
+      </div>
     </footer>
   );
 }

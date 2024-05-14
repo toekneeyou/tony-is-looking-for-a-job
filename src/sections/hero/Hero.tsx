@@ -1,11 +1,11 @@
-import { HERO_ID, HERO_H1_TONY_ID, HERO_H1_YU_ID } from "../../constants/id";
+import { HERO_ID } from "../../constants/id";
 import tony from "../../assets/tony-iceland.jpg";
 import { classNames } from "../../helpers/helpers";
 import Actions from "../../features/Actions";
 
-type IntroProps = {};
+type HeroProps = {};
 
-export default function Intro({}: IntroProps) {
+export default function Hero({}: HeroProps) {
   return (
     <div
       id={HERO_ID}
@@ -27,12 +27,10 @@ export default function Intro({}: IntroProps) {
         ])}
       >
         <h1
-          id={HERO_H1_TONY_ID}
           className={classNames(
-            "josefin-sans font-bold leading-none select-none",
+            "josefin-sans font-bold leading-none select-none translate-x-[5rem]",
             ["text-[10rem]", "xl:text-[12rem]"]
           )}
-          style={{ transform: "translateX(80px)" }}
         >
           TONY
         </h1>
@@ -52,7 +50,7 @@ export default function Intro({}: IntroProps) {
       </div>
       {/*
       
-      Visual section of Intro
+      Visual section of Hero
 
       */}
       <div
@@ -75,7 +73,6 @@ export default function Intro({}: IntroProps) {
       */}
       <div className={classNames("py-5rem", ["hidden", "lg:landscape:flex"])}>
         <h1
-          id={HERO_H1_YU_ID}
           className={classNames(
             "josefin-sans font-bold self-end -translate-x-[5rem] leading-none select-none",
             ["text-[10rem]", "xl:text-[12rem]"]
@@ -86,7 +83,7 @@ export default function Intro({}: IntroProps) {
       </div>
       {/* 
       
-      Mobile text of Intro
+      Mobile text of Hero
       
       */}
       <div

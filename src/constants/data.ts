@@ -1,9 +1,4 @@
-import {
-  ABBY_SECTION_ID,
-  ABOUT_ME_SECTION_ID,
-  INTRO_SECTION_ID,
-  SKILLS_SECTION_ID,
-} from "./id";
+import { ABOUT_ME_ID, HERO_ID, PROJECTS_ID, SKILLS_ID } from "./id";
 import htmlLogo from "../assets/html-logo.svg";
 import cssLogo from "../assets/css-logo.svg";
 import jsLogo from "../assets/js-logo.svg";
@@ -23,16 +18,16 @@ import postmanLogo from "../assets/postman-logo.svg";
 import tailwindLogo from "../assets/tailwind-logo.svg";
 import nextLogo from "../assets/next-logo.svg";
 
-export type Section = "intro" | "about me" | "skills" | "projects";
+export type Section = "hero" | "about me" | "skills" | "projects";
 export type SectionDetail = {
   label: Section;
   id: string;
 };
 export const sections: SectionDetail[] = [
-  { label: "intro", id: INTRO_SECTION_ID },
-  { label: "about me", id: ABOUT_ME_SECTION_ID },
-  { label: "skills", id: SKILLS_SECTION_ID },
-  { label: "projects", id: ABBY_SECTION_ID },
+  { label: "hero", id: HERO_ID },
+  { label: "about me", id: ABOUT_ME_ID },
+  { label: "skills", id: SKILLS_ID },
+  { label: "projects", id: PROJECTS_ID },
 ];
 
 export type Skill = "design" | "frontend" | "backend";
