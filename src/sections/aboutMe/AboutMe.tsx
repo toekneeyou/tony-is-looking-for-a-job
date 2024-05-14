@@ -1,10 +1,11 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { ABOUT_ME_ID } from "../../constants/id";
 import AboutMeVisual from "./AboutMeVisual";
 import tonyLa from "../../assets/tony-la.jpg";
 import ButtonWithBar from "../../components/ButtonWithBar";
 import TextWithLink from "../../components/TextWithLink";
 import { classNames } from "../../helpers/helpers";
+import { AppContext } from "../../App";
 
 const resumeLink =
   process.env.RESUME_LINK ??
@@ -13,6 +14,7 @@ const resumeLink =
 type AboutMeProps = {};
 export default function AboutMe({}: AboutMeProps) {
   const resumeRef = useRef<HTMLAnchorElement>(null);
+  const { setLoadingState } = useContext(AppContext);
 
   return (
     <section
@@ -77,6 +79,7 @@ export default function AboutMe({}: AboutMeProps) {
           className="h-full object-cover object-right-bottom"
           src={tonyLa}
           alt="Author overlooking the downtown los angeles skyline."
+          onLoad={() => setLoadingState((p) => ({ ...p, "about me": false }))}
         />
       </div>
 
