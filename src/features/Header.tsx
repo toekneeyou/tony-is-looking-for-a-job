@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import IconButton from "../components/IconButton";
-import { HEADER_ID, HERO_ID } from "../constants/id";
+import { APP_ID, HEADER_ID, HERO_ID } from "../constants/id";
 import { classNames } from "../helpers/helpers";
+import { sections } from "../constants/data";
 
 type HeaderProps = {
   isSideMenuOpen: boolean;
@@ -57,6 +58,37 @@ export default function Header({
         className={classNames(["lg:hidden"])}
         iconString={isSideMenuOpen ? "close" : "menu"}
       />
+      <nav className={classNames(["hidden", "lg:flex"], "lg:space-x-[1rem]")}>
+        {sections.map((s) => {
+          if (s.label !== "hero") {
+            const onClick = (e: React.MouseEvent) => {
+              e.preventDefault();
+              const app = document.getElementById(APP_ID)!;
+              const el = document.getElementById(s.id)!;
+              const top =
+                el.getBoundingClientRect().top +
+                app.scrollTop +
+                app.getBoundingClientRect().top -
+                100;
+              app.scrollTo({ top, behavior: "smooth" });
+            };
+
+            return (
+              <a
+                className={classNames(
+                  "font-semibold",
+                  "transition-[transform,drop-shadow] will-change-[transform,drop-shadow]",
+                  "hover:drop-shadow-pink-glow hover:translate-y-[4px]"
+                )}
+                href={`#${s.id}`}
+                onClick={onClick}
+              >
+                {s.label}
+              </a>
+            );
+          }
+        })}
+      </nav>
     </header>
   );
 }

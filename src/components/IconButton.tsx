@@ -24,7 +24,7 @@ export default function IconButton({
       disabled={disabled}
       className={classNames(
         "group icon-button",
-        "transition-all opacity-95",
+        "transition-[transform,opacity] will-change-[transform,opacity] opacity-95",
         "hover:translate-y-[4px] hover:opacity-100",
         {
           [className]: !!className,
@@ -41,7 +41,7 @@ export default function IconButton({
         <span
           className={classNames(
             "material-symbols-outlined",
-            "transition-all text-[30px]",
+            "transition-[color,drop-shadow] will-change-[color,drop-shadow] text-[30px]",
             "group-hover:text-white group-hover:drop-shadow-pink-glow"
           )}
         >

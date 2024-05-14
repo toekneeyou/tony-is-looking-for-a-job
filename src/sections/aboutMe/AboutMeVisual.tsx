@@ -158,7 +158,7 @@ const AboutMeVisualItem = forwardRef(function AboutMeVisualItem(
       className={classNames(
         "overflow-hidden group relative w-full max-w-text items-center gap-[0.5rem] justify-self-center",
         "lg:aspect-square",
-        "lg:transition-[transform,opacity] lg:ease-in-out lg:duration-300 lg:will-change-[transform,opacity]",
+        "lg:transition-[transform,opacity] lg:ease-in-out lg:duration-500 lg:will-change-[transform,opacity]",
         ["h-[7rem]", "lg:h-auto"],
         ["rounded-3xl", "lg:rounded-none"],
         ["grid grid-cols-[6rem_1fr]", "lg:grid-cols-1"],

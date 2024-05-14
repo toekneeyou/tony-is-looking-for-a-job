@@ -83,7 +83,7 @@ const SkillsVisualItem = forwardRef(function (
       className={classNames(
         "grid relative",
         "lg:aspect-square",
-        "lg:transition-[transform,opacity] lg:will-change-[transform,opacity] lg:duration-300",
+        "lg:transition-[transform,opacity] lg:will-change-[transform,opacity] lg:duration-500",
         ["min-w-[300px]", "lg:min-w-[260px]"],
         ["w-[300px]", "lg:w-full"],
         {
