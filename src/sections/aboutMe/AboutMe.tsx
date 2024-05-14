@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import { ABOUT_ME_ID } from "../../constants/id";
+import { ABOUT_ME_HEADING_ID, ABOUT_ME_ID } from "../../constants/id";
 import AboutMeVisual from "./AboutMeVisual";
 import tonyLa from "../../assets/tony-la.jpg";
 import ButtonWithBar from "../../components/ButtonWithBar";
@@ -18,7 +18,7 @@ export default function AboutMe({}: AboutMeProps) {
 
   return (
     <section
-      title="About Me"
+      aria-labelledby={ABOUT_ME_HEADING_ID}
       id={ABOUT_ME_ID}
       className={classNames(
         "lg:grid lg:grid-cols-4 lg:grid-rows-5 lg:gap-[1rem]",
@@ -30,6 +30,7 @@ export default function AboutMe({}: AboutMeProps) {
       )}
     >
       <h2
+        id={ABOUT_ME_HEADING_ID}
         className={classNames(
           "h2",
           "lg:col-start-3 lg:col-end-5 lg:row-start-1 lg:row-end-2"
@@ -44,7 +45,6 @@ export default function AboutMe({}: AboutMeProps) {
           "lg:flex lg:items-end"
         )}
         textClass={classNames("lg:justify-self-end", "lg:max-w-small-text")}
-        title="About"
         text="Hello! I'm Tony, a frontend developer based in Los Angeles, CA. I've
             been in this field for over 4 years, and I love building engaging,
             intuitive, and beautiful user interfaces."
