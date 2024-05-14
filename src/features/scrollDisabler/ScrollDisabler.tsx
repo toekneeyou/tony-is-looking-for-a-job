@@ -1,14 +1,8 @@
-import { SCROLL_DISABLER_Z_INDEX } from "../../constants/zIndices";
 import "./scrollDisabler.css";
 
 type ScrollDisablerProps = { isLoading: boolean };
 export default function ScrollDisabler({ isLoading }: ScrollDisablerProps) {
   if (!isLoading) return null;
 
-  return (
-    <div
-      className="SCROLL_DISABLER"
-      style={{ zIndex: SCROLL_DISABLER_Z_INDEX }}
-    />
-  );
+  return <div className="SCROLL_DISABLER" />;
 }

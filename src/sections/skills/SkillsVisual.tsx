@@ -49,7 +49,7 @@ export default function SkillsVisual({}: SkillsVisualProps) {
         ["space-x-[1rem]", "lg:space-x-0"]
       )}
     >
-      {skills.sort().map((s, i) => {
+      {skills.sort().map((s) => {
         return (
           <SkillsVisualItem
             className={`${s.name}-visual-item`}
