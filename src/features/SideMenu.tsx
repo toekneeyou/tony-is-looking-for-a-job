@@ -22,22 +22,32 @@ export default function SideMenu({
         ["lg:hidden"]
       )}
     >
-      <nav className="p-5rem w-[25rem] space-y-3">
-        {sections.map((s) => {
-          if (s.label === "hero") return null;
+      <nav className="p-5rem w-[25rem]">
+        <ul className="space-y-3">
+          {sections.map((s) => {
+            if (s.label === "hero") return null;
 
-          const onClick = () => {
-            const el = document.getElementById(s.id)!;
-            el.scrollIntoView({ behavior: "smooth" });
-            toggleSideMenu();
-          };
+            const onClick = () => {
+              const el = document.getElementById(s.id)!;
+              el.scrollIntoView({ behavior: "smooth" });
+              toggleSideMenu();
+            };
 
-          return (
-            <ButtonWithBar onClick={onClick} key={s.label}>
-              <span className="font-semibold">{s.label}</span>
-            </ButtonWithBar>
-          );
-        })}
+            return (
+              <li key={s.label}>
+                <ButtonWithBar onClick={onClick}>
+                  <a
+                    href={`#${s.id}`}
+                    onClick={(e) => e.preventDefault()}
+                    className="font-semibold"
+                  >
+                    {s.label}
+                  </a>
+                </ButtonWithBar>
+              </li>
+            );
+          })}
+        </ul>
       </nav>
       <Actions className="pr-5rem" />
     </div>

@@ -36,6 +36,7 @@ export default function Header({
 
   return (
     <header
+      aria-label="Navigation Header"
       id={HEADER_ID}
       className={classNames(
         "fixed top-0 z-50 flex justify-between items-center w-full bg-app-black",
@@ -66,37 +67,43 @@ export default function Header({
         className={classNames(["lg:hidden"])}
         iconString={isSideMenuOpen ? "close" : "menu"}
       />
-      <nav className={classNames(["hidden", "lg:flex"], "lg:space-x-[1rem]")}>
-        {sections.map((s) => {
-          if (s.label !== "hero") {
-            const onClick = (e: React.MouseEvent) => {
-              e.preventDefault();
-              const app = document.getElementById(APP_ID)!;
-              const el = document.getElementById(s.id)!;
-              const top =
-                el.getBoundingClientRect().top +
-                app.scrollTop +
-                app.getBoundingClientRect().top -
-                100;
-              app.scrollTo({ top, behavior: "smooth" });
-            };
+      <nav
+        className={classNames(["hidden", "lg:flex"])}
+        aria-label="Sections on this page"
+      >
+        <ul className="lg:flex lg:space-x-[1rem]" aria-label="Section Links">
+          {sections.map((s) => {
+            if (s.label !== "hero") {
+              const onClick = (e: React.MouseEvent) => {
+                e.preventDefault();
+                const app = document.getElementById(APP_ID)!;
+                const el = document.getElementById(s.id)!;
+                const top =
+                  el.getBoundingClientRect().top +
+                  app.scrollTop +
+                  app.getBoundingClientRect().top -
+                  100;
+                app.scrollTo({ top, behavior: "smooth" });
+              };
 
-            return (
-              <a
-                key={s.label}
-                className={classNames(
-                  "font-semibold",
-                  "transition-[transform,drop-shadow] will-change-[transform,drop-shadow]",
-                  "hover:drop-shadow-pink-glow hover:translate-y-[4px]"
-                )}
-                href={`#${s.id}`}
-                onClick={onClick}
-              >
-                {s.label}
-              </a>
-            );
-          }
-        })}
+              return (
+                <li key={s.label} aria-label={`Scroll to ${s.label}`}>
+                  <a
+                    className={classNames(
+                      "font-semibold",
+                      "transition-[transform,drop-shadow] will-change-[transform,drop-shadow]",
+                      "hover:drop-shadow-pink-glow hover:translate-y-[4px]"
+                    )}
+                    href={`#${s.id}`}
+                    onClick={onClick}
+                  >
+                    {s.label}
+                  </a>
+                </li>
+              );
+            }
+          })}
+        </ul>
       </nav>
     </header>
   );

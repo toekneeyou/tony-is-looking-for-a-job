@@ -16,6 +16,7 @@ export default function Abby({}: AbbyProps) {
       id={ABBY_ID}
       className={classNames(
         "relative space-y-[2rem]",
+        "from-[var(--eggplant)] to-[var(--dark-eggplant)]",
         "lg:space-y-0 lg:grid lg:grid-cols-4 lg:grid-rows-8"
       )}
     >
