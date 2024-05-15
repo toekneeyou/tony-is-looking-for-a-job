@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import ButtonWithBar from "../components/ButtonWithBar";
 import { sections } from "../constants/data";
 import { classNames } from "../helpers/helpers";
 import Actions from "./Actions";
+import { AppContext } from "../App";
 
 type SideMenuProps = {
   isMenuOpen: boolean;
@@ -12,6 +14,7 @@ export default function SideMenu({
   isMenuOpen,
   toggleSideMenu,
 }: SideMenuProps) {
+  const { currentSection } = useContext(AppContext);
   return (
     <div
       className={classNames(
@@ -22,8 +25,8 @@ export default function SideMenu({
         ["lg:hidden"]
       )}
     >
-      <nav className="p-5rem w-[25rem]">
-        <ul className="space-y-3">
+      <nav className="p-5rem w-[25rem]" aria-label="Sections on this page">
+        <ul className="space-y-3" aria-label="Section Links">
           {sections.map((s) => {
             if (s.label === "hero") return null;
 
@@ -34,7 +37,11 @@ export default function SideMenu({
             };
 
             return (
-              <li key={s.label}>
+              <li
+                key={s.label}
+                aria-label={`Scroll to ${s.label}`}
+                aria-current={s.label === currentSection.label}
+              >
                 <ButtonWithBar onClick={onClick}>
                   <a
                     href={`#${s.id}`}
