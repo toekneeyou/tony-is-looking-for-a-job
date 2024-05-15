@@ -4,7 +4,6 @@ import { classNames } from "../helpers/helpers";
 type TextWithLinkProps = {
   text: string;
   button?: ReactNode;
-  title: string;
   containerClass?: string;
   textClass?: string;
 };

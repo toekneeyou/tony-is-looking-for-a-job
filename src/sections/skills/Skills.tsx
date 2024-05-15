@@ -1,6 +1,6 @@
 import ButtonWithBar from "../../components/ButtonWithBar";
-import TextWithButton from "../../components/TextWithLink";
-import { SKILLS_ID } from "../../constants/id";
+import TextWithLink from "../../components/TextWithLink";
+import { SKILLS_HEADING_ID, SKILLS_ID } from "../../constants/id";
 import { classNames } from "../../helpers/helpers";
 import SkillsVisual from "./SkillsVisual";
 
@@ -9,7 +9,7 @@ export default function Skills({}: SkillsProps) {
   return (
     <section
       id={SKILLS_ID}
-      title="Skills"
+      aria-labelledby={SKILLS_HEADING_ID}
       className={classNames(
         [
           "py-[var(--mobile-header-height)] space-y-[2rem]",
@@ -21,6 +21,7 @@ export default function Skills({}: SkillsProps) {
       )}
     >
       <h2
+        id={SKILLS_HEADING_ID}
         className={classNames("h2", [
           "lg:col-start-1 lg:col-end-5 lg:row-start-1 lg:row-end-3 lg:justify-self-start",
         ])}
@@ -28,8 +29,7 @@ export default function Skills({}: SkillsProps) {
         Skills
       </h2>
 
-      <TextWithButton
-        title="Skills"
+      <TextWithLink
         containerClass={classNames(
           ["max-w-text"],
           ["mx-auto", "lg:mx-0"],

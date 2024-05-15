@@ -16,6 +16,7 @@ export default function Abby({}: AbbyProps) {
       id={ABBY_ID}
       className={classNames(
         "relative space-y-[2rem]",
+        "from-[var(--eggplant)] to-[var(--dark-eggplant)]",
         "lg:space-y-0 lg:grid lg:grid-cols-4 lg:grid-rows-8"
       )}
     >
@@ -30,11 +31,10 @@ export default function Abby({}: AbbyProps) {
       </h3>
       <TextWithLink
         containerClass={classNames(
-          ["mx-auto", "lg:mx-0"],
+          ["mx-auto", "lg:!mt-1rem"],
           "max-w-text",
           "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-5 lg:self-start"
         )}
-        title="ABBY"
         text="When Mint sunsetted, I decided to build my own app to monitor my finances. Users can monitor their balances and manage their transactions to better understand their financial health."
       />
       <img

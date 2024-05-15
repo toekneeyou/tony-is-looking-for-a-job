@@ -64,6 +64,7 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
 
   return (
     <ul
+      aria-label="Experience & Education List"
       role="list"
       className={classNames(
         "w-full",

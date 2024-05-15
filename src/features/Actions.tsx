@@ -9,32 +9,39 @@ type ActionsProps = {
 
 export default function Actions({ className = "" }: ActionsProps) {
   return (
-    <div
+    <ul
       className={classNames("centered space-x-[1rem]", {
         [className]: !!className,
       })}
+      aria-label="Contact Information"
     >
-      <IconButton
-        label="E-mail"
-        iconString="mail"
-        onClick={() => {
-          window.open("mailto:tonyyu1129@gmail.com", "_blank");
-        }}
-      />
-      <IconButton
-        label="LinkedIn"
-        IconEl={LinkedInIcon}
-        onClick={() => {
-          window.open("https://linkedin.com/in/tonyyu1129", "_blank");
-        }}
-      />
-      <IconButton
-        label="Github"
-        IconEl={GithubIcon}
-        onClick={() => {
-          window.open("https://github.com/toekneeyou", "_blank");
-        }}
-      />
-    </div>
+      <li aria-label="Email Link">
+        <IconButton
+          label="E-mail"
+          iconString="mail"
+          onClick={() => {
+            window.open("mailto:tonyyu1129@gmail.com", "_blank");
+          }}
+        />
+      </li>
+      <li aria-label="LinkedIn Link">
+        <IconButton
+          label="LinkedIn"
+          IconEl={LinkedInIcon}
+          onClick={() => {
+            window.open("https://linkedin.com/in/tonyyu1129", "_blank");
+          }}
+        />
+      </li>
+      <li aria-label="Github Link">
+        <IconButton
+          label="Github"
+          IconEl={GithubIcon}
+          onClick={() => {
+            window.open("https://github.com/toekneeyou", "_blank");
+          }}
+        />
+      </li>
+    </ul>
   );
 }
