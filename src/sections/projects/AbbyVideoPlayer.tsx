@@ -82,6 +82,7 @@ export default function AbbyVideoPlayer({
             "!opacity-0": isPlaying || hasBeenPlayed,
           })}
           src={coverSrc}
+          alt={`${label} screen`}
         />
       </div>
 

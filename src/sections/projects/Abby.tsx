@@ -44,7 +44,7 @@ export default function Abby({}: AbbyProps) {
           "lg:row-start-2 lg:row-end-5 lg:col-start-1 lg:col-end-3 lg:justify-self-center lg:self-start"
         )}
         src={AbbyLogin}
-        alt="A screenshot of ABBY's login screen"
+        alt="ABBY's login screen"
         onLoad={() => setLoadingState((p) => ({ ...p, projects: false }))}
       />
 

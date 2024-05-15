@@ -104,7 +104,7 @@ export default function Hero({}: HeroProps) {
         <img
           className="h-full object-cover"
           src={tony}
-          alt="Photo of author wearing a red jacket standing in front of a snow-capped mountain"
+          alt="Author wearing a red jacket standing in front of a snow-capped mountain"
           onLoad={() => setLoadingState((p) => ({ ...p, hero: false }))}
         />
       </div>
