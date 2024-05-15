@@ -6,12 +6,14 @@ type AbbyVideoPlayerProps = {
   videoSrc: string;
   className?: string;
   isSelected: boolean;
+  label: string;
 };
 export default function AbbyVideoPlayer({
   coverSrc,
   videoSrc,
   className = "",
   isSelected,
+  label,
 }: AbbyVideoPlayerProps) {
   const [hasBeenPlayed, setHasBeenPlayed] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,6 +30,8 @@ export default function AbbyVideoPlayer({
 
   return (
     <div
+      role="listitem"
+      aria-labelledby={label}
       className={classNames(
         "ABBY_VIDEO_PLAYER",
         "relative h-full max-w-max overflow-hidden",
