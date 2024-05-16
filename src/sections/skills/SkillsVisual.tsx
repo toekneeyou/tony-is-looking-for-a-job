@@ -39,6 +39,7 @@ export default function SkillsVisual({}: SkillsVisualProps) {
 
   return (
     <ul
+      aria-label="Web Development Expertise"
       className={classNames(
         "w-full flex",
         "lg:justify-center",
@@ -79,6 +80,7 @@ const SkillsVisualItem = forwardRef(function (
 ) {
   return (
     <li
+      aria-label={skill.name}
       ref={ref}
       className={classNames(
         "grid relative",
@@ -97,10 +99,14 @@ const SkillsVisualItem = forwardRef(function (
         }
       )}
     >
-      <label className="absolute top-[-12px] left-[12px] font-semibold capitalize">
+      <label
+        aria-hidden="true"
+        className="absolute top-[-12px] left-[12px] font-semibold capitalize"
+      >
         {skill.name}
       </label>
       <ul
+        aria-label={`${skill.name} tools`}
         className={classNames(
           ["grid grid-cols-3 grid-rows-3 gap-[1rem]", "w-full bg-black p-1rem"],
           ["rounded-3xl", "lg:rounded-none"]
@@ -109,15 +115,17 @@ const SkillsVisualItem = forwardRef(function (
         {skill.tools.map((s) => {
           return (
             <li
+              aria-label={s.name}
               key={s.name}
               className="w-full h-auto aspect-square centered relative group"
             >
               <img
                 src={s.icon}
-                alt={`${s.name}-logo`}
+                role="none"
                 className="h-[75%] w-[75%] object-contain"
               />
               <div
+                aria-hidden="true"
                 className={classNames([
                   "absolute top-0 left-0 right-0 bottom-0",
                   "bg-[rgba(0,0,0,0.75)] centered opacity-0 transition-opacity",

@@ -38,13 +38,14 @@ export default function Skills({}: SkillsProps) {
         text="I focus on creating user interfaces with React and the extensive JavaScript ecosystem. Though my expertise is mainly in frontend development, I've been involved in different phases of the development cycle and I'm always looking to expand my knowledge. Here are some of the recent tools I've used."
         button={
           <ButtonWithBar
-            label="Github"
             onClick={() => {
               window.open("https://github.com/toekneeyou", "_blank");
             }}
           >
             <span>See more on Github</span>
-            <span className="material-symbols-outlined">open_in_new</span>
+            <span aria-hidden="true" className="material-symbols-outlined">
+              open_in_new
+            </span>
           </ButtonWithBar>
         }
       />

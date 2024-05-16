@@ -6,17 +6,21 @@ type AbbyVideoPlayerProps = {
   videoSrc: string;
   className?: string;
   isSelected: boolean;
+  label: string;
 };
 export default function AbbyVideoPlayer({
   coverSrc,
   videoSrc,
   className = "",
   isSelected,
+  label,
 }: AbbyVideoPlayerProps) {
   const [hasBeenPlayed, setHasBeenPlayed] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoId = `${label.replace(/[\s&]/g, "")}video`;
+  const videoLabel = `${label} video`;
 
   useEffect(() => {
     const videoEl = videoRef.current as HTMLVideoElement;
@@ -28,6 +32,7 @@ export default function AbbyVideoPlayer({
 
   return (
     <div
+      role="listitem"
       className={classNames(
         "ABBY_VIDEO_PLAYER",
         "relative h-full max-w-max overflow-hidden",
@@ -51,6 +56,8 @@ export default function AbbyVideoPlayer({
           )}
         >
           <button
+            aria-label="video controls"
+            aria-controls={videoId}
             className="group"
             onClick={() => {
               const video = videoRef.current!;
@@ -63,6 +70,7 @@ export default function AbbyVideoPlayer({
             }}
           >
             <span
+              aria-hidden="true"
               className={classNames(
                 "material-symbols-outlined",
                 "text-4rem text-app-white border-[0.5rem] border-app-white rounded-full p-[0.5rem] transition-all",
@@ -78,10 +86,14 @@ export default function AbbyVideoPlayer({
             "!opacity-0": isPlaying || hasBeenPlayed,
           })}
           src={coverSrc}
+          alt={`${label} screen`}
         />
       </div>
 
       <video
+        aria-label={videoLabel}
+        id={videoId}
+        poster={coverSrc}
         className="h-full"
         ref={videoRef}
         src={videoSrc}

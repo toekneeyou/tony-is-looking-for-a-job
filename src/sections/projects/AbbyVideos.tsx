@@ -45,7 +45,8 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
       )}
     >
       <div className={classNames("w-full overflow-hidden")}>
-        <div
+        <ul
+          aria-label="abby video tabs"
           className={classNames(
             "grid grid-cols-2-full grid-flow-col",
             `transition-transform duration-500 -translate-x-[${
@@ -55,7 +56,8 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
         >
           {abbyVideos.map((v) => {
             return (
-              <div
+              <li
+                aria-current={selectedVideo.index === v.index}
                 key={v.label}
                 className={classNames("flex w-full")}
                 onClick={() => setSelectedVideo(v)}
@@ -63,14 +65,15 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
                 <label className="flex-grow text-center font-semibold capitalize">
                   {v.label}
                 </label>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
 
       <div className="flex w-full items-center px-1rem">
         <IconButton
+          label="previous video"
           disabled={selectedVideo.index === 0}
           iconString="arrow_back_ios"
           onClick={() =>
@@ -84,6 +87,7 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
           }
         />
         <div
+          role="list"
           className={classNames(
             ["relative h-[376px] flex-grow", "grid grid-cols-1 grid-rows-1"],
             ["lg:h-[35rem]"]
@@ -93,6 +97,7 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
             const isSelected = selectedVideo.label === v.label;
             return (
               <AbbyVideoPlayer
+                label={v.label}
                 key={v.label}
                 coverSrc={v.image}
                 videoSrc={v.video}
@@ -109,6 +114,7 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
           })}
         </div>
         <IconButton
+          label="next video"
           disabled={selectedVideo.index === abbyVideos.length - 1}
           iconString="arrow_forward_ios"
           onClick={() =>

@@ -3,7 +3,13 @@ import "./index.css";
 import Hero from "./sections/hero/Hero";
 import AboutMe from "./sections/aboutMe/AboutMe";
 import Skills from "./sections/skills/Skills";
-import { APP_ID } from "./constants/id";
+import {
+  ABOUT_ME_ID,
+  APP_ID,
+  HERO_ID,
+  PROJECTS_ID,
+  SKILLS_ID,
+} from "./constants/id";
 import { classNames } from "./helpers/helpers";
 import Footer from "./sections/footer/Footer";
 import Header from "./features/Header";
@@ -13,10 +19,11 @@ import {
   Dispatch,
   SetStateAction,
   createContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
-import { Section, sections } from "./constants/data";
+import { Section, SectionDetail, sections } from "./constants/data";
 import Loading from "./features/loading/Loading";
 
 type LoadingState = { [section in Section]: boolean };
@@ -33,6 +40,7 @@ const initialLoadingState: LoadingState = sections.reduce((p, c) => {
 type AppContextState = {
   isLoading: boolean;
   setLoadingState: Dispatch<SetStateAction<LoadingState>>;
+  currentSection: SectionDetail;
 };
 export const AppContext = createContext({} as AppContextState);
 
@@ -40,6 +48,7 @@ export default function App() {
   const [loadingState, setLoadingState] =
     useState<LoadingState>(initialLoadingState);
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState(sections[0]);
   const toggleSideMenu = () => setIsSideMenuOpen((p) => !p);
 
   const isLoading = useMemo(() => {
@@ -54,8 +63,30 @@ export default function App() {
     return value;
   }, [loadingState]);
 
+  useEffect(() => {
+    const intObs = new IntersectionObserver(
+      (entries) => {
+        setCurrentSection((p) => {
+          let newSection = p;
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              newSection = sections.find((s) => s.id === entry.target.id)!;
+            }
+          });
+          return newSection;
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    intObs.observe(document.getElementById(HERO_ID)!);
+    intObs.observe(document.getElementById(ABOUT_ME_ID)!);
+    intObs.observe(document.getElementById(SKILLS_ID)!);
+    intObs.observe(document.getElementById(PROJECTS_ID)!);
+  }, []);
+
   return (
-    <AppContext.Provider value={{ isLoading, setLoadingState }}>
+    <AppContext.Provider value={{ isLoading, setLoadingState, currentSection }}>
       <div
         id={APP_ID}
         className={classNames("overflow-y-scroll overflow-x-hidden relative", [

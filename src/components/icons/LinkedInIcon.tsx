@@ -5,6 +5,7 @@ type LinkedInIconProps = {
 export default function LinkedInIcon({ isGradient }: LinkedInIconProps) {
   return (
     <svg
+      aria-hidden="true"
       className="w-[24px] h-[24px] transition-all group-hover:drop-shadow-pink-glow"
       viewBox="0 0 300 301"
       fill="none"

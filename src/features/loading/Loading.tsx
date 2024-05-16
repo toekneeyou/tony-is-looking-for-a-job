@@ -16,11 +16,11 @@ export default function Loading({}: LoadingProps) {
         { "opacity-0": !isLoading, "pointer-events-none": !isLoading }
       )}
     >
-      <div className="lds-ellipsis">
-        <div />
-        <div />
-        <div />
-        <div />
+      <div className="lds-ellipsis" role="status" aria-label="Loading">
+        <div aria-hidden="true" />
+        <div aria-hidden="true" />
+        <div aria-hidden="true" />
+        <div aria-hidden="true" />
       </div>
     </div>
   );

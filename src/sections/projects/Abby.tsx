@@ -6,6 +6,7 @@ import AbbyLogin from "../../assets/abby-login.svg";
 import AbbyVideos from "./AbbyVideos";
 import { useContext } from "react";
 import { AppContext } from "../../App";
+import { abbyLinks } from "../../constants/data";
 
 type AbbyProps = {};
 
@@ -44,7 +45,7 @@ export default function Abby({}: AbbyProps) {
           "lg:row-start-2 lg:row-end-5 lg:col-start-1 lg:col-end-3 lg:justify-self-center lg:self-start"
         )}
         src={AbbyLogin}
-        alt="A screenshot of ABBY's login screen"
+        alt="ABBY's login screen"
         onLoad={() => setLoadingState((p) => ({ ...p, projects: false }))}
       />
 
@@ -88,33 +89,21 @@ function AbbyLinks({ className = "" }: AbbyLinksProps) {
         { [className]: !!className }
       )}
     >
-      <ButtonWithBar
-        onClick={() => {
-          window.open(
-            "https://www.figma.com/file/NJuPGZIs74vcuwP5Ty3VLD/Abby-Design-System?type=design&node-id=2-96&mode=design",
-            "_blank"
-          );
-        }}
-      >
-        <span>Design - Figma</span>
-        <span className="material-symbols-outlined">open_in_new</span>
-      </ButtonWithBar>
-      <ButtonWithBar
-        onClick={() => {
-          window.open("https://github.com/toekneeyou/abby-ui", "_blank");
-        }}
-      >
-        <span>Frontend - React Native</span>
-        <span className="material-symbols-outlined">open_in_new</span>
-      </ButtonWithBar>
-      <ButtonWithBar
-        onClick={() => {
-          window.open("https://github.com/toekneeyou/abby-backend", "_blank");
-        }}
-      >
-        <span>Backend - Express</span>
-        <span className="material-symbols-outlined">open_in_new</span>
-      </ButtonWithBar>
+      {abbyLinks.map(({ text, link }) => {
+        return (
+          <ButtonWithBar
+            key={link}
+            onClick={() => {
+              window.open(link, "_blank");
+            }}
+          >
+            <span>{text}</span>
+            <span aria-hidden="true" className="material-symbols-outlined">
+              open_in_new
+            </span>
+          </ButtonWithBar>
+        );
+      })}
     </div>
   );
 }

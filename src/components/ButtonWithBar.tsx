@@ -1,18 +1,18 @@
-import { ReactNode, useState } from "react";
+import { ButtonHTMLAttributes, ReactNode, useState } from "react";
 import { classNames } from "../helpers/helpers";
 
-type ButtonWithBarProps = {
+type ButtonWithBarProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode;
   className?: string;
   onClick: () => void;
-  label?: string;
 };
 
 export default function ButtonWithBar({
   children,
   className = "",
   onClick,
-  label,
+
+  ...buttonAttributes
 }: ButtonWithBarProps) {
   const [isHovered, setIsHovered] = useState(false);
   return (
@@ -22,6 +22,7 @@ export default function ButtonWithBar({
       })}
     >
       <div
+        aria-hidden="true"
         className={classNames(
           "divider flex-grow mr-1rem transition-transform duration-300",
           {
@@ -30,7 +31,6 @@ export default function ButtonWithBar({
         )}
       />
       <button
-        aria-label={label}
         className={classNames(
           "centered py-[8px] space-x-2 z-10 bg-app-black relative",
           [
@@ -45,6 +45,7 @@ export default function ButtonWithBar({
         onMouseOver={() => setIsHovered(true)}
         onMouseOut={() => setIsHovered(false)}
         onClick={onClick}
+        {...buttonAttributes}
       >
         {children}
       </button>

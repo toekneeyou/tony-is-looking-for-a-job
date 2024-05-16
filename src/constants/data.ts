@@ -68,3 +68,18 @@ export const skills: SkillDetail[] = [
     ],
   },
 ];
+
+export const abbyLinks = [
+  {
+    text: "Design - Figma",
+    link: "https://www.figma.com/file/NJuPGZIs74vcuwP5Ty3VLD/Abby-Design-System?type=design&node-id=2-96&mode=design",
+  },
+  {
+    text: "Frontend - React Native",
+    link: "https://github.com/toekneeyou/abby-ui",
+  },
+  {
+    text: "Backend - React Native",
+    link: "https://github.com/toekneeyou/abby-backend",
+  },
+];

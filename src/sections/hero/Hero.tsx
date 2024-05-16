@@ -69,6 +69,7 @@ export default function Hero({}: HeroProps) {
             "lg:transition-[transform,opacity] lg:will-change-[transform,opacity] lg:duration-500 lg:opacity-0 lg:delay-[700ms]",
             ["text-[10rem]", "lg:text-[11rem]", "xl:text-[12rem]"]
           )}
+          aria-label="Tony Yu"
         >
           TONY
         </h1>
@@ -84,7 +85,7 @@ export default function Hero({}: HeroProps) {
               "flex align-middle mt-1rem translate-x-[5rem]"
             )}
           >
-            <div className="divider w-[6rem] my-1rem" />
+            <div aria-hidden="true" className="divider w-[6rem] my-1rem" />
             <Actions className="ml-1rem" />
           </div>
         </div>
@@ -104,7 +105,7 @@ export default function Hero({}: HeroProps) {
         <img
           className="h-full object-cover"
           src={tony}
-          alt="Photo of author wearing a red jacket standing in front of a snow-capped mountain"
+          alt="Author wearing a red jacket standing in front of a snow-capped mountain"
           onLoad={() => setLoadingState((p) => ({ ...p, hero: false }))}
         />
       </div>
@@ -121,6 +122,7 @@ export default function Hero({}: HeroProps) {
         ])}
       >
         <h1
+          aria-hidden="true"
           ref={yuRef}
           className={classNames(
             "josefin-sans font-bold self-end leading-none select-none",
