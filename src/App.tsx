@@ -85,10 +85,6 @@ export default function App() {
     intObs.observe(document.getElementById(PROJECTS_ID)!);
   }, []);
 
-  useEffect(() => {
-    console.log(currentSection);
-  }, [currentSection]);
-
   return (
     <AppContext.Provider value={{ isLoading, setLoadingState, currentSection }}>
       <div

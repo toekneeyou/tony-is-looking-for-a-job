@@ -5,6 +5,7 @@ type GithubIconProps = {
 export default function GithubIcon({ isGradient }: GithubIconProps) {
   return (
     <svg
+      aria-hidden="true"
       className="w-[26px] h-[26px] transition-all group-hover:drop-shadow-pink-glow"
       viewBox="0 0 334 327"
       fill="none"

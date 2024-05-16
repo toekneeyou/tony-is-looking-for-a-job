@@ -18,19 +18,14 @@ export default function Header({
   const { currentSection } = useContext(AppContext);
 
   useEffect(() => {
-    const hero = document.getElementById(HERO_ID)!;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        setHideMenu(entry.isIntersecting);
-      });
-    });
-    observer.observe(hero);
+    if (currentSection.label === "hero") {
+      setHideMenu(true);
+    } else {
+      setHideMenu(false);
+    }
+  }, [currentSection]);
 
-    return () => {
-      observer.disconnect();
-    };
-  });
-
+  // scroll to hero section while preventing default of anchor element
   const scrollToHero = (event: SyntheticEvent) => {
     event.preventDefault();
     document.getElementById(HERO_ID)!.scrollIntoView({ behavior: "smooth" });
@@ -38,7 +33,6 @@ export default function Header({
 
   return (
     <header
-      aria-label="Navigation Header"
       id={HEADER_ID}
       className={classNames(
         "fixed top-0 z-50 flex justify-between items-center w-full bg-app-black",
@@ -54,6 +48,7 @@ export default function Header({
         }
       )}
     >
+      {/* TONY YU on top left corner */}
       <h1
         className={classNames("josefin-sans font-bold translate-y-[2px]", [
           "text-1rem",
@@ -64,16 +59,18 @@ export default function Header({
           TONY YU
         </a>
       </h1>
+      {/* menu button visible on < lg viewports*/}
       <IconButton
         onClick={toggleSideMenu}
         className={classNames(["lg:hidden"])}
         iconString={isSideMenuOpen ? "close" : "menu"}
       />
+      {/* site navigation visible on >= lg viewports */}
       <nav
         className={classNames(["hidden", "lg:flex"])}
         aria-label="Sections on this page"
       >
-        <ul className="lg:flex lg:space-x-[1rem]" aria-label="Section Links">
+        <ul className="lg:flex lg:space-x-[1rem]">
           {sections.map((s) => {
             if (s.label !== "hero") {
               const onClick = (e: React.MouseEvent) => {
@@ -91,7 +88,6 @@ export default function Header({
               return (
                 <li
                   key={s.label}
-                  aria-label={`Scroll to ${s.label}`}
                   aria-current={s.label === currentSection.label}
                 >
                   <a

@@ -15,7 +15,7 @@ export default function Actions({ className = "" }: ActionsProps) {
       })}
       aria-label="Contact Information"
     >
-      <li aria-label="Email Link">
+      <li>
         <IconButton
           label="E-mail"
           iconString="mail"
@@ -24,7 +24,7 @@ export default function Actions({ className = "" }: ActionsProps) {
           }}
         />
       </li>
-      <li aria-label="LinkedIn Link">
+      <li>
         <IconButton
           label="LinkedIn"
           IconEl={LinkedInIcon}
@@ -33,7 +33,7 @@ export default function Actions({ className = "" }: ActionsProps) {
           }}
         />
       </li>
-      <li aria-label="Github Link">
+      <li>
         <IconButton
           label="Github"
           IconEl={GithubIcon}

@@ -62,10 +62,7 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
                 className={classNames("flex w-full")}
                 onClick={() => setSelectedVideo(v)}
               >
-                <label
-                  id={v.label}
-                  className="flex-grow text-center font-semibold capitalize"
-                >
+                <label className="flex-grow text-center font-semibold capitalize">
                   {v.label}
                 </label>
               </li>
@@ -76,6 +73,7 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
 
       <div className="flex w-full items-center px-1rem">
         <IconButton
+          label="previous video"
           disabled={selectedVideo.index === 0}
           iconString="arrow_back_ios"
           onClick={() =>
@@ -116,6 +114,7 @@ export default function AbbyVideos({ className = "" }: AbbyVideosProps) {
           })}
         </div>
         <IconButton
+          label="next video"
           disabled={selectedVideo.index === abbyVideos.length - 1}
           iconString="arrow_forward_ios"
           onClick={() =>

@@ -64,7 +64,7 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
 
   return (
     <ul
-      aria-label="Experience & Education List"
+      aria-label="Experience & Education"
       role="list"
       className={classNames(
         "w-full",
@@ -122,6 +122,7 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
           "lg:row-start-3 lg:row-end-4 lg:col-start-2 lg:col-end-3"
         )}
       />
+
       <button
         ref={buttonRef}
         className={classNames(
@@ -138,7 +139,9 @@ export default function AboutMeVisual({}: AboutMeVisualProps) {
         }}
       >
         <span className="mr-[0.5rem]">See more on LinkedIn</span>
-        <span className="material-symbols-outlined">open_in_new</span>
+        <span aria-hidden="true" className="material-symbols-outlined">
+          open_in_new
+        </span>
       </button>
     </ul>
   );
@@ -157,6 +160,7 @@ const AboutMeVisualItem = forwardRef(function AboutMeVisualItem(
 ) {
   return (
     <li
+      aria-label={`${title} @ ${company}`}
       ref={ref}
       className={classNames(
         "overflow-hidden group relative w-full max-w-text items-center gap-[0.5rem] justify-self-center",
@@ -177,9 +181,10 @@ const AboutMeVisualItem = forwardRef(function AboutMeVisualItem(
           ["w-[5rem]", "lg:w-[85%]"]
         )}
         src={src}
-        alt={`${company}-logo`}
+        alt={`${company} logo`}
       />
       <div
+        aria-hidden="true"
         className={classNames(
           "flex flex-col",
           "lg:absolute lg:top-0 lg:left-0",

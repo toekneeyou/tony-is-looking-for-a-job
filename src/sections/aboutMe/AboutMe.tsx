@@ -29,6 +29,7 @@ export default function AboutMe({}: AboutMeProps) {
         ["py-[var(--mobile-header-height)]", "lg:py-0"]
       )}
     >
+      {/* heading */}
       <h2
         id={ABOUT_ME_HEADING_ID}
         className={classNames(
@@ -38,6 +39,7 @@ export default function AboutMe({}: AboutMeProps) {
       >
         About
       </h2>
+      {/* description */}
       <TextWithLink
         containerClass={classNames(
           "lg:w-full",
@@ -56,7 +58,9 @@ export default function AboutMe({}: AboutMeProps) {
             }}
           >
             <span>Download Resume</span>
-            <span className="material-symbols-outlined">download</span>
+            <span aria-hidden="true" className="material-symbols-outlined">
+              download
+            </span>
             <a
               ref={resumeRef}
               href={resumeLink}
@@ -67,7 +71,7 @@ export default function AboutMe({}: AboutMeProps) {
           </ButtonWithBar>
         }
       />
-
+      {/* Image */}
       <div
         className={classNames(
           "z-10",

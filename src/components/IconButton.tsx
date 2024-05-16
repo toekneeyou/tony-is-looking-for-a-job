@@ -39,6 +39,7 @@ export default function IconButton({
       {!!IconEl && <IconEl />}
       {!!iconString && (
         <span
+          aria-hidden="true"
           className={classNames(
             "material-symbols-outlined",
             "transition-[color,drop-shadow] will-change-[color,drop-shadow] text-[30px]",
