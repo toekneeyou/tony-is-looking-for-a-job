@@ -103,6 +103,7 @@ export default function Hero({}: HeroProps) {
         )}
       >
         <img
+          fetchPriority="high"
           className="h-full object-cover"
           src={tony}
           alt="Author wearing a red jacket standing in front of a snow-capped mountain"

@@ -123,6 +123,7 @@ const SkillsVisualItem = forwardRef(function (
                 src={s.icon}
                 role="none"
                 className="h-[75%] w-[75%] object-contain"
+                loading="lazy"
               />
               <div
                 aria-hidden="true"

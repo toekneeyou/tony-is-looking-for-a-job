@@ -8,7 +8,7 @@ export default function Footer() {
       role="contentinfo"
       className="p-1rem mt-[var(--mobile-header-height)] space-y-2"
     >
-      <div aria-hidden="true" className="divider bg-app-white opacity-25" />
+      <div role="separator" className="divider bg-app-white opacity-25" />
       <Actions className="p-2rem" />
       <div className="text-center p-2rem pt-0 opacity-60">
         &copy; 2024 Tony Yu. All rights reserved.
