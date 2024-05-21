@@ -2,13 +2,13 @@ import { HERO_ID } from "../../constants/id";
 import tony from "../../assets/tony-iceland.jpg";
 import { classNames } from "../../helpers/helpers";
 import Actions from "../../features/Actions";
-import { useContext, useEffect, useRef } from "react";
-import { AppContext } from "../../App";
+import { useEffect, useRef } from "react";
+import { useLoadingContext } from "../../contexts/LoadingContext";
 
 type HeroProps = {};
 
 export default function Hero({}: HeroProps) {
-  const { isLoading, setLoadingState } = useContext(AppContext);
+  const { isLoading, setLoadingState } = useLoadingContext();
   const tonyRef = useRef<HTMLHeadingElement>(null);
   const yuRef = useRef<HTMLHeadingElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);

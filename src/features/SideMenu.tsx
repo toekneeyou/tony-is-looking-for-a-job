@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import ButtonWithBar from "../components/ButtonWithBar";
 import { sections } from "../constants/data";
 import { classNames } from "../helpers/helpers";
 import Actions from "./Actions";
-import { AppContext } from "../App";
+import { useSectionContext } from "../contexts/SectionContext";
 
 type SideMenuProps = {
   isMenuOpen: boolean;
@@ -14,7 +13,8 @@ export default function SideMenu({
   isMenuOpen,
   toggleSideMenu,
 }: SideMenuProps) {
-  const { currentSection } = useContext(AppContext);
+  const { currentSection } = useSectionContext();
+
   return (
     <div
       className={classNames(

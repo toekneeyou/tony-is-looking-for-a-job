@@ -1,11 +1,11 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import { ABOUT_ME_HEADING_ID, ABOUT_ME_ID } from "../../constants/id";
 import AboutMeVisual from "./AboutMeVisual";
 import tonyLa from "../../assets/tony-la.jpg";
 import ButtonWithBar from "../../components/ButtonWithBar";
 import TextWithLink from "../../components/TextWithLink";
 import { classNames } from "../../helpers/helpers";
-import { AppContext } from "../../App";
+import { useLoadingContext } from "../../contexts/LoadingContext";
 
 const resumeLink =
   process.env.RESUME_LINK ??
@@ -14,7 +14,7 @@ const resumeLink =
 type AboutMeProps = {};
 export default function AboutMe({}: AboutMeProps) {
   const resumeRef = useRef<HTMLAnchorElement>(null);
-  const { setLoadingState } = useContext(AppContext);
+  const { setLoadingState } = useLoadingContext();
 
   return (
     <section

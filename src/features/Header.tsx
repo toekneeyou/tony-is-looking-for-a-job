@@ -1,9 +1,9 @@
-import { SyntheticEvent, useContext, useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import IconButton from "../components/IconButton";
 import { APP_ID, HEADER_ID, HERO_ID } from "../constants/id";
 import { classNames } from "../helpers/helpers";
 import { sections } from "../constants/data";
-import { AppContext } from "../App";
+import { useSectionContext } from "../contexts/SectionContext";
 
 type HeaderProps = {
   isSideMenuOpen: boolean;
@@ -15,7 +15,7 @@ export default function Header({
   toggleSideMenu,
 }: HeaderProps) {
   const [hideMenu, setHideMenu] = useState(true);
-  const { currentSection } = useContext(AppContext);
+  const { currentSection } = useSectionContext();
 
   useEffect(() => {
     if (currentSection.label === "hero") {
