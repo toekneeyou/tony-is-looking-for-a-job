@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import { classNames } from "../../helpers/helpers";
+import { useLoadingContext } from "../../contexts/LoadingContext";
 import "./loading.css";
-import { AppContext } from "../../App";
 
 type LoadingProps = {};
 
 export default function Loading({}: LoadingProps) {
-  const { isLoading } = useContext(AppContext);
+  const { isLoading } = useLoadingContext();
 
   return (
     <div

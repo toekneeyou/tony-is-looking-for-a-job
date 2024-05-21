@@ -1,27 +1,26 @@
-import { useContext } from "react";
 import ButtonWithBar from "../components/ButtonWithBar";
 import { sections } from "../constants/data";
 import { classNames } from "../helpers/helpers";
 import Actions from "./Actions";
-import { AppContext } from "../App";
+import { useSectionContext } from "../contexts/SectionContext";
+import { useSideMenuContext } from "../contexts/SideMenuContext";
 
-type SideMenuProps = {
-  isMenuOpen: boolean;
-  toggleSideMenu: () => void;
-};
+type SideMenuProps = {};
 
-export default function SideMenu({
-  isMenuOpen,
-  toggleSideMenu,
-}: SideMenuProps) {
-  const { currentSection } = useContext(AppContext);
+export default function SideMenu({}: SideMenuProps) {
+  const { currentSection } = useSectionContext();
+  const { isSideMenuOpen, toggleSideMenu } = useSideMenuContext();
+
   return (
     <div
       className={classNames(
         "fixed top-0 left-0 h-svh w-full bg-app-black z-40",
         "flex flex-col justify-center items-end",
         "transition-transform duration-500",
-        { "translate-x-full": !isMenuOpen, "translate-x-0": isMenuOpen },
+        {
+          "translate-x-full": !isSideMenuOpen,
+          "translate-x-0": isSideMenuOpen,
+        },
         ["lg:hidden"]
       )}
     >
