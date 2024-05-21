@@ -58,7 +58,7 @@ export default function SectionContextProvider({
 export const useSectionContext = () => {
   const sectionState = useContext(SectionContext);
   if (!sectionState) {
-    throw new Error("useLoadingState must be used within a Provider");
+    throw new Error("useSectionContext must be used within a Provider");
   }
   return sectionState;
 };

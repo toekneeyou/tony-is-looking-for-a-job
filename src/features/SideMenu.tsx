@@ -3,17 +3,13 @@ import { sections } from "../constants/data";
 import { classNames } from "../helpers/helpers";
 import Actions from "./Actions";
 import { useSectionContext } from "../contexts/SectionContext";
+import { useSideMenuContext } from "../contexts/SideMenuContext";
 
-type SideMenuProps = {
-  isMenuOpen: boolean;
-  toggleSideMenu: () => void;
-};
+type SideMenuProps = {};
 
-export default function SideMenu({
-  isMenuOpen,
-  toggleSideMenu,
-}: SideMenuProps) {
+export default function SideMenu({}: SideMenuProps) {
   const { currentSection } = useSectionContext();
+  const { isSideMenuOpen, toggleSideMenu } = useSideMenuContext();
 
   return (
     <div
@@ -21,7 +17,10 @@ export default function SideMenu({
         "fixed top-0 left-0 h-svh w-full bg-app-black z-40",
         "flex flex-col justify-center items-end",
         "transition-transform duration-500",
-        { "translate-x-full": !isMenuOpen, "translate-x-0": isMenuOpen },
+        {
+          "translate-x-full": !isSideMenuOpen,
+          "translate-x-0": isSideMenuOpen,
+        },
         ["lg:hidden"]
       )}
     >
